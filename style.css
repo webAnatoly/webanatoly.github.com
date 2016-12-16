@@ -17,9 +17,13 @@ p.myclass {
 	font-family: cursive;
 }
 
+img {
+	width:100px;
+}
+
 /*buttons*/
 button {
-	height:50px;
+    height:50px;
     width:220px;
     border-color:#bcd2ee;
     background-color:#bcd2ee;
