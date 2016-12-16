@@ -1,0 +1,33 @@
+body {
+	background: whitesmoke;
+	text-align: center;
+	color: #4682B4;
+	font-family: cursive !important;
+}
+
+#text {
+	color: #000080;
+	font-size: 20px; 
+	text-align: left;
+	margin-left: 100px;
+}
+
+p.myclass {
+	color:brown;
+	font-family: cursive;
+}
+
+/*buttons*/
+button {
+	height:50px;
+    width:220px;
+    border-color:#bcd2ee;
+    background-color:#bcd2ee;
+    border-style:solid;
+    border-width:1px;
+    border-radius:5px;
+    margin:auto;
+    text-align:center;
+}
+
+
