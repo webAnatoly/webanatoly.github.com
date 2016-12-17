@@ -14,32 +14,24 @@ function changeColor() {
 	*/
 }
 
-function getProperies () {
-	var properties = '';
-	for (var i in document) {
-		properties += ('<br>' + i + ': ' + document[i] + '<br>');
-	};
-	document.getElementById('text').innerHTML = properties;
-
+function getProperties () {
+	var counter = document.getElementById('forTable').childElementCount;
+	if (counter == 0) {
+		document.getElementById('buttonProperties').innerHTML = 'Hide Properties'; // to change name of button to the 'Hide Properties'
+		var properties = '';
+		for (var i in document) {
+			properties += ('<tr><td class="first_td">' + i + '</td><td class="second_td">' + document[i] +'</td></tr>' + '\n');
+		};
+		document.getElementById('forTable').innerHTML = '<table>' + properties + '</table>';
+	} else { 
+		document.getElementById('forTable').innerHTML = '';
+		document.getElementById('buttonProperties').innerHTML = 'Get Properties Of This Document';
+	}
 }
 
 // =========================================
 
-var data = [10, 9, 10, 10, 9, 8];
 
-function nonUniqueElements(data) {
-	var newData = [];
-	for (var n = 0; n < data.length; n++){
-		for (var i = 0; i < data.length; i++){
-			if (data[n] == data[i] && n != i) {
-				newData[newData.length] = data[n];
-				break;
-			}
-		}
-	}
-    return newData;
-}
-console.log(nonUniqueElements(data));
 
 
 
