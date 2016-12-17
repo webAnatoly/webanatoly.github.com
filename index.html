@@ -2,35 +2,43 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<link type="text/CSS" rel="stylesheet" href="style.css" />
-<title>TestPage</title>
+<link type="text/CSS" rel="stylesheet" href="exercises.css" />
+<title>EXERCISES</title>
 </head>
 
 
-<body id='body'>	
-	<p class='myclass'>Hello World</p>
-	<a href='#'><button type='button' onclick='changeColor()'>Change Background Color</button></a>
-	<a href='#'><button type='button' onclick='getProperies()'>Get All Properties Of Document</button></a>
-	<p>Paragraph 1</p>
-	<p>Paragraph 2</p>
-	<p>Paragraph 3</p>
-	<div id='text'>any text</div>
-	<script src='script.js'></script>
-	<br><br>
-	<p>Look Ma, I am coding <abbr title="Hyper Text Markup Language">HTML</abbr>.</p>
-	<img src='http://xcp.ninja/images/ninja-icon.png' />
-	<br><br>
-
-	<div>This is 'div' for media <br><br>
-
-	<audio id="demo" src=" " controls></audio>
-
+<body id='body'>
+	<div class='left'>
+		<a href='css_tips.html'>CSS tips</a>
 	</div>
+	<div class='center'>
+		<br>	
+		<button type='button' class='myButton' onclick='changeColor()'>Change Background Color</button>
+		<button type='button' class='myButton'id='buttonProperties' onclick='getProperties()'>Get Properties Of This Document</button>
+		<br><br>
+		<div id='forTable'>
+			<!--table from script-->
+		</div>
+		<p>Paragraph 1</p>
+		<p>Paragraph 2</p>
+		<p>Paragraph 3</p>
+		<br><br>
+		<p>Look Ma, I am coding <abbr title="Hyper Text Markup Language">HTML</abbr>.</p>
+		<img src='http://xcp.ninja/images/ninja-icon.png' />
+		<br><br>
 
-	<div style="width:50px; height:50px; background-color:red"></div>
-	<div style="width:50px; height:50px; background-color:yellow"></div>
-	<div style="width:50px; height:50px; background-color:grey"></div>
+		<div>This is 'div' for media <br><br>
+			<audio id="demo" src="Zaz.mp3" controls></audio>
+		</div>
 
+		<div style="width:50px; height:50px; background-color:red"></div>
+		<div style="width:50px; height:50px; background-color:yellow"></div>
+		<div style="width:50px; height:50px; background-color:grey"></div>
+		<br>
+		
+		<script src='exercises.js'></script>
+		<br>
+	</div>
 
 
 </body>
