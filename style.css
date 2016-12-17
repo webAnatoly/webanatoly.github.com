@@ -1,29 +1,67 @@
 body {
-	background: whitesmoke;
-	text-align: center;
+	background: lightslategray;
 	color: #4682B4;
-	font-family: cursive !important;
+	font-family: Times, Arial, Verdana, sans-serif;
 }
 
-#text {
+div {
+	text-align:center;
+	background-color:#FFF8DC;
+	border-radius:10px;
+}
+
+div.left {
+	width:25%;
+	height:100px;
+	float:left;
+}
+
+div.center {
+	width:50%;
+	float:left;
 	color: #000080;
-	font-size: 20px; 
-	text-align: left;
-	margin-left: 100px;
+	font-size: 15px; 
+	margin-left:10px;
+	/*overflow-x:hidden;*/	
 }
 
-p.myclass {
-	color:brown;
-	font-family: cursive;
+table {
+	text-align:left;
 }
+
+
+td.first_td {
+	border: 1px solid black;
+	word-break: break-all;
+	width: 50%;
+}
+
+td.second_td {
+	border: 1px solid black;
+	word-break: break-all; /* to carry a long word on to the next line */
+	width:50%;
+}
+
 
 img {
 	width:100px;
 }
 
-/*buttons*/
-button {
-    height:50px;
+
+a {
+	text-decoration:none;
+	color:#6495ED;
+	font-family:Verdana, Arial, serif;
+}
+
+
+a:hover {
+	color:blue;
+}
+
+
+button.myButton {
+	height:50px;
     width:220px;
     border-color:#bcd2ee;
     background-color:#bcd2ee;
@@ -33,5 +71,16 @@ button {
     margin:auto;
     text-align:center;
 }
+
+
+.myButton:hover {
+	background: transparent;
+ 	color: #226fbe;
+ 	/*cursor: pointer;*/
+}
+
+
+
+
 
 
