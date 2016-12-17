@@ -1,10 +1,9 @@
 'use strict';
 
 function changeColor() {
-	var myColor = document.body.style.background[0];
-	console.log(myColor);
-	(myColor == 'w' || myColor == null ) ? document.body.style.background = 'darkseagreen' : 
-	document.body.style.background = 'whitesmoke';
+	var myColor = document.body.style.background[0];// getting first letter of color name
+	(myColor == 'l' || myColor == null ) ? document.body.style.background = 'darkseagreen' : 
+	document.body.style.background = 'lightslategray';
 	
 	// It's The Conditional Operator (?:)
 	/* The first operand is evaluated and interpreted as a boolean. 
