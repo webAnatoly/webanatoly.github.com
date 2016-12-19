@@ -22,6 +22,7 @@ div.center {
 	color: #000080;
 	font-size: 15px; 
 	margin-left:10px;
+	float:left;
 	/*overflow-x:hidden;*/	
 }
 
