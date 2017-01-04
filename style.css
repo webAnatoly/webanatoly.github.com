@@ -10,12 +10,6 @@ div {
 	border-radius:10px;
 }
 
-div.left {
-	width:25%;
-	height:150px;
-	float:left;
-}
-
 div.center {
 	width:50%;
 	float:left;
