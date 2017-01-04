@@ -14,6 +14,7 @@ function changeColor() {
 }
 
 function getProperties () {
+	console.log('asdfasdfsadf');
 	var counter = document.getElementById('forTable').childElementCount;
 	if (counter == 0) {
 		document.getElementById('buttonProperties').innerHTML = 'Hide Properties'; // to change name of button to the 'Hide Properties'
@@ -29,6 +30,16 @@ function getProperties () {
 }
 
 // =========================================
+
+function textClocks () {
+	var gDate = new Date(); // gDate it's Date object for using into my function;
+	var myClock = document.getElementById('textClocks');
+	var h = gDate.getHours(); (h < 10) ? h = '0'+ h : h; // hours
+	var m = gDate.getMinutes(); (m < 10) ? m = '0'+ m : m; // minutes
+	var s = gDate.getSeconds(); (s < 10) ? s = '0'+ s : s; // seconds
+	myClock.innerHTML = h + " : " + m + " : " + s;
+	setInterval(textClocks, 1);
+}
 
 
 

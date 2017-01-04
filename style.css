@@ -4,6 +4,10 @@ body {
 	font-family: Times, Arial, Verdana, sans-serif;
 }
 
+h2 {
+	padding-top: 5px;
+}
+
 div {
 	text-align:center;
 	background-color:#FFF8DC;
@@ -11,17 +15,18 @@ div {
 }
 
 div.center {
-	width:50%;
-	float:left;
+	position: relative;
+	width:70%;
+	height:1000px;
 	color: #000080;
 	font-size: 15px; 
-	margin-left:10px;
-	float:left;
+	margin: auto;
 	/*overflow-x:hidden;*/	
 }
 
 table {
 	text-align:left;
+	width:100%;
 }
 
 
