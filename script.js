@@ -43,9 +43,3 @@ function textClocks () { // this function show tick clocks into button as text.
 	myClock.innerHTML =  h + ":" + m + ":" + s;
 }
 
-
-
-
-
-
-
