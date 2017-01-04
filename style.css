@@ -1,3 +1,7 @@
+/* 
+for comments
+*/
+
 body {
 	background: lightslategray;
 	color: #4682B4;
@@ -23,6 +27,7 @@ div.center {
 	margin: auto;
 	/*overflow-x:hidden;*/	
 }
+
 
 table {
 	text-align:left;
@@ -77,6 +82,23 @@ button.myButton {
 	background: transparent;
  	color: #226fbe;
  	/*cursor: pointer;*/
+}
+
+.ButtonClock {
+	height:50px;
+    width:220px;
+	color: #226fbe;
+	font-size: 20px;
+	font-family: Courier;
+	border-color:#bcd2ee;
+    background: transparent;
+    border-style:solid;
+    border-width:1px;
+    border-radius:5px;
+    margin:auto;
+    text-align:center;
+	
+    
 }
 
 

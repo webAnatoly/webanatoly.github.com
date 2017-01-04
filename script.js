@@ -13,8 +13,7 @@ function changeColor() {
 	*/
 }
 
-function getProperties () {
-	console.log('asdfasdfsadf');
+function getProperties () { // gettin properties of document
 	var counter = document.getElementById('forTable').childElementCount;
 	if (counter == 0) {
 		document.getElementById('buttonProperties').innerHTML = 'Hide Properties'; // to change name of button to the 'Hide Properties'
@@ -26,19 +25,22 @@ function getProperties () {
 	} else { 
 		document.getElementById('forTable').innerHTML = '';
 		document.getElementById('buttonProperties').innerHTML = 'Get Properties Of This Document';
-	}
+	} 
 }
 
-// =========================================
+function changeButtonAndStartClocks() { // starting function for clock. This function change style of button where will appear clocks.
+	var newButton = document.getElementById('newButtonView');
+	newButton.innerHTML = "<button type='button' class='ButtonClock' onclick='changeButtonAndStarClocks()'><span id='textClocks'></span></button>"
+	setInterval(textClocks, 1000);
+}
 
-function textClocks () {
+function textClocks () { // this function show tick clocks into button as text.  
 	var gDate = new Date(); // gDate it's Date object for using into my function;
 	var myClock = document.getElementById('textClocks');
 	var h = gDate.getHours(); (h < 10) ? h = '0'+ h : h; // hours
 	var m = gDate.getMinutes(); (m < 10) ? m = '0'+ m : m; // minutes
 	var s = gDate.getSeconds(); (s < 10) ? s = '0'+ s : s; // seconds
-	myClock.innerHTML = h + " : " + m + " : " + s;
-	setInterval(textClocks, 1);
+	myClock.innerHTML =  h + ":" + m + ":" + s;
 }
 
 
