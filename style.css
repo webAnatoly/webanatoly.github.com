@@ -77,6 +77,18 @@ button.myButton {
     text-align:center;
 }
 
+.buttonTransparent {
+	height:50px;
+    width:220px;
+    border-color:#bcd2ee;
+    background-color:transparent;
+    border-style:solid;
+    border-width:1px;
+    border-radius:5px;
+    margin:auto;
+    text-align:center;
+}
+
 
 .myButton:hover {
 	background: transparent;
@@ -84,20 +96,6 @@ button.myButton {
  	/*cursor: pointer;*/
 }
 
-.ButtonClock {
-	height:50px;
-    width:220px;
-	color: #226fbe;
-	font-size: 20px;
-	font-family: Courier;
-	border-color:#bcd2ee;
-    background: transparent;
-    border-style:solid;
-    border-width:1px;
-    border-radius:5px;
-    margin:auto;
-    text-align:center;
-}
 
 
 

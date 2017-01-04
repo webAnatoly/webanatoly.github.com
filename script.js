@@ -28,18 +28,13 @@ function getProperties () { // gettin properties of document
 	} 
 }
 
-function changeButtonAndStartClocks() { // starting function for clock. This function change style of button where will appear clocks.
-	var newButton = document.getElementById('newButtonView');
-	newButton.innerHTML = "<button type='button' class='ButtonClock' onclick='changeButtonAndStarClocks()'><span id='textClocks'></span></button>"
-	setInterval(textClocks, 1000);
-}
-
 function textClocks () { // this function show tick clocks into button as text.  
 	var gDate = new Date(); // gDate it's Date object for using into my function;
-	var myClock = document.getElementById('textClocks');
+	var myClock = document.getElementById('newButtonView');
 	var h = gDate.getHours(); (h < 10) ? h = '0'+ h : h; // hours
 	var m = gDate.getMinutes(); (m < 10) ? m = '0'+ m : m; // minutes
 	var s = gDate.getSeconds(); (s < 10) ? s = '0'+ s : s; // seconds
-	myClock.innerHTML =  h + ":" + m + ":" + s;
+	myClock.innerHTML =  "<button type='button' class='buttonTransparent' onclick='textClocks()'><pre style='font-size: 15px'>" + h + ":" + m + ":" + s + '</pre>' + '</button>';
+	setInterval(textClocks, 1000);
 }
 
