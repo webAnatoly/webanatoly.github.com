@@ -57,3 +57,23 @@ th {
     text-align: center;
     font-style: solid;
 }
+
+
+#back {
+    width:60px;
+    height:35px;
+    background:#669999;
+    color: white;
+    position: fixed;
+    margin: 10px 0px 0px 20px;
+    text-align: center;
+    padding-top: 15px;
+    border-radius: 0px 80px 30px 80px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.6); /* Тень */
+    /* сделать, чтобы этот указатель плавно, очень плавно менял оттенок */
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
