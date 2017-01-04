@@ -1,4 +1,4 @@
-pythonanatoly.github.com
+webAnatoly.github.com
 ========================
 
-http://pythonanatoly.github.io/
+http://webanatoly.github.io/
