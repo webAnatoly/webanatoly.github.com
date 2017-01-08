@@ -1,4 +1,4 @@
-### This repository is made for learning JavaScript. 
+This repository is made for learning JavaScript. 
 
 I keep here:
 
