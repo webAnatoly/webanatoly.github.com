@@ -8,6 +8,6 @@ Summary of some JavaScript methods to understand how they work;
 
 Summary of varios text-books;
 
-My solutions for any tasks and so on...
+My solutions for any tasks and so on...;
 
-http://webanatoly.github.io
+GitHub Pages for my experiments with js/html: http://webanatoly.github.io
