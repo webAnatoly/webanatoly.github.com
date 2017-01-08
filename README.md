@@ -1,4 +1,5 @@
 This repository is made for studying JavaScript. 
+
 I keep here:
 JavaScript exercises and notes; 
 Summary of some JavaScript methods to understand how they work; 
