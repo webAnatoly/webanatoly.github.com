@@ -9,3 +9,5 @@ Summary of some JavaScript methods to understand how they work;
 Summary of varios text-books;
 
 My solutions for any tasks and so on...
+
+www.webanatoly.github.io
