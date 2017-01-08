@@ -256,6 +256,20 @@ function learnReduce() { // understanding reduce() method and statement like "re
 	} assignAndReturn ()
 } //learnReduce();
 
+function xoReferee(data) { // Task "Тic-Тac-Тoe" from chekio.org
 
+	var str = data.join(''); // join all strings in data
+	console.log(str);
+	for (var n = 0; n < 3; n++) {
+		if (str[n] == str[n+3] && str[n+3] == str[n+6]) { if (str[n] != '.') return str[n]; }
+	}
 
+	for (var n = 0; n < 9; n += 3) {
+		if (str[n] == str[n+1] && str[n] == str[n+2]) { if (str[n] != '.') return str[n]; }
+	}
+
+	if (str[0] == str[4] && str[4] == str[8]) { if (str[0] != '.') return str[0]; }
+	if (str[2] == str[4] && str[4] == str[6]) { if (str[2] != '.') return str[2]; }
+	return 'D';
+} //var game = [".O.","...","..."]; //console.log(xoReferee(game));
 
