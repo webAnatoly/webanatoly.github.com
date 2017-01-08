@@ -10,4 +10,4 @@ Summary of varios text-books;
 
 My solutions for any tasks and so on...
 
-www.webanatoly.github.io
+webanatoly.github.io
