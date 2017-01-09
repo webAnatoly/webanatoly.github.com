@@ -2,8 +2,8 @@
 
 function changeColor() {
 	var myColor = document.body.style.background[0];// getting first letter of color name
-	(myColor == 'l' || myColor == null ) ? document.body.style.background = 'darkseagreen' : 
-	document.body.style.background = 'lightslategray';
+	(myColor == 'd' || myColor == null ) ? document.body.style.background = 'lightslategray' : 
+	document.body.style.background = 'darkseagreen';
 	
 	// It's The Conditional Operator (?:)
 	/* The first operand is evaluated and interpreted as a boolean. 
@@ -272,4 +272,85 @@ function xoReferee(data) { // Task "Тic-Тac-Тoe" from chekio.org
 	if (str[2] == str[4] && str[4] == str[6]) { if (str[2] != '.') return str[2]; }
 	return 'D';
 } //var game = [".O.","...","..."]; //console.log(xoReferee(game));
+
+function breakRings(rings){ // Task "Break Rings" from chekio.org
+	// Step 1 Create array with subarrays [a,b] where "a" hold a serial number of ring, and "b" hold an amount of rings this one connect. 
+    var counter = 0;// counter for broken rings
+    
+    while (rings.length > 0) {
+    	var sequence = rings.map(function(item, index){
+    		var str = item.join('');
+    		return str;
+    	});
+    	sequence = sequence.join('').split('').sort(); //create sequence like ithis [1, 1, 2, 2, 3, 3, 4, 4];
+    		//console.log(sequence);
+	    function creatPairValues(arr) { // creating new array with subarrays pairs [a,b], where "a" hold a serial number of ring, and "b" hold an amount of rings this one connect, for example [[1,2], [2,2], [3,2], [4,2]] 
+	    	var accum = 0;
+	    	var pairsArray = [];
+	    	// console.log(arr); // arr = [1,1,2,2,3,3,4,4] sorted array;
+	    	while (arr.length > 0) { //count how many 'number' are in  the 'arr' and form new array "pairsArray" with subarrays [number,accum];
+    			var number = arr[0]; // 1;
+    			for (var i = 0; i < arr.length; i++) { 
+    				if (number == arr[i]) {
+    					accum += 1;
+    				} 
+    				else {
+    					pairsArray.push([number,accum]);
+    					arr.splice(0,i);
+    					accum = 0;
+    					break;
+    				} 
+    			}
+    			if (number == arr[arr.length-1]) { // if all rest elements in array equal each other set 'arr' = [] to break cycle 'while'
+    				pairsArray.push([number,accum]);
+    				arr = []; 
+    			}	
+    		}
+    		return pairsArray;
+	    } 
+	    sequence = creatPairValues(sequence); // creat array of subarrays like this  [[a,b],[c,d]];
+
+	    function getLargestValue(sequence) { // sort sequence [[a,b],[c,d]] and return first largest value 'sequence[0][0]'
+		    sequence.sort(function(a,b) {
+		    	return b[1] - a[1];
+		    });
+		    return(sequence[0][0]);
+		} 
+		var largest = getLargestValue(sequence); // 'largest' it is the ring which go through other rings more of all 
+
+		// Step 2 - delete all subarrays [a,b] in which appears values == veriable 'largest' (largest now = 4) and increase variable "counter" by 1
+		
+		for (var x = 0; x < rings.length; x++) {
+			for (var y = 0; y < 2; y++) {
+				if (rings[x][y] == largest) {
+					rings.splice(x, 1);
+					x = x - 1;
+					break;
+				}
+			}
+		}
+		counter += 1;
+	} // ending while cycle
+	// STEP 3  - repeat Step 1 and Step 2 until variable 'rings' become empty array [] and then return 'counter'
+    console.log (counter);
+} 
+
+//var rings = [[8, 9], [1, 9], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [8, 7]]; // should return 3
+//var rings = [[1,9],[1,2],[8,5],[4,6],[5,6],[8,1],[3,4],[2,6],[9,6],[8,4],[8,3],[5,7],[9,7],[2,3],[1,7]]; // 5 
+			//[[8,5], [4,6], [5,6], [3,4] [2,6] [9,6] [8,4] [8,3] [5,7] [9,7] [2,3]]; // - первая итерация; counter = 1
+			//[[8,5],[3,4],[8,4],[8,3],[5,7],[9,7],[2,3]]; // - вторая итерация; counter = 2
+			//[[8,5],[8,4],[5,7],[9,7]]; // - третья итерация, counter = 3
+			//[[8,4],[9,7]]; // - четвертая итерация, counter = 4
+			//[9,7]; // - пятая итерация, counter = 5
+			//[]; // - шестая итерация, counter = 6
+			//[[1,9],[1,7],[1,2],[2,6],[2,3],[3,4],[4,6],[5,6],[5,7],[8,5],[8,3],[8,1],[8,4],[9,6],[9,7]]
+			//[[2,3],[2,6],[3,4],[4,6],[5,6],[5,7],[8,4],[8,3],[8,5],[9,7],[9,6]]
+			//[[2,3],[3,4],[5,7],[8,5],[8,4],[8,3],[9,7]]
+			//[[5,7],[8,5],[8,4],[9,7]]
+			//[[9,7],[8,4]]
+			//[[9,7]]
+			//the key of solution of this task is the "graph theory"
+//breakRings(rings);
+
+
 
