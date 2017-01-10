@@ -463,7 +463,7 @@ function intrOOP() { // introduction in OOP and interesting OOP patterns
 	console.log('x = ' + obj.x); // x = false
 	console.log('y = ' + obj.y); // y = true
 	
-} intrOOP();
+} //intrOOP();
 
 
 
