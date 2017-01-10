@@ -1,6 +1,6 @@
 'use strict';
 
-function changeColor() {
+function changeColor() { //changing background color of the HTML page
 	var myColor = document.body.style.background[0];// getting first letter of color name
 	(myColor == 'd' || myColor == null ) ? document.body.style.background = 'lightslategray' : 
 	document.body.style.background = 'darkseagreen';
@@ -301,7 +301,7 @@ function breakRings(rings){ // Task "Break Rings" from chekio.org
     					break;
     				} 
     			}
-    			if (number == arr[arr.length-1]) { // if all rest elements in array equal each other set 'arr' = [] to break cycle 'while'
+    			if (number == arr[arr.length-1]) { // if all rest elements in array equal each other set 'arr' = [] to break the loop 'while'
     				pairsArray.push([number,accum]);
     				arr = []; 
     			}	
@@ -330,27 +330,156 @@ function breakRings(rings){ // Task "Break Rings" from chekio.org
 			}
 		}
 		counter += 1;
-	} // ending while cycle
+	} // ending the while loop
 	// STEP 3  - repeat Step 1 and Step 2 until variable 'rings' become empty array [] and then return 'counter'
     console.log (counter);
 } 
-
 //var rings = [[8, 9], [1, 9], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [8, 7]]; // should return 3
-//var rings = [[1,9],[1,2],[8,5],[4,6],[5,6],[8,1],[3,4],[2,6],[9,6],[8,4],[8,3],[5,7],[9,7],[2,3],[1,7]]; // 5 
-			//[[8,5], [4,6], [5,6], [3,4] [2,6] [9,6] [8,4] [8,3] [5,7] [9,7] [2,3]]; // - первая итерация; counter = 1
-			//[[8,5],[3,4],[8,4],[8,3],[5,7],[9,7],[2,3]]; // - вторая итерация; counter = 2
-			//[[8,5],[8,4],[5,7],[9,7]]; // - третья итерация, counter = 3
-			//[[8,4],[9,7]]; // - четвертая итерация, counter = 4
-			//[9,7]; // - пятая итерация, counter = 5
-			//[]; // - шестая итерация, counter = 6
-			//[[1,9],[1,7],[1,2],[2,6],[2,3],[3,4],[4,6],[5,6],[5,7],[8,5],[8,3],[8,1],[8,4],[9,6],[9,7]]
-			//[[2,3],[2,6],[3,4],[4,6],[5,6],[5,7],[8,4],[8,3],[8,5],[9,7],[9,6]]
-			//[[2,3],[3,4],[5,7],[8,5],[8,4],[8,3],[9,7]]
-			//[[5,7],[8,5],[8,4],[9,7]]
-			//[[9,7],[8,4]]
-			//[[9,7]]
-			//the key of solution of this task is the "graph theory"
+	//var rings = [[1,9],[1,2],[8,5],[4,6],[5,6],[8,1],[3,4],[2,6],[9,6],[8,4],[8,3],[5,7],[9,7],[2,3],[1,7]]; // 5 
+	//[[8,5], [4,6], [5,6], [3,4] [2,6] [9,6] [8,4] [8,3] [5,7] [9,7] [2,3]]; // - первая итерация; counter = 1
+	//[[8,5],[3,4],[8,4],[8,3],[5,7],[9,7],[2,3]]; // - вторая итерация; counter = 2
+	//[[8,5],[8,4],[5,7],[9,7]]; // - третья итерация, counter = 3
+	//[[8,4],[9,7]]; // - четвертая итерация, counter = 4
+	//[9,7]; // - пятая итерация, counter = 5
+	//[]; // - шестая итерация, counter = 6
+	//[[1,9],[1,7],[1,2],[2,6],[2,3],[3,4],[4,6],[5,6],[5,7],[8,5],[8,3],[8,1],[8,4],[9,6],[9,7]]
+	//[[2,3],[2,6],[3,4],[4,6],[5,6],[5,7],[8,4],[8,3],[8,5],[9,7],[9,6]]
+	//[[2,3],[3,4],[5,7],[8,5],[8,4],[8,3],[9,7]]
+	//[[5,7],[8,5],[8,4],[9,7]]
+	//[[9,7],[8,4]]
+	//[[9,7]]
+	//the key of solution of this task is the "graph theory"
 //breakRings(rings);
+
+// =======================================================
+
+function fizzBuzz() { // FizzBuzz game
+	/* We're going to play a game of FizzBuzz. The rules are simple. We want to count from 1 to 20. 
+	But if the number is divisible by 3, we're going to print "Fizz". 
+	And if the number is divisible by 5 we're going to print "Buzz". 
+	
+	For numbers divisible by 3, print out "Fizz".
+	For numbers divisible by 5, print out "Buzz".
+	For numbers divisible by both 3 and 5, print out "FizzBuzz" in the console.
+	Otherwise, just print out the number.*/
+
+	for (var n = 1; n <= 30; n++) {
+		if (!(n % 3) && !(n % 5)) { console.log (n + ' ---- ' + 'FizzBuzz'); }
+		else if (!(n % 3)) { console.log (n + ' ---- ' + 'Fizz'); }
+		else if (!(n % 5)) { console.log (n + ' ---- ' + 'Buzz'); } 
+		else { console.log(n); }
+	}
+} //fizzBuzz();
+
+function useSwitch() { // understanding the switch statement
+	// EXAMPLE #1 
+	function getReview(movie) {
+		switch (movie) {
+			case "Toy Story 2":
+			return "Great story. Mean prospector.";
+
+			case "Finding Nemo":
+			return "Cool animation, and funny turtles.";
+
+			case "The Lion King":
+			return "Great songs.";
+
+			default:
+			return 'I don\'t know';
+		}
+	}
+	console.log(getReview("Finding Nemo"));
+
+	// EXAMPLE #2 if don't insert 'break' (or return) all case statements will run from the case where criteria is met
+	var expr = 'Oranges';
+	switch (expr) {
+	  case "Oranges":
+	    console.log("Oranges are $0.59 a pound.");
+	    //break;
+	  case "Apples":
+	    console.log("Apples are $0.32 a pound.");
+	    //break;
+	  case "Bananas":
+	    console.log("Bananas are $0.48 a pound.");
+	    //break;
+	  case "Cherries":
+	    console.log("Cherries are $3.00 a pound.");
+	    //break;
+	  case "Mangoes":
+	  case "Papayas":
+	    console.log("Mangoes and papayas are $2.79 a pound.");
+	    //break;
+	  default:
+	    console.log("Sorry, we are out of " + expr + ".");
+	}
+} //useSwitch();
+
+//========================================================
+
+function intrOOP() { // introduction in OOP and interesting OOP patterns 
+	// EXAMPLE #1
+	var setAge = function (newAge) {
+  		this.age = newAge;
+	};
+	var bob = new Object();
+	bob.age = 30;
+	bob.setAge = setAge; // here we're adding the new propertie 'setAge' into object bob and seting the function 'setAge' as value.
+	bob.setAge(50); // change age from 30 to 50
+	console.log(bob);
+
+	// EXAMPLE #2
+	var rectangle = {
+		width: 10,
+		height: 20
+	}
+
+	var setWidth = function(w){
+		this.width = w;
+	}
+	var setHeight = function(h){
+		this.height = h;
+	}
+
+	rectangle.setWidth = setWidth;
+	rectangle.setHeight = setHeight;
+
+	rectangle.setWidth(1);
+	rectangle.setHeight(2);
+
+	console.log(rectangle.width); // 1
+	console.log(rectangle.height); // 2
+
+	// EXAMPLE #3
+	var obj = {
+		x: 0,
+		y: 1,
+	};
+	obj.setX = function(any) { this.x = any; } // adding property 'setX' in 'obj' with value as a function. This is about how to create methods' object.
+	obj.setY = function(any) { this.y = any; }
+
+	obj.setX(false);
+	obj.setY(true);
+
+	console.log('x = ' + obj.x); // x = false
+	console.log('y = ' + obj.y); // y = true
+	
+} intrOOP();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
