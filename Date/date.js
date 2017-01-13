@@ -161,6 +161,102 @@ function settingTime() {
     console.log(currentDate);
 } 
 
+// =======================
+
+function getDateInUTC() { //gettin UTC time
+    var current = new Date();
+    var difference = current.getTimezoneOffset()/60;
+    difference < 0 ? difference = '+' + Math.abs(difference) : difference = '-' + difference;
+
+    console.log(current.getHours() + " hours in your time-zone UTC" + difference);
+    console.log(current.getUTCHours() + " hours in London UTC+0");
+} //getDateInUTC();
+
+function substactDate() {
+    var start = new Date; // засекли время
+
+    // что-то сделать
+    for (var i = 0; i < 99999999; i++) {
+        var doSomething = i * i * i;
+    }
+
+    var end = new Date; // конец измерения
+    var result = (end - start);
+    alert( "Цикл занял " + result + " ms" + " it's equal " + result/1000 + ' sec' );
+} //substactDate();
+
+/*
+var d = new Date(); 
+console.log(d.toLocaleString('ru', {era: 'short', }));
+*/
+
+// Создайте функцию getWeekDay(date), которая выводит текущий день недели в коротком формате „пн“, „вт“, … „вс“.
+function getWeekDay (date) {
+    var myDay = new Date(2012, 1, 20, 3, 12);
+    var d = date.getDay();
+    var arr = ['пн',"вт","ср","чт","пт","сб","вс"];
+    alert(arr[d]);
+} //getWeekDay(myDay);
+
+function getLocalDay() {
+    // Напишите функцию, которая возвращает день недели для даты date.
+    var date = new Date(2012, 0, 3);
+    var d = date.getDay();
+    if (d == 0) {
+        d = 7; 
+    }
+    alert(d);
+} //getLocalDay();
+
+function getSecondsToTomorrow() {
+    /* Напишите функцию getSecondsToTomorrow() которая возвращает, сколько секунд осталось до завтра.
+    Например, если сейчас 23:00, то: getSecondsToTomorrow() == 3600 
+    P.S. Функция должна работать в любой день, т.е. в ней не должно быть конкретного значения сегодняшней даты.*/
+    var d = new Date();
+    return 86400 - (d.getHours()*3600 + d.getMinutes()*60 + d.getSeconds()); // 86400 секунд в сутках, 3600 секунд в одном часе, 60 секунд в минуте
+} console.log(getSecondsToTomorrow());
+
+function formatMyDate() {
+    /* Напишите функцию formatDate(date), которая выводит дату date в формате дд.мм.гг
+    Dедущие нули должны присутствовать, то есть 1 января 2001 должно быть 01.01.01, а не 1.1.1.*/
+    var d = new Date();
+    var day = d.getDate(); if (day < 10 ) { day = '0' + day; }
+    var month = d.getMonth() + 1; if (month < 10) { month = '0' + month; }
+    var year = d.getFullYear(); year = String(year).slice(2);
+    return day + '.' + month + '.' + year;
+} console.log( formatMyDate() );
+
+function formatDate(date) {
+    /* Напишите функцию formatDate(date), которая форматирует дату date так:
+    Если со времени date прошло менее секунды, то возвращает "только что".
+    Иначе если со времени date прошло менее минуты, то "n сек. назад".
+    Иначе если прошло меньше часа, то "m мин. назад".
+    Иначе полная дата в формате "дд.мм.гг чч:мм". */
+    var current = new Date();
+    var diff = (current - date);
+    var answer;
+    if (diff <= 1000) {answer = 'just now';} 
+    else if (diff <= 1000 * 60) {answer = 'a ' + diff/1000 + ' sec ago'; }
+    else if (diff <= 1000 * 3600) {answer = 'a ' + diff/1000/60 + ' min ago'; }
+    else { 
+        var d = date; 
+        var day = d.getDate(); if (day < 10 ) { day = '0' + day; }
+        var month = d.getMonth() + 1; if (month < 10) { month = '0' + month; }
+        var year = d.getFullYear(); year = String(year).slice(2);
+        var h = d.getHours(); if (h < 10) { h = '0' + h; }
+        var m = d.getMinutes(); if (m < 10 ) { m = '0' + m; }
+        answer = day + '.' + month + '.' + year + ' ' + h + ':' + m;
+    };
+    console.log(answer);
+
+} formatDate( new Date(new Date - 86400 * 1000) );
+
+
+
+
+
+
+
 
 
 
