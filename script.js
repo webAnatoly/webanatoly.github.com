@@ -846,6 +846,88 @@ function aboutPrivate() { // Private propertied(variables) and private methods(f
 // ======================= END of Introduction to OOP section ==============================
 
 
+function understandArguments() { // understanding "arguments" object
+	/* The arguments object is a local variable available within all functions.*/
+	function test(a) {
+		console.log(arguments.length); // Use arguments.length to determine the number of arguments passed to the function
+		console.log(a, arguments[1], arguments[2], arguments[3]);
+		console.log(typeof arguments); // 'object'
+		console.log(typeof arguments[2]) // 'number'
+		console.log(typeof arguments[3]);
+	}
+	test('first', 'second', 3);
+	console.log(test.length + ' - how many arguments has a function');	// To determine the number of parameters in the function signature. 
+
+	//EXAMPLE #2
+	var vasya = {
+		age: 21,
+		name: 'Вася',
+		surname: 'Петров'
+	};
+
+	var user = {
+		isAdmin: false,
+		isEmailConfirmed: true
+	};
+
+	var student = {
+		university: 'My university'
+	};
+
+	function copy () { // добавить к vasya свойства из user и student
+		for (var n = 1; n < arguments.length; n++) {
+			for (var key in arguments[n]) {
+				arguments[0][key] = arguments[n][key];
+			}
+		}
+	}
+
+	copy(vasya, user, student);
+
+	//alert( vasya.isAdmin ); // false
+	//alert( vasya.university ); // My university
+	//console.log(vasya);
+
+	//EXAMPLE #3 Именованные аргументы
+	function showWarning(options) {
+		var width = options.width || 300;
+		var height = options.height || 100;
+		var contents = options.contents || 'Предупреждение';
+		console.log(width);
+		console.log(height);
+		console.log(contents);
+	}
+	showWarning( {contents:"Вы вызвали функцию"} );
+
+	//EXAMPLE #4 Task:
+	/* Как в функции отличить отсутствующий аргумент от undefined?
+	выведите 1, если первый аргумент есть, и 0 - если нет*/
+	/* my solution:
+	function f(x) {
+  		if (arguments.length == 1) console.log(1 + ' the first argument equal to the undefined');
+  		else console.log(0 + ' function didn\'t get any argument');
+	}
+	*/
+	// best solution:
+	function f(x) {
+		arguments.length ? console.log(1 + ' the first argument equal to the undefined') : console.log(0 + ' function didn\'t get any argument');
+	}
+
+	f(undefined); // 1
+	f(); // 0
+
+	//EXAMPLE #5 Task:
+	// Напишите функцию sum(...), которая возвращает сумму всех своих аргументов:
+	function sum() {
+		var counter = 0;
+		for (var n = 0; n < arguments.length; n++) {
+			counter += arguments[n];
+		}
+		return counter;
+	} console.log(sum(4,5,1,3) + ' Friday') // should be 13;
+} //understandArguments();
+
+
 
 
 
