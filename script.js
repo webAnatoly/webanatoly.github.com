@@ -543,6 +543,12 @@ function intrOOP() { // introduction to OOP and interesting OOP patterns
     	shirt: "Hawaiian",
 	};
 	suitcase.hasOwnProperty('polo') ? console.log(suitcase.polo) : suitcase.polo = 'Red Polo-Shirt';
+
+	// EXAMPLE #10 interesting stuff with ('property' in 'object'), ('var' in "GlobalObject")
+	var obj10 = {a:1, 'b':2, 'c':3};
+	console.log (('a' in obj10) + ' ------ return true because "a" is in object obj10');
+	console.log((a in obj10) + ' ------ false? why?')
+	console.log (('x' in obj10) + ' ------ return false because object do NOT have "x"');
 } //intrOOP();
 
 function whatClass() { // understanding Classes
@@ -926,6 +932,151 @@ function understandArguments() { // understanding "arguments" object
 		return counter;
 	} console.log(sum(4,5,1,3) + ' Friday') // should be 13;
 } //understandArguments();
+
+function useLet() { // keyword 'let'
+	// Example with 'var' keyword
+	var a = 1;
+	if(true){
+	    var a = 2;
+	    console.log('a = ' + a);//2
+	}
+	console.log('a = ' + a);//2
+
+	// Example with 'let' keyword
+	var b = 1;
+	if(true){
+	    let b = 2;
+	    console.log('b = ' + b);//2
+	}
+	console.log('b=' + b + ' b = 1, becouse we using \' let in if blok {} ');//1
+} //useLet();
+
+function interestingExample() { //interesting example
+	var a = 1; 
+	function b() { 
+		//{ function(){} }
+		a = 10;
+		console.log(a); // 10  
+		return; 
+		function a() {};
+	} 
+	b(); 
+	console.log(a);//  1, but not 10, why? because of hoisting! 
+} //interestingExample();
+
+
+// ==============================
+
+function studyingClosures() {
+
+	function makeCounter() {
+  		var currentCount = 1;
+
+		return function() { // (**)
+			return currentCount++;// Сначала возвращает потом увеличивает на единицу! Потому что оператор инкремента стоит после переменной.
+		};
+	}
+
+	var counter = makeCounter(); // (*)
+
+	// каждый вызов увеличивает счётчик и возвращает результат
+	alert( counter() ); // 1
+	alert( counter() ); // 2
+	alert( counter() ); // 3
+
+	// создать другой счётчик, он будет независим от первого
+	var counter2 = makeCounter();
+	alert( counter2() ); // 1
+} //studyingClosures()
+
+function functionAsObject() {
+	// EXAMPLE #1 =======================================================================
+	studyingClosures.test = "You can add a property to a function like to an object"
+	console.log (studyingClosures.test);
+
+	// EXAMPLE #2 =======================================================================
+	function makeCounter() {
+		function counter() {
+			return counter.currentCount++; // return a property of the 'counter()' object
+		};
+	counter.currentCount = 1;
+
+	return counter;
+	}
+	var counter = makeCounter();
+	alert( counter() ); // 1
+	alert( counter() ); // 2
+
+	// EXAMPLE #3 =======================================================================
+	function a2() {
+		var a = 4;
+	}
+
+	a2.test = 4;
+	console.log (++a2.test); // 5;
+	try {
+		++a; // Error: a is not defined
+	}
+	catch (err) {
+		console.log ('Error: a is not defined');
+	}
+} //functionAsObject();
+
+function studyIAFE() { // Immediately Invoked Anonymous Function Expression
+
+	/* A function expression can be used as a IIFE (Immediately Invoked Function Expression) 
+	which runs as soon as it is defined. */
+
+	(function() { console.log('Hello World'); } ) (); // ( function(){} ) ();
+
+	(function() { console.log('Hello World'); } () ); // ( function(){}() );
+
+	(function(b) { console.log(b); } ) ('Hello World'); // ( function(param){} ) ();
+
+	(function(b) { console.log(b); } ('Hello World') ); // ( function(param){} () );
+
+	(function(b) { console.log(b + arguments[1]); } ('Hello', ' World') ); // all functions in JavaScript have a build-in 'arguments' object.
+} //studyIAFE();
+
+// ==============================
+
+
+function newFunction () { // understanding 'new Function' working with 'LexicalEnvironment'
+
+	var a = 1;
+
+	function getFunc() {
+			var a = 2;
+
+			var func = new Function('', 'alert(a)');
+
+			return func;
+	}
+	try {
+		getFunc()(); 
+	}
+	catch(err) {
+
+		/* Error "a is not defined", because when we use the 'new Function' syntax a special property [[Scope]] refer to the window.
+		To check that you can declare the "var a = 1" in global area, and result will be "1" */
+		console.log(err);
+	}
+} //newFunction();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
