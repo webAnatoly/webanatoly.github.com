@@ -12,6 +12,7 @@ function changeColor() { //changing background color of the HTML page
 	Only one of the second and third operands is evaluated, never both.
 	*/// changing background color of HTML page
 }
+document.getElementById('colorBotton').onclick = changeColor; // Now property "onclick" of "colorButton" object has a function "changeColor" as value, i.e. the "onclick" is a method which you create by yourself and define what it actually should do when user click on object. 
 
 function getProperties () { // gettin all properties' names of document and their values
 	var counter = document.getElementById('forTable').childElementCount;
@@ -27,16 +28,19 @@ function getProperties () { // gettin all properties' names of document and thei
 		document.getElementById('buttonProperties').innerHTML = 'Get Properties Of This Document';
 	} 
 }
+document.getElementById('buttonProperties').onclick = getProperties;
 
 function textClocks () { // this function show tick clocks into button as text.  
 	var gDate = new Date(); // gDate it's Date object for using into my function;
-	var myClock = document.getElementById('newButtonView');
+	var myClock = document.getElementById('clockedButton');
 	var h = gDate.getHours(); (h < 10) ? h = '0'+ h : h; // hours
 	var m = gDate.getMinutes(); (m < 10) ? m = '0'+ m : m; // minutes
 	var s = gDate.getSeconds(); (s < 10) ? s = '0'+ s : s; // seconds
 	myClock.innerHTML =  "<button type='button' class='buttonTransparent' onclick='textClocks()'><pre style='font-size: 15px'>" + h + ":" + m + ":" + s + '</pre>' + '</button>';
 	setInterval(textClocks, 1000);
 }
+document.getElementById('clockedButton').onclick = textClocks; // event handler	
+
 
 function fix(fixNumber, decimalPlaces) { // Example №5 from a text-book
 	/* 	DESCRIPTION:
