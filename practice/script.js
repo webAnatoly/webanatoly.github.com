@@ -23,5 +23,12 @@ switch (window.screen.colorDepth)
     default:
         document.bgColor = "white";
 }
-document.write("Your screen supports " + window.screen.colorDepth + 
-                  "bit color");
+document.getElementById('notification').innerHTML = "Your screen supports " + window.screen.colorDepth + "bit color";
+
+var myTable = '';
+for (var key in screen) {
+    myTable += '<tr><td>' + key + '</td>' + '<td>' + screen[key] + '</td></tr>';
+}
+console.log(myTable);
+var headerTable = '<tr><td>All Properties Of The Screen</td></tr>' + '<tr><td><em>Property</em></td><td><em>Value</em></td></tr>';
+document.getElementById('forTable').innerHTML =  headerTable + myTable;
