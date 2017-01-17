@@ -12,13 +12,18 @@ objects are contained in the images collection, as you saw earlier.
 */
 
 /* TASK: 
-Connect to a hyperlink’s click event to randomly change the image loaded in a page. */
+1. Connect to a hyperlink’s click event to randomly change the image loaded in a page. 
+2. Don't allow the link "<a href=https://github.com>" to go to the github.com */
 
-document.getElementById('myLink').addEventListener('click', function(event){
+function changeImg (event) {
 	event.preventDefault(); // prevent a default behavior of an "<a></a>" element.
 	var n = Math.round(Math.random() * 3);
 	document.images[0].src = myImages[n];
-});
+}
+
+
+document.getElementById('myLink').addEventListener('click', changeImg);
+document.getElementById('linkImg').addEventListener('click', changeImg);
 
 
 
