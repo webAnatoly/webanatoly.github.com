@@ -25,5 +25,3 @@ switch (window.screen.colorDepth)
 }
 document.write("Your screen supports " + window.screen.colorDepth + 
                   "bit color");
-
-alert('What the Hell World');
