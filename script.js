@@ -28,7 +28,8 @@ function getProperties () { // gettin all properties' names of document and thei
 		document.getElementById('buttonProperties').innerHTML = 'Get Properties Of This Document';
 	} 
 }
-document.getElementById('buttonProperties').onclick = getProperties;
+document.getElementById('buttonProperties').onclick = getProperties; // event handler
+
 
 function textClocks () { // this function show tick clocks into button as text.  
 	var gDate = new Date(); // gDate it's Date object for using into my function;
@@ -39,8 +40,7 @@ function textClocks () { // this function show tick clocks into button as text.
 	myClock.innerHTML =  "<button type='button' class='buttonTransparent' onclick='textClocks()'><pre style='font-size: 15px'>" + h + ":" + m + ":" + s + '</pre>' + '</button>';
 	setInterval(textClocks, 1000);
 }
-document.getElementById('clockedButton').onclick = textClocks; // event handler	
-
+document.getElementById('clockedButton').addEventListener('click', textClocks); // adding event handler with method "addEventListener()". With this method you can add events as many as you want.
 
 function fix(fixNumber, decimalPlaces) { // Example №5 from a text-book
 	/* 	DESCRIPTION:
