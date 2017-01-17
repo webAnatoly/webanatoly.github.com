@@ -29,6 +29,5 @@ var myTable = '';
 for (var key in screen) {
     myTable += '<tr><td>' + key + '</td>' + '<td>' + screen[key] + '</td></tr>';
 }
-console.log(myTable);
 var headerTable = '<tr><td>All Properties Of The Screen</td></tr>' + '<tr><td><em>Property</em></td><td><em>Value</em></td></tr>';
 document.getElementById('forTable').innerHTML =  headerTable + myTable;
