@@ -19,7 +19,7 @@ var browsers = {
 	// isEdge: !this.isIE && !!window.StyleMedia, // doesn't work properly in the IE 11
 
 	// Chrome 1+
-	isChrome: !!window.chrome && !!window.chrome.webstore,
+	isChrome: !!window.chrome && !!window.chrome.webstore
 
 	// Blink engine detection
 	// isBlink: (this.isChrome || this.isOpera) && !!window.CSS // I don't understand this yet
