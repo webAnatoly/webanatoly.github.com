@@ -1,6 +1,5 @@
-; 'use strict';
+;'use strict';
 // Detecting The Browser
-
 var browsers = {
 
 	// Opera 8.0+
@@ -34,4 +33,6 @@ for (var key in browsers) {
 }
 
 document.getElementById('yourBrowser').innerHTML = 'Your browser is ' + detectedBrowser.substring(2);
+
+
 
