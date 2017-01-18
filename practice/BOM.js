@@ -16,7 +16,7 @@ var browsers = {
 	isIE: /*@cc_on!@*/false || !!document.documentMode,
 
 	// Edge 20+
-	isEdge: !this.isIE && !!window.StyleMedia,
+	// isEdge: !this.isIE && !!window.StyleMedia, // doesn't work properly in the IE 11
 
 	// Chrome 1+
 	isChrome: !!window.chrome && !!window.chrome.webstore,
