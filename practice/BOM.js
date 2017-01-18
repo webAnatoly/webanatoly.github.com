@@ -22,7 +22,7 @@ var browsers = {
 	isChrome: !!window.chrome && !!window.chrome.webstore,
 
 	// Blink engine detection
-	isBlink: (this.isChrome || this.isOpera) && !!window.CSS
+	// isBlink: (this.isChrome || this.isOpera) && !!window.CSS // I don't understand this yet
 
 };
 
