@@ -103,12 +103,12 @@ function learnFilter() {
 		if (typeof item === 'string') {
 			return item;
 		}
-	}); console.log (new_arr);
+	}); console.log (new_arr); // write output here
 
 	// EXAMPLE 2 
 	var arr2 = arr.filter(function(a){
 		return a > 0;
-	}); console.log (arr2 + ' this is arr2');
+	}); console.log (arr2 + ' this is arr2'); // write output here
 
 	// EXAMPLE 3
 	function greater10(n){
@@ -416,445 +416,6 @@ function useSwitch() { // understanding the switch statement
 	}
 } //useSwitch();
 
-// ========================================== OOP =================================================
-// ===== Introduction to OOP: Constructors, Classes, Prototypes, Inheritance, Public, Private =====
-//================================================================================================
-
-function intrOOP() { // introduction to OOP and interesting OOP patterns 
-	// EXAMPLE #1
-	var setAge = function (newAge) {
-  		this.age = newAge;
-	};
-	var bob = new Object();
-	bob.age = 30;
-	bob.setAge = setAge; // here we're adding the new propertie 'setAge' into object bob and seting the function 'setAge' as value.
-	bob.setAge(50); // change age from 30 to 50
-	console.log(bob);
-
-	// EXAMPLE #2
-	var rectangle = {
-		width: 10,
-		height: 20
-	}
-
-	var setWidth = function(w){
-		this.width = w;
-	}
-	var setHeight = function(h){
-		this.height = h;
-	}
-
-	rectangle.setWidth = setWidth;
-	rectangle.setHeight = setHeight;
-
-	rectangle.setWidth(1);
-	rectangle.setHeight(2);
-
-	console.log(rectangle.width); // 1
-	console.log(rectangle.height); // 2
-
-	// EXAMPLE #3 my own coding
-	var obj = {
-		x: 0,
-		y: 1,
-	};
-	obj.setX = function(any) { this.x = any; } // adding property 'setX' in 'obj' with value as a function. This is about how to create methods' object.
-	obj.setY = function(any) { this.y = any; }
-
-	obj.setX(false);
-	obj.setY(true);
-
-	console.log('x = ' + obj.x); // x = false
-	console.log('y = ' + obj.y); // y = true
-
-	// EXAMPLE #4 
-	var square = new Object();
-	square.sideLength = 6;
-	square.calcPerimeter = function() {
-		return this.sideLength * 4;
-	};
-
-	square.calcArea = function() {
-		var s = this.sideLength;
-		return s * s;
-	}
-
-	var p = square.calcPerimeter(); console.log('Perimeter ' + p);
-	var a = square.calcArea(); console.log('Area: ' + a); 
-
-	// EXAMPLE #5 using Constructor
-	var Cat = function(age, color, name) {
-		this.color = color;
-		this.age = age;
-		this.getColor = function(){console.log("This is a " + this.color.toUpperCase() + " cat");};
-	}
-
-	var meow = new Cat(1, 'white');
-	meow.getColor();
-
-	// EXAMPLE #6 Arrays of Objects
-	function Person (name, age) {
-		this.name = name;
-		this.age = age;
-	}
-	var arr = new Array();
-	arr[0] = new Person ('Alice', 16);
-	arr[1] = new Person ('Bob', 42);
-	arr[2] = new Person ('Nick', 34);
-	arr[3] = new Person ('Timmy', 6);
-
-	console.log(arr[0].name + ' - (this is a name from object in the array)');
-
-	// EXAMPLE #7 Loop through an array of objects and access properties or methods
-	function Person (name, age) {
-	    this.name = name;
-	    this.age = age;
-	}
-	// Now we can make an array of people
-	var family = [];
-	family[0] = new Person('Alice', 40);
-	family[1] = new Person('Bob', 42); 
-
-	// loop through our new array
-	for (var a = 0; a < family.length; a++) {
-	    console.log(family[a].name + " \t\t\t it's from EXAMPLE #7");
-	}
-
-	// EXAMPLE #8 Passing Objects into Functions
-	//In addition to making arrays of Objects, we can use objects as parameters for functions as well.
-
-	function Person (name, age) {
-	    this.name = name;
-	    this.age = age;
-	}
-
-	// We can make a function which takes persons as arguments
-	// This one computes the difference in ages between two people
-	var ageDifference = function(person1, person2) {
-	    return person1.age - person2.age;
-	}
-
-	var alice = new Person("Alice", 30);
-	var billy = new Person("Billy", 25);
-
-	// get the difference in age between alice and billy using our function
-	var diff = ageDifference(alice, billy);
-	console.log(diff + " \t\t\t\t EXAMPLE #7: difference between Alice and Billy ages"); 
-
-	// EXAMPLE #9 == .hasOwnProperty() == 
-	/* Method hasOwnProperty() returns true or false, based on whether an object has a certain property. */
-	var suitcase = {
-    	shirt: "Hawaiian",
-	};
-	suitcase.hasOwnProperty('polo') ? console.log(suitcase.polo) : suitcase.polo = 'Red Polo-Shirt';
-
-	// EXAMPLE #10 interesting stuff with ('property' in 'object'), ('var' in "GlobalObject")
-	var obj10 = {a:1, 'b':2, 'c':3};
-	console.log (('a' in obj10) + ' ------ return true because "a" is in object obj10');
-	console.log((a in obj10) + ' ------ false? why?')
-	console.log (('x' in obj10) + ' ------ return false because object do NOT have "x"');
-} //intrOOP();
-
-function whatClass() { // understanding Classes
-	
-	// EXAMPLE #1 == Introduction ==
-	/* Сonstructors are a way to make objects, but they actually do even more than that.
-	When you make a constructor, you are in fact defining a new class. 
-	A class can be thought of as a type, or a category of objects-kind of like how Number and String are 
-	types in JavaScript. Take a look at our Person example. 
-	In this case 'bob' and 'susan' are two separate objects, but both belong to the class Person. */
-
-	function Person(name,age) {
-		this.name = name;
-		this.age = age;
-	}
-
-	var bob = new Person("Bob Smith", 30); // 'bob' belong to the class Person
-	var susan = new Person("Susan Jordan", 35); // 'susan' belong to the class Person
-
-	function Circle(radius) {
-		this.radius = radius;
-		this.getArea = function() { return Math.PI * (this.radius * this.radius); };
-	}
-
-	var circle1 = new Circle(4); // 'circle1' belong to the class Circle
-	var circle2 = new Circle(100); // 'circle2' belong to the class Circle
-	console.log ('Area of circle is ' + Math.round(circle2.getArea()) + ' cm' );
-
-	// EXAMPLE #2 == Prototype == 
-	/* So we know that a class will have certain properties and methods, 
-	but what keeps track of what a given class can or can't do? 
-	What a class has or doesn't have? That is the job of the PROTOTYPE.
-	
-	JavaScript automatically defines the prototype for class with a constructor. 
-
-	For example, our 'Dog' constructor ensures that the 'Dog' prototype has a breed property. 
-	Remember, the 'Dog' prototype keeps track of what 'Dog' has, doesn't have, can, or can't do.
-	 */
-
-	function Dog (breed) {
-  		this.breed = breed;
-	}
-
-	// here we make buddy and teach him how to bark
-	var buddy = new Dog("Golden Retriever");
-	buddy.bark = function() {
-  		console.log("Woof");
-	};
-	buddy.bark();
-
-	// here we make snoopy
-	var snoopy = new Dog("Beagle");
-	
-	try {
-		snoopy.bark(); // this causes an error, because snoopy doesn't know how to bark!
-	}
-	catch (err) {
-		console.log('ERROR: this causes an error, because snoopy doesn\'t have bark() method! ');
-	}
-
-	/* if you want to add a method to a class such that all members of the class can use it, 
-	we use the following syntax to extend the prototype:
-
-		className.prototype.newMethod =
-			function() {
-				statements;
-			};
-
-	to add new method for ALL instances of Dog we need write this:
-		Dog.prototype.bark = function() {
-	  		console.log("Woof");
-		};
-		buddy.bark();
-	*/ 
-
-	Dog.prototype.bark = function() {
-	  		console.log("Woof");
-		};
-	snoopy.bark() // now instances of Dog snoopy has method bark() i.e. class Dog has this method and all his instances will be use method bark()
-
-	//EXAMPLE #3 
-	/* Classes are very important in object-oriented programming. 
-	This is because a class tells us helpful information about objects, 
-	and you can think of an object as a particular instance of a class. */
-
-	/* For example, look at our 'Person' class again in the console. 
-	We know that any 'Person' will have a 'name' and 'age', because they are in the constructor. 
-	This allows us to create a function like 'printPersonName()', which will take a 'Person' as an argument and 
-	print out their 'name'. We know the function will work on any 'Person', 
-	because 'name' is a valid property for that class. */
-
-	function Person(name,age) {
- 		this.name = name;
- 		this.age = age;
-	}
-	// a function that prints the name of any given person
-	var printPersonName = function (p) {
-		console.log(p.name);
-	};
-
-	var bob = new Person("Bob Smith", 30);
-	printPersonName(bob); 
-
-	//Example #4 == Object.prototype.method == 
-	
-	function Cat(name, breed) {
-	    this.name = name;
-	    this.breed = breed;
-	}
-
-	var cheshire = new Cat("Cheshire Cat", "British Shorthair");
-	var gary = new Cat("Gary", "Domestic Shorthair");
-
-	Cat.prototype.meow = function() { // adding a new method into class 'Cat' by 'prototype'
-	    console.log ('Meow!');
-	}
-	cheshire.meow();
-	gary.meow();	
-} //whatClass();
-
-function whatInheritance() { // understanding Inheritance
-	/* In object-oriented programming, inheritance allows one class to see and 
-	use the methods and properties of another class. You can think of it as a child being able to use 
-	his or her parent's money because the child inherits the money. */
-
-	/* Remember, inheritance lets us see and use properties and methods from another class. 
-	To say that Penguin inherits from Animal, we need to set Penguin's prototype to be Animal.
-	*/
-
-	// EXAMPLE #1 
-	/* the original Animal class and sayName method */
-	function Animal(name, numLegs) {
-	    this.name = name;
-	    this.numLegs = numLegs;
-	}
-	Animal.prototype.sayName = function() {
-	    console.log("Hi my name is " + this.name);
-	};
-
-	// a Penguin class
-	function Penguin(name) {
-	    this.name = name;
-	}
-
-	Penguin.prototype = new Animal();
-	var p = new Penguin('Tom'); // now we can use sayName() method for Penguin class becaus we've inherited it from Animal class
-
-	p.sayName();
-
-	//EXAMPLE #2
-	function example2() {
-
-		function Penguin(name) {
-	    	this.name = name;
-	    	this.numLegs = 2;
-		}
-
-		// create your Emperor class here and make it inherit from Penguin
-		function Emperor(name) {
-	    	this.name = name;
-		}
-		Emperor.prototype = new Penguin();
-
-		// create an "emperor" object and print the number of legs it has
-		var emperor = new Emperor("Caesar");
-		console.log(emperor.numLegs + ' \t  this is from EXAMPLE #2'); // Output should be 2 because Emperor class have inherited from Penguin property 'numLegs'!
-	} //example2();
-
-	// EXAMPLE #3 
-	//========== Up the Food-I-mean-Prototype Chain ================= 
-	/* A penguin is an animal and an emperor penguin is a penguin. Are emperor penguins animals too? Of course!
-	The "prototype chain" in JavaScript knows this as well. 
-	If JavaScript encounters something it can't find in the current class's methods or properties, 
-	it looks up the prototype chain to see if it's defined in a class that it inherits from. 
-	This keeps going upwards until it stops all the way at the top: the mighty Object.prototype (more on this later).
-	By default, all classes inherit directly from Object, unless we change the class's prototype, 
-	like we've been doing for Penguin and Emperor. 
-
-	Let's see how going up the prototype chain works! We've defined some classes and inheritance patterns: 
-	Emperor inherits from Penguin which inherits from Animal. 
-	We've also created an instance of the Emperor class.
-
-	Remember how the prototype chain works: if a property is not defined for a class, 
-	this class's prototype chain will be traversed upwards until one is found (or not) in a parent (higher) class. */
-
-	function example3() {
-			// original classes
-			function Animal(name, numLegs) {
-			    this.name = name;
-			    this.numLegs = numLegs;
-			    this.isAlive = true;
-			}
-			function Penguin(name) {
-			    this.name = name;
-			    this.numLegs = 2;
-			}
-			function Emperor(name) {
-			    this.name = name;
-			    this.saying = "Waddle waddle";
-			}
-
-			// set up the prototype chain
-			Penguin.prototype = new Animal(); // Penguin class inherit all properties:values of class Animal
-			Emperor.prototype = new Penguin(); // Emperor ingerit all properties of Penguin and Animal
-
-			var myEmperor = new Emperor("Jules");
-
-			console.log( myEmperor.saying ); // should print "Waddle waddle" (property 'saying' is in Emperor)
-			console.log( myEmperor.numLegs ); // should print 2 (property 'numLegs' isn't in Emperor but inherited from Penguin)
-			console.log( myEmperor.isAlive ); // should print true (property 'isAlive' isn't in Emperor but inherited from Penguin, but Penguin inherited this property from Animal )
-			console.log( myEmperor.hasOwnProperty('numLegs')) // return 'false' because class Emperor doesn't have the 'numLegs', but inherits it from Penguin
-	} //example3();
-} //whatInheritance()
-
-function aboutPrivate() { // Private propertied(variables) and private methods(functions)
-	/* Just as functions can have local variables which can only be accessed from within that function, 
-	objects can have private variables.  */
-
-	// EXAMPLE #1 Private properties
-	function Person(first,last,age) {
-		this.firstname = first;
-		this.lastname = last;
-		this.age = age;
-		var bankBalance = 7500; // this is private property
-
-		this.getBalance = function(){ // ihis is public method which can handle with privante property bankBalance
-			return bankBalance;
-		}
-	}
-
-	// create your Person 
-	var ant = new Person('Anatoly','Demon',34);
-	// if you try to print his bankBalance it will be 'undefined'
-	console.log(ant.bankBalance + ' --- it\'s private'); // output is'undefined' because variable bankBalance are private
-
-	/* Although we cannot directly access private variables from outside the class, 
-	there is a way to get around this. 
-	We can define a public method that returns the value of a private variable. */
-	var myBalance = ant.getBalance();
-	console.log(myBalance);
-
-	//EXAMPLE #2 Private methods
-	/* Methods can also be private within a class and inaccessible outside of the class. 
-	Changing 'this.returnBalance' from the last exercise to 'var returnBalance' makes this method private. 
-	If you run the program trying to access the method you get an undefined error this time. */
-	function example2() {
-		function Person(first,last,age) {
-		   	this.firstname = first;
-		   	this.lastname = last;
-		   	this.age = age;
-		   	var bankBalance = 7500;
-		  
-		   	var returnBalance = function() { // now this method privite and we can't use it outside of constructor Person
-		      	return bankBalance;
-		   	};
-       
-   			// The way to access a private method is similar to accessing a private variable. 
-   			// You must create a public method for the class that returns the private method.
-   			// create the new function here
-   			this.askTeller = function() {
-   				return returnBalance; 
-   			}
-		}
-
-		var john = new Person('John','Smith',30);
-		console.log(john.returnBalance); // our attempt to use method 'returnBalance' will fall and return 'undefined' value because this method is PRIVATE, we can use this method only within constructor 'Person'.
-		var myBalanceMethod = john.askTeller(); // write in variable a private method 'returnBalance'
-		var myBalance = myBalanceMethod(); // call method
-		console.log(myBalance);
-	} example2();
-
-	// EXAMPLE #3 using password
-	function example3() {
-		function Person(first,last,age) {
-			this.firstname = first;
-			this.lastname = last;
-			this.age = age;
-			var bankBalance = 7500;
-
-			this.askTeller = function(password) {
-				if (password == 1234) return bankBalance;
-				else return "Wrong password.";
-			};
-		}
-
-		var john = new Person('John','Smith',30);
-		/* the variable myBalance should access askTeller() with a password as an argument  */
-		var myBalance = john.askTeller(1234);
-		console.log(myBalance + '\t password is correct');
-	} example3();
-
-	/* SUMMARY:
-	Public properties can be accessed from outside the class
-	Private properties can only be accessed from within the class
-	
-	Using constructor notation, a property declared as this.property = "someValue;" will be public, 
-	whereas a property declared with var property = "hiddenValue;" will be private.
-
-	*/
-} //aboutPrivate();
-// ======================= END of Introduction to OOP section ==============================
-
 
 function understandArguments() { // understanding "arguments" object
 	/* The arguments object is a local variable available within all functions.*/
@@ -937,95 +498,6 @@ function understandArguments() { // understanding "arguments" object
 	} console.log(sum(4,5,1,3) + ' Friday') // should be 13;
 } //understandArguments();
 
-function useLet() { // keyword 'let'
-	// Example with 'var' keyword
-	var a = 1;
-	if(true){
-	    var a = 2;
-	    console.log('a = ' + a);//2
-	}
-	console.log('a = ' + a);//2
-
-	// Example with 'let' keyword
-	var b = 1;
-	if(true){
-	    let b = 2;
-	    console.log('b = ' + b);//2
-	}
-	console.log('b=' + b + ' b = 1, becouse we using \' let in if blok {} ');//1
-} //useLet();
-
-function interestingExample() { //interesting example
-	var a = 1; 
-	function b() { 
-		//{ function(){} }
-		a = 10;
-		console.log(a); // 10  
-		return; 
-		function a() {};
-	} 
-	b(); 
-	console.log(a);//  1, but not 10, why? because of hoisting! 
-} //interestingExample();
-
-
-// ==============================
-
-function studyingClosures() {
-
-	function makeCounter() {
-  		var currentCount = 1;
-
-		return function() { // (**)
-			return currentCount++;// Сначала возвращает потом увеличивает на единицу! Потому что оператор инкремента стоит после переменной.
-		};
-	}
-
-	var counter = makeCounter(); // (*)
-
-	// каждый вызов увеличивает счётчик и возвращает результат
-	alert( counter() ); // 1
-	alert( counter() ); // 2
-	alert( counter() ); // 3
-
-	// создать другой счётчик, он будет независим от первого
-	var counter2 = makeCounter();
-	alert( counter2() ); // 1
-} //studyingClosures()
-
-function functionAsObject() {
-	// EXAMPLE #1 =======================================================================
-	studyingClosures.test = "You can add a property to a function like to an object"
-	console.log (studyingClosures.test);
-
-	// EXAMPLE #2 =======================================================================
-	function makeCounter() {
-		function counter() {
-			return counter.currentCount++; // return a property of the 'counter()' object
-		};
-	counter.currentCount = 1;
-
-	return counter;
-	}
-	var counter = makeCounter();
-	alert( counter() ); // 1
-	alert( counter() ); // 2
-
-	// EXAMPLE #3 =======================================================================
-	function a2() {
-		var a = 4;
-	}
-
-	a2.test = 4;
-	console.log (++a2.test); // 5;
-	try {
-		++a; // Error: a is not defined
-	}
-	catch (err) {
-		console.log ('Error: a is not defined');
-	}
-} //functionAsObject();
-
 function studyIAFE() { // Immediately Invoked Anonymous Function Expression
 
 	/* A function expression can be used as a IIFE (Immediately Invoked Function Expression) 
@@ -1042,30 +514,979 @@ function studyIAFE() { // Immediately Invoked Anonymous Function Expression
 	(function(b) { console.log(b + arguments[1]); } ('Hello', ' World') ); // all functions in JavaScript have a build-in 'arguments' object.
 } //studyIAFE();
 
-// ==============================
 
 
-function newFunction () { // understanding 'new Function' working with 'LexicalEnvironment'
+(function(){ // MODULE: Introduction to OOP: Constructors, Classes, Prototypes, Inheritance, Public, Private 
 
-	var a = 1;
+	function intrOOP() { // introduction to OOP and interesting OOP patterns 
+		// EXAMPLE #1
+		var setAge = function (newAge) {
+	  		this.age = newAge;
+		};
+		var bob = new Object();
+		bob.age = 30;
+		bob.setAge = setAge; // here we're adding the new propertie 'setAge' into object bob and seting the function 'setAge' as value.
+		bob.setAge(50); // change age from 30 to 50
+		console.log(bob);
 
-	function getFunc() {
-			var a = 2;
+		// EXAMPLE #2
+		var rectangle = {
+			width: 10,
+			height: 20
+		}
 
-			var func = new Function('', 'alert(a)');
+		var setWidth = function(w){
+			this.width = w;
+		}
+		var setHeight = function(h){
+			this.height = h;
+		}
 
-			return func;
+		rectangle.setWidth = setWidth;
+		rectangle.setHeight = setHeight;
+
+		rectangle.setWidth(1);
+		rectangle.setHeight(2);
+
+		console.log(rectangle.width); // 1
+		console.log(rectangle.height); // 2
+
+		// EXAMPLE #3 my own coding
+		var obj = {
+			x: 0,
+			y: 1,
+		};
+		obj.setX = function(any) { this.x = any; } // adding property 'setX' in 'obj' with value as a function. This is about how to create methods' object.
+		obj.setY = function(any) { this.y = any; }
+
+		obj.setX(false);
+		obj.setY(true);
+
+		console.log('x = ' + obj.x); // x = false
+		console.log('y = ' + obj.y); // y = true
+
+		// EXAMPLE #4 
+		var square = new Object();
+		square.sideLength = 6;
+		square.calcPerimeter = function() {
+			return this.sideLength * 4;
+		};
+
+		square.calcArea = function() {
+			var s = this.sideLength;
+			return s * s;
+		}
+
+		var p = square.calcPerimeter(); console.log('Perimeter ' + p);
+		var a = square.calcArea(); console.log('Area: ' + a); 
+
+		// EXAMPLE #5 using Constructor
+		var Cat = function(age, color, name) {
+			this.color = color;
+			this.age = age;
+			this.getColor = function(){console.log("This is a " + this.color.toUpperCase() + " cat");};
+		}
+
+		var meow = new Cat(1, 'white');
+		meow.getColor();
+
+		// EXAMPLE #6 Arrays of Objects
+		function Person (name, age) {
+			this.name = name;
+			this.age = age;
+		}
+		var arr = new Array();
+		arr[0] = new Person ('Alice', 16);
+		arr[1] = new Person ('Bob', 42);
+		arr[2] = new Person ('Nick', 34);
+		arr[3] = new Person ('Timmy', 6);
+
+		console.log(arr[0].name + ' - (this is a name from object in the array)');
+
+		// EXAMPLE #7 Loop through an array of objects and access properties or methods
+		function Person (name, age) {
+		    this.name = name;
+		    this.age = age;
+		}
+		// Now we can make an array of people
+		var family = [];
+		family[0] = new Person('Alice', 40);
+		family[1] = new Person('Bob', 42); 
+
+		// loop through our new array
+		for (var a = 0; a < family.length; a++) {
+		    console.log(family[a].name + " \t\t\t it's from EXAMPLE #7");
+		}
+
+		// EXAMPLE #8 Passing Objects into Functions
+		//In addition to making arrays of Objects, we can use objects as parameters for functions as well.
+
+		function Person (name, age) {
+		    this.name = name;
+		    this.age = age;
+		}
+
+		// We can make a function which takes persons as arguments
+		// This one computes the difference in ages between two people
+		var ageDifference = function(person1, person2) {
+		    return person1.age - person2.age;
+		}
+
+		var alice = new Person("Alice", 30);
+		var billy = new Person("Billy", 25);
+
+		// get the difference in age between alice and billy using our function
+		var diff = ageDifference(alice, billy);
+		console.log(diff + " \t\t\t\t EXAMPLE #7: difference between Alice and Billy ages"); 
+
+		// EXAMPLE #9 == .hasOwnProperty() == 
+		/* Method hasOwnProperty() returns true or false, based on whether an object has a certain property. */
+		var suitcase = {
+	    	shirt: "Hawaiian",
+		};
+		suitcase.hasOwnProperty('polo') ? console.log(suitcase.polo) : suitcase.polo = 'Red Polo-Shirt';
+
+		// EXAMPLE #10 interesting stuff with ('property' in 'object'), ('var' in "GlobalObject")
+		var obj10 = {a:1, 'b':2, 'c':3};
+		console.log (('a' in obj10) + ' ------ return true because "a" is in object obj10');
+		console.log((a in obj10) + ' ------ false? why?')
+		console.log (('x' in obj10) + ' ------ return false because object do NOT have "x"');
+	} //intrOOP();
+
+	function whatClass() { // understanding Classes
+		
+		// EXAMPLE #1 == Introduction ==
+		/* Сonstructors are a way to make objects, but they actually do even more than that.
+		When you make a constructor, you are in fact defining a new class. 
+		A class can be thought of as a type, or a category of objects-kind of like how Number and String are 
+		types in JavaScript. Take a look at our Person example. 
+		In this case 'bob' and 'susan' are two separate objects, but both belong to the class Person. */
+
+		function Person(name,age) {
+			this.name = name;
+			this.age = age;
+		}
+
+		var bob = new Person("Bob Smith", 30); // 'bob' belong to the class Person
+		var susan = new Person("Susan Jordan", 35); // 'susan' belong to the class Person
+
+		function Circle(radius) {
+			this.radius = radius;
+			this.getArea = function() { return Math.PI * (this.radius * this.radius); };
+		}
+
+		var circle1 = new Circle(4); // 'circle1' belong to the class Circle
+		var circle2 = new Circle(100); // 'circle2' belong to the class Circle
+		console.log ('Area of circle is ' + Math.round(circle2.getArea()) + ' cm' );
+
+		// EXAMPLE #2 == Prototype == 
+		/* So we know that a class will have certain properties and methods, 
+		but what keeps track of what a given class can or can't do? 
+		What a class has or doesn't have? That is the job of the PROTOTYPE.
+		
+		JavaScript automatically defines the prototype for class with a constructor. 
+
+		For example, our 'Dog' constructor ensures that the 'Dog' prototype has a breed property. 
+		Remember, the 'Dog' prototype keeps track of what 'Dog' has, doesn't have, can, or can't do.
+		 */
+
+		function Dog (breed) {
+	  		this.breed = breed;
+		}
+
+		// here we make buddy and teach him how to bark
+		var buddy = new Dog("Golden Retriever");
+		buddy.bark = function() {
+	  		console.log("Woof");
+		};
+		buddy.bark();
+
+		// here we make snoopy
+		var snoopy = new Dog("Beagle");
+		
+		try {
+			snoopy.bark(); // this causes an error, because snoopy doesn't know how to bark!
+		}
+		catch (err) {
+			console.log('ERROR: this causes an error, because snoopy doesn\'t have bark() method! ');
+		}
+
+		/* if you want to add a method to a class such that all members of the class can use it, 
+		we use the following syntax to extend the prototype:
+
+			className.prototype.newMethod =
+				function() {
+					statements;
+				};
+
+		to add new method for ALL instances of Dog we need write this:
+			Dog.prototype.bark = function() {
+		  		console.log("Woof");
+			};
+			buddy.bark();
+		*/ 
+
+		Dog.prototype.bark = function() {
+		  		console.log("Woof");
+			};
+		snoopy.bark() // now instances of Dog snoopy has method bark() i.e. class Dog has this method and all his instances will be use method bark()
+
+		//EXAMPLE #3 
+		/* Classes are very important in object-oriented programming. 
+		This is because a class tells us helpful information about objects, 
+		and you can think of an object as a particular instance of a class. */
+
+		/* For example, look at our 'Person' class again in the console. 
+		We know that any 'Person' will have a 'name' and 'age', because they are in the constructor. 
+		This allows us to create a function like 'printPersonName()', which will take a 'Person' as an argument and 
+		print out their 'name'. We know the function will work on any 'Person', 
+		because 'name' is a valid property for that class. */
+
+		function Person(name,age) {
+	 		this.name = name;
+	 		this.age = age;
+		}
+		// a function that prints the name of any given person
+		var printPersonName = function (p) {
+			console.log(p.name);
+		};
+
+		var bob = new Person("Bob Smith", 30);
+		printPersonName(bob); 
+
+		//Example #4 == Object.prototype.method == 
+		
+		function Cat(name, breed) {
+		    this.name = name;
+		    this.breed = breed;
+		}
+
+		var cheshire = new Cat("Cheshire Cat", "British Shorthair");
+		var gary = new Cat("Gary", "Domestic Shorthair");
+
+		Cat.prototype.meow = function() { // adding a new method into class 'Cat' by 'prototype'
+		    console.log ('Meow!');
+		}
+		cheshire.meow();
+		gary.meow();	
+	} //whatClass();
+
+	function whatInheritance() { // understanding Inheritance
+		/* In object-oriented programming, inheritance allows one class to see and 
+		use the methods and properties of another class. You can think of it as a child being able to use 
+		his or her parent's money because the child inherits the money. */
+
+		/* Remember, inheritance lets us see and use properties and methods from another class. 
+		To say that Penguin inherits from Animal, we need to set Penguin's prototype to be Animal.
+		*/
+
+		// EXAMPLE #1 
+		/* the original Animal class and sayName method */
+		function Animal(name, numLegs) {
+		    this.name = name;
+		    this.numLegs = numLegs;
+		}
+		Animal.prototype.sayName = function() {
+		    console.log("Hi my name is " + this.name);
+		};
+
+		// a Penguin class
+		function Penguin(name) {
+		    this.name = name;
+		}
+
+		Penguin.prototype = new Animal();
+		var p = new Penguin('Tom'); // now we can use sayName() method for Penguin class becaus we've inherited it from Animal class
+
+		p.sayName();
+
+		//EXAMPLE #2
+		function example2() {
+
+			function Penguin(name) {
+		    	this.name = name;
+		    	this.numLegs = 2;
+			}
+
+			// create your Emperor class here and make it inherit from Penguin
+			function Emperor(name) {
+		    	this.name = name;
+			}
+			Emperor.prototype = new Penguin();
+
+			// create an "emperor" object and print the number of legs it has
+			var emperor = new Emperor("Caesar");
+			console.log(emperor.numLegs + ' \t  this is from EXAMPLE #2'); // Output should be 2 because Emperor class have inherited from Penguin property 'numLegs'!
+		} //example2();
+
+		// EXAMPLE #3 
+		//========== Up the Food-I-mean-Prototype Chain ================= 
+		/* A penguin is an animal and an emperor penguin is a penguin. Are emperor penguins animals too? Of course!
+		The "prototype chain" in JavaScript knows this as well. 
+		If JavaScript encounters something it can't find in the current class's methods or properties, 
+		it looks up the prototype chain to see if it's defined in a class that it inherits from. 
+		This keeps going upwards until it stops all the way at the top: the mighty Object.prototype (more on this later).
+		By default, all classes inherit directly from Object, unless we change the class's prototype, 
+		like we've been doing for Penguin and Emperor. 
+
+		Let's see how going up the prototype chain works! We've defined some classes and inheritance patterns: 
+		Emperor inherits from Penguin which inherits from Animal. 
+		We've also created an instance of the Emperor class.
+
+		Remember how the prototype chain works: if a property is not defined for a class, 
+		this class's prototype chain will be traversed upwards until one is found (or not) in a parent (higher) class. */
+
+		function example3() {
+				// original classes
+				function Animal(name, numLegs) {
+				    this.name = name;
+				    this.numLegs = numLegs;
+				    this.isAlive = true;
+				}
+				function Penguin(name) {
+				    this.name = name;
+				    this.numLegs = 2;
+				}
+				function Emperor(name) {
+				    this.name = name;
+				    this.saying = "Waddle waddle";
+				}
+
+				// set up the prototype chain
+				Penguin.prototype = new Animal(); // Penguin class inherit all properties:values of class Animal
+				Emperor.prototype = new Penguin(); // Emperor ingerit all properties of Penguin and Animal
+
+				var myEmperor = new Emperor("Jules");
+
+				console.log( myEmperor.saying ); // should print "Waddle waddle" (property 'saying' is in Emperor)
+				console.log( myEmperor.numLegs ); // should print 2 (property 'numLegs' isn't in Emperor but inherited from Penguin)
+				console.log( myEmperor.isAlive ); // should print true (property 'isAlive' isn't in Emperor but inherited from Penguin, but Penguin inherited this property from Animal )
+				console.log( myEmperor.hasOwnProperty('numLegs')) // return 'false' because class Emperor doesn't have the 'numLegs', but inherits it from Penguin
+		} //example3();
+	} //whatInheritance()
+
+	function aboutPrivate() { // Private propertied(variables) and private methods(functions)
+		/* Just as functions can have local variables which can only be accessed from within that function, 
+		objects can have private variables.  */
+
+		// EXAMPLE #1 Private properties
+		function Person(first,last,age) {
+			this.firstname = first;
+			this.lastname = last;
+			this.age = age;
+			var bankBalance = 7500; // this is private property
+
+			this.getBalance = function(){ // ihis is public method which can handle with privante property bankBalance
+				return bankBalance;
+			}
+		}
+
+		// create your Person 
+		var ant = new Person('Anatoly','Demon',34);
+		// if you try to print his bankBalance it will be 'undefined'
+		console.log(ant.bankBalance + ' --- it\'s private'); // output is'undefined' because variable bankBalance are private
+
+		/* Although we cannot directly access private variables from outside the class, 
+		there is a way to get around this. 
+		We can define a public method that returns the value of a private variable. */
+		var myBalance = ant.getBalance();
+		console.log(myBalance);
+
+		//EXAMPLE #2 Private methods
+		/* Methods can also be private within a class and inaccessible outside of the class. 
+		Changing 'this.returnBalance' from the last exercise to 'var returnBalance' makes this method private. 
+		If you run the program trying to access the method you get an undefined error this time. */
+		function example2() {
+			function Person(first,last,age) {
+			   	this.firstname = first;
+			   	this.lastname = last;
+			   	this.age = age;
+			   	var bankBalance = 7500;
+			  
+			   	var returnBalance = function() { // now this method privite and we can't use it outside of constructor Person
+			      	return bankBalance;
+			   	};
+	       
+	   			// The way to access a private method is similar to accessing a private variable. 
+	   			// You must create a public method for the class that returns the private method.
+	   			// create the new function here
+	   			this.askTeller = function() {
+	   				return returnBalance; 
+	   			}
+			}
+
+			var john = new Person('John','Smith',30);
+			console.log(john.returnBalance); // our attempt to use method 'returnBalance' will fall and return 'undefined' value because this method is PRIVATE, we can use this method only within constructor 'Person'.
+			var myBalanceMethod = john.askTeller(); // write in variable a private method 'returnBalance'
+			var myBalance = myBalanceMethod(); // call method
+			console.log(myBalance);
+		} example2();
+
+		// EXAMPLE #3 using password
+		function example3() {
+			function Person(first,last,age) {
+				this.firstname = first;
+				this.lastname = last;
+				this.age = age;
+				var bankBalance = 7500;
+
+				this.askTeller = function(password) {
+					if (password == 1234) return bankBalance;
+					else return "Wrong password.";
+				};
+			}
+
+			var john = new Person('John','Smith',30);
+			/* the variable myBalance should access askTeller() with a password as an argument  */
+			var myBalance = john.askTeller(1234);
+			console.log(myBalance + '\t password is correct');
+		} example3();
+
+		/* SUMMARY:
+		Public properties can be accessed from outside the class
+		Private properties can only be accessed from within the class
+		
+		Using constructor notation, a property declared as this.property = "someValue;" will be public, 
+		whereas a property declared with var property = "hiddenValue;" will be private.
+
+		*/
+	} //aboutPrivate();
+})(); // ======================= END of 'Introduction to OOP' section ==============================
+
+
+
+(function(){ // MODULE: Closures, Scope, Hoisting, Lexical Environment ==============
+
+	function useLet() { // keyword 'let'
+		// Example with 'var' keyword
+		var a = 1;
+		if(true){
+		    var a = 2;
+		    console.log('a = ' + a);//2
+		}
+		console.log('a = ' + a);//2
+
+		// Example with 'let' keyword
+		var b = 1;
+		if(true){
+		    let b = 2;
+		    console.log('b = ' + b);//2
+		}
+		console.log('b=' + b + ' b = 1, becouse we using \' let in if blok {} ');//1
+	} //useLet();
+
+	function interestingExample() { //interesting example about the Hoisting
+		var a = 1; 
+		function b() { 
+			//{ function(){} }
+			a = 10;
+			console.log(a); // 10  
+			return; 
+			function a() {};
+		} 
+		b(); 
+		console.log(a);//  1, but not 10, why? because of hoisting! 
+	} //interestingExample();
+
+	function studyingClosures() {
+
+		function makeCounter() {
+	  		var currentCount = 1;
+
+			return function() { // (**)
+				return currentCount++;// Сначала возвращает потом увеличивает на единицу! Потому что оператор инкремента стоит после переменной.
+			};
+		}
+
+		var counter = makeCounter(); // (*)
+
+		// каждый вызов увеличивает счётчик и возвращает результат
+		alert( counter() ); // 1
+		alert( counter() ); // 2
+		alert( counter() ); // 3
+
+		// создать другой счётчик, он будет независим от первого
+		var counter2 = makeCounter();
+		alert( counter2() ); // 1
+	} //studyingClosures()
+
+	function functionAsObject() {
+		// EXAMPLE #1 
+		studyingClosures.test = "You can add a property to a function like to an object"
+		console.log (studyingClosures.test);
+
+		// EXAMPLE #2
+		function makeCounter() {
+			function counter() {
+				return counter.currentCount++; // return a property of the 'counter()' object
+			};
+		counter.currentCount = 1;
+
+		return counter;
+		}
+		var counter = makeCounter();
+		alert( counter() ); // 1
+		alert( counter() ); // 2
+
+		// EXAMPLE #3 
+		function a2() {
+			var a = 4;
+		}
+
+		a2.test = 4;
+		console.log (++a2.test); // 5;
+		try {
+			++a; // Error: a is not defined
+		}
+		catch (err) {
+			console.log ('Error: a is not defined');
+		}
+	} //functionAsObject();
+
+	function newFunction () { // understanding 'new Function' working with 'LexicalEnvironment'
+
+		var a = 1;
+
+		function getFunc() {
+				var a = 2;
+
+				var func = new Function('', 'alert(a)');
+
+				return func;
+		}
+		try {
+			getFunc()(); 
+		}
+		catch(err) {
+
+			/* Error "a is not defined", because when we use the 'new Function' syntax a special property [[Scope]] refer to the window.
+			To check that you can declare the "var a = 1" in global area, and result will be "1" */
+			console.log(err);
+		}
+	} //newFunction();
+
+	function exampleClosure() { // Пример замыкания с навешиванием свойств возвращаемой функции
+		function makeCounter() {
+			var currentCount = 1;
+		  	function count() {
+		  		return currentCount++;
+		  	};
+		  	count.set = function(a) {
+				a ? currentCount = a : currentCount; // if a == undefined 'currentCount' doesn't change
+			};
+			count.reset = function() {
+				currentCount = 1;
+			};
+			return count;
+		}
+
+		var counter = makeCounter();
+
+		// каждый вызов возвращает результат, увеличивая счётчик
+		counter.set(10);
+		console.log(counter());
+		console.log(counter());
+		console.log(counter());
+	} //exampleClosure();
+
+	function exampleClosure2() {
+
+		function f() { 
+			var value = Math.random();
+			return function func() { console.log(value) };
+		}
+
+		// 3 функции, каждая ссылается на свой объект переменных,
+		// каждый со своим значением value
+		var arr = [f(),f(),f()];
+
+		arr[0](); // random value
+		arr[1](); // another random value
+		arr[2](); // another random value
+	} //exampleClosure2();
+
+	function closureTasks() {
+		function task_1() { // write function "add" which return sum of 'a'and'b' and called as "add(a)(b)"
+			/* it was a task from comment on habrahabr.ru:
+			Настоящий JavaScript-ер должен разбираться не только в DOM и Ajax. 
+			Он должен, например, без запинки написать функцию add которая складывает a и b и вызывается так: add(a)(b)
+			*/
+
+			// My solution:
+			function add(a){
+				return function(b) {
+					return a + b;
+				}
+			};
+			// It can be written in one string:    function add(a){ return function(b){return a + b}; };
+			console.log(add(5)(-1));
+		} //task_1();
+
+		function task_2() {
+			/* Описание задачи: Вызов makeBuffer должен возвращать такую функцию buffer, которая при вызове buffer(value) добавляет значение 
+			в некоторое внутреннее хранилище, а при вызове без аргументов buffer() – возвращает его. */
+			// Solution:
+			function makeBuffer() {
+				var text = '';
+				function buffer(piece) {
+					if (arguments.length == 0) {
+						return text;
+					}
+					text += piece;
+				}
+				buffer.clear = function() {
+					text = '';
+				}
+				return buffer;
+			}
+
+			var buffer = makeBuffer();
+
+			buffer('Замыкания');
+			buffer(' Использовать');
+			buffer(' Нужно!');
+			console.log(buffer().length);
+			buffer.clear(); // clear buffer
+			console.log(buffer().length);
+		} // task_2();
+
+		function task_3 () {
+			// Отсортировать объекты в массиве по нужному полю с использованием замыкания byField(имя поля)
+			var users = [{
+			  name: "Вася",
+			  surname: 'Иванов',
+			  age: 20
+			}, {
+			  name: "Петя",
+			  surname: 'Чапаев',
+			  age: 25
+			}, {
+			  name: "Маша",
+			  surname: 'Медведева',
+			  age: 18
+			}];
+
+			function byField(field) {
+				return function (a, b) {
+					return a[field] > b[field] ? 1 : -1;
+				}	
+			}
+			users.sort(byField('name'));
+			console.log(users);
+		} //task_3();
+
+		function task_4 () { // Task with my own variant of solution
+			/*
+			Создайте функцию filter(arr, func), которая получает массив arr и возвращает новый, 
+			в который входят только те элементы arr, для которых func возвращает true.
+			Создайте набор «готовых фильтров»: inBetween(a,b) – «между a,b», inArray([...]) – "в массиве [...]". 
+			Использование должно быть таким:
+			filter(arr, inBetween(3,6)) – выберет только числа от 3 до 6,
+			filter(arr, inArray([1,2,3])) – выберет только элементы, совпадающие с одним из значений массива. 
+			*/
+
+			function myFilter(arr, func) {
+				return arr.filter(func);
+			}
+
+			function inBetween(a,b) {
+				return function(item){
+					return item >= a && item <= b;
+				}
+			}
+
+			function inArray(arr) {
+				return function(item){
+					return arr.indexOf(item) >= 0 ? true : false ;
+				}
+			}
+
+			console.log( myFilter([1,2,3,4,5,6,7], function(a) { return a % 2 == 0; } ) ); // must return a new array [2,4,6] 
+			console.log( myFilter([1,2,3,4,5,6,7],inBetween(3,6)) ); // [3,4,5,6]
+			console.log( myFilter([1,2,3,4,5,6,7],inArray([1,2,10,7,18,6])) ); 	// [1,2,6,7]
+		} //task_4();
+
+		function task4_secondSolution() { 
+			// Написать решение без использования встроенного метода Array.ptototype.filter()
+			function myFilter (arr, func) {
+				var result = [];
+				for (var n = 0; n < arr.length; n++) {
+					if (func(arr[n])) {
+						result.push(arr[n]);
+					}
+				}
+				return result;
+			}
+
+			function inBetween(a, b) {
+				return function(x) {
+					return x >= a && x <= b ? true : false;
+				}
+			}
+
+			function inArray(arr) {
+				return function (x) {
+					return arr.indexOf(x) >= 0 ? true : false ;
+				}
+			}
+
+			console.log( myFilter([1,2,3,4,5,6,7], function(a) { return a % 2 == 0; } ) ); // must return a new array [2,4,6] 
+			console.log( myFilter([1,2,3,4,5,6,7],inBetween(3,6)) ); // [3,4,5,6]
+			console.log( myFilter([1,2,3,4,5,6,7],inArray([1,2,10,7,18,6])) ); 	// [1,2,6,7]
+		} //task4_secondSolution();
+
+		function task5_makeArmy() {
+			function makeArmy() { // моё решение задачи "Армия функций"
+				/* Условия задачи: 
+				Следующий код создает массив функций-стрелков shooters. По замыслу, каждый стрелок должен выводить свой номер, но сейчас не выводит.
+				Поправьте код, чтобы стрелки работали как задумано. Предложите несколько вариантов исправления. */
+
+				var shooters = [];
+				for (var i = 0; i < 10; i++) {
+					function shooter() { // функция-стрелок
+						console.log(shooter.set);
+					};
+				shooter.set = i;
+				shooters[i] = shooter;
+				}
+				return shooters;
+			}
+
+			var army = makeArmy();
+
+			army[0](); // должна выводить 0
+			army[5](); // должна выводить 5
+			army[7](); // 7 
+		} //task5_makeArmy();
+
+		function task6_makeArmy() { // решение задачи "Армия функций" с использованием Named Function Expression
+			function makeArmy() { 
+				/* Условия задачи: 
+				Следующий код создает массив функций-стрелков shooters. По замыслу, каждый стрелок должен выводить свой номер, но сейчас не выводит.
+				Поправьте код, чтобы стрелки работали как задумано. Предложите несколько вариантов исправления. */
+
+				var shooters = [];
+				for (var i = 0; i < 10; i++) {
+					var shooter = function me() { // Named Function Expression
+						console.log(me.i); // Если использовать Named Function Expression, то имя жёстко привязывается к конкретной функции, и поэтому me.i возвращает правильный i, именно тот который привязан к данной функции.
+					};
+					shooter.i = i;
+					shooters[i] = shooter;
+				}
+				return shooters;
+			}
+
+			var army = makeArmy();
+
+			army[0](); // должна выводить 0
+			army[5](); // должна выводить 5
+			army[7](); // 7 
+		} //task6_makeArmy();
+
+
+		function task7_makeArmy() { // Продвинутый вариант решения задачи "Армия Функций"
+			/* Другое, более продвинутое решение – использовать дополнительную функцию для того, 
+			чтобы «поймать» текущее значение i:
+			*/
+			function makeArmy() {
+
+				var shooters = [];
+
+				for (var i = 0; i < 10; i++) {
+
+					var shooter = (function(x) { 	// Функция shooter создана как результат вызова промежуточного функционального 
+						return function() {      	// выражения function(x), которое объявляется – и тут же выполняется, 
+							console.log(x);			// получая x = i. Так как function(x) тут же завершается, 	
+						};							// то значение x больше не меняется. Оно и будет использовано в возвращаемой функции-стрелке.	 		
+					})(i);
+
+					shooters.push(shooter);
+				}
+
+				return shooters;
+			}
+
+			var army = makeArmy();
+
+			army[0](); // 0
+			army[4](); // 4
+		} //task7_makeArmy();
+
+		function task8_makeArmy() { // еще один вариант, в котором тоже в каждую функцию записывается индивидуальное значение i, которое потом выводится. 
+
+			function makeArmy() {
+
+				var shooters = [];
+
+				function makeShooter(i) {
+					return function() {
+						console.log( i );
+					}
+				}            
+
+				for (var i = 0; i < 10; i++) {
+					var newShooter = makeShooter(i);
+					shooters.push(newShooter);
+				}
+
+				return shooters;
+			}
+
+			var army = makeArmy();
+
+			army[0](); // 0
+			army[4](); // 4
+		} //task8_makeArmy();
+	} //closureTasks();
+})(); // ===== END of Module: 'Closures, Scope, Hoisting, Lexical Environment' =======
+
+
+
+(function(){ // Начало темы "Преобразование объектов"
+	function objectsConversion() { // Преобразование объектов. 
+		/* Если в объект добавить свойство valueOf c функцией возвращающей примитивное значение, 
+		то во время неявного преобразования этого объекта, он преобразуется к этому значению. */
+		var obj = {
+	  		valueOf: function() { return 10; },
+	  	number: 22,
+	  	string: 'Hello'
+		};
+
+		alert( obj + "test" ); // 10test
+		// Подробнее см. на https://learn.javascript.ru/object-conversion
+	} //objectsConversion();
+
+	// Два объекта равны только тогда, когда это один и тот же объект. Поэтому выражение [] == [] вернет false ибо это два разных объекта
+
+	function task1() {
+		// что вернут нижеследующие выражения?
+		new Date(0) - 0 ; 
+		new Array(1)[0] + "" ; 
+		({})[0] ;  
+		[1] + 1 ; 
+		[1,2] + [3,4] ;  
+		[] + null + 1;
+		[[0]][0][0] ; 
+		({} + {}) ; 
+	} //task1();
+
+	function task2() { // решение интересной задачи https://learn.javascript.ru/object-conversion#сумма-произвольного-количества-скобок
+		function sum(a) {
+			var mySum = a;
+
+			function inner(b) {
+				mySum += b;
+				return inner;
+			}
+
+			inner.toString = function() {
+				return mySum;
+			}
+
+
+			return inner;	
+		} 
+
+		console.log( sum(1)(2) ); // 3
+		console.log( sum(5)(-1)(2) ); // 6
+		console.log( sum(6)(-1)(-2)(-3) ); // 0
+		console.log( sum(0)(1)(2)(3)(4)(5) ); // 15
+	} //task2();
+})(); // Конец темы "Преобразование объектов"
+
+
+function doCalc() { // Моё решение задачи с сайта https://learn.javascript.ru/constructor-new#создайте-калькулятор
+	/* 
+	Напишите конструктор Calculator, который создаёт расширяемые объекты-калькуляторы.
+	Эта задача состоит из двух частей, которые можно решать одна за другой.
+
+	Первый шаг задачи: вызов calculate(str) принимает строку, например «1 + 2», 
+	с жёстко заданным форматом «ЧИСЛО операция ЧИСЛО» (по одному пробелу вокруг операции), и возвращает результат. 
+	Понимает плюс + и минус -.
+	*/
+
+	function Calc() {
+		// '2 + 4'; распарсить строку и вычленить из неё числа до плюса и после плюса
+		var a = '';
+		var b = '';
+		var sign;
+		var operations = {
+			'+': function(a,b) {return (a + b);},
+			'-': function(a,b) {return (a - b);}
+		}
+		this.calculate = function(str) {
+			var arr = str.split(' ');
+			sign = arr[1];
+			a = +arr[0]; // convert to the number
+			b = +arr[2]; 
+			return operations[sign](a,b);
+		}
+
+		this.addMethod = function(name, func) {
+			operations[name] = func;
+		}
 	}
-	try {
-		getFunc()(); 
-	}
-	catch(err) {
 
-		/* Error "a is not defined", because when we use the 'new Function' syntax a special property [[Scope]] refer to the window.
-		To check that you can declare the "var a = 1" in global area, and result will be "1" */
-		console.log(err);
-	}
-} //newFunction();
+	var p = new Calc();
+	var m = new Calc(); // распарсить строку
+
+	console.log ( p.calculate('1 + 4') );
+	console.log ( m.calculate('10 - 4') );
+
+	/* Второй шаг – добавить калькулятору метод addMethod(name, func), 
+	который учит калькулятор новой операции. Он получает имя операции name и функцию от двух аргументов func(a,b), 
+	которая должна её реализовывать.
+	Например, добавим операции умножить *, поделить / и возвести в степень **:
+	*/
+
+	var powerCalc = new Calc();
+
+	powerCalc.addMethod( '*', function(a,b){return a * b;} );
+	powerCalc.addMethod( '/', function(a,b){return a / b;} );
+	powerCalc.addMethod('**', function(a,b){return a ** b});
+
+	console.log ( powerCalc.calculate('22 / 2') );
+	console.log ( powerCalc.calculate('2 * 20') );
+	console.log ( powerCalc.calculate('4 ** 2') );
+} //doCalc(); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
