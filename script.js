@@ -14,7 +14,7 @@ function changeColor() { //changing background color of the HTML page
 }
 document.getElementById('colorBotton').onclick = changeColor; // Now property "onclick" of "colorButton" object has a function "changeColor" as value, i.e. the "onclick" is a method which you create by yourself and define what it actually should do when user click on object. 
 
-function getProperties () { // gettin all properties' names of document and their values
+function getProperties () { // getting all properties' names of document and their values
 	var counter = document.getElementById('forTable').childElementCount;
 	if (counter == 0) {
 		document.getElementById('buttonProperties').innerHTML = 'Hide Properties'; // to change name of button to the 'Hide Properties'
