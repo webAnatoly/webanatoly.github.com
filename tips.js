@@ -5,3 +5,14 @@ if (!Element.prototype.remove) { // The Polyfill of ChildNode.remove() method fo
     }
   }
 }
+
+function removeAllChildren(element) { // Element.innerHTML doesn't work for tables in IE8- that is why a "try catch" construction is used here
+  try {
+    element.innerHTML = '';
+  } catch (e) {
+    console.log(e.name + " " + e.message);  
+      while (element.firstChild) {
+        element.removeChild(element.firstChild);
+      }  
+  }
+}
