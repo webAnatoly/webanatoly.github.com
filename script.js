@@ -1,9 +1,9 @@
 ;'use strict';
 
 function changeColor() { //changing background color of the HTML page
-  var myColor = document.body.style.background[0];// getting first letter of color name
-  (myColor == 'd' || myColor == null ) ? document.body.style.background = 'lightslategray' : 
-  document.body.style.background = 'darkseagreen';
+  var myColor = document.body.style.background;
+  (myColor == 'lightslategray' || myColor == null ) ? document.body.style.background = 'darkseagreen' : 
+  document.body.style.background = 'lightslategray';
   
   // It's The Conditional Operator (?:)
   /* The first operand is evaluated and interpreted as a boolean. 
@@ -13,6 +13,7 @@ function changeColor() { //changing background color of the HTML page
   */// changing background color of HTML page
 }
 document.getElementById('colorButton').onclick = changeColor; // Now property "onclick" of "colorButton" object has a function "changeColor" as value, i.e. the "onclick" is a method which you create by yourself and define what it actually should do when user click on object. 
+
 
 function getProperties () { // gettin all properties' names of document and their values
   var counter = document.getElementById('forTable').childElementCount;
@@ -1434,12 +1435,12 @@ function doCalc() { // Моё решение задачи с сайта https://
 
   powerCalc.addMethod( '*', function(a,b){return a * b;} );
   powerCalc.addMethod( '/', function(a,b){return a / b;} );
-  powerCalc.addMethod('**', function(a,b){return a ** b;} );
+  powerCalc.addMethod('**', function(a,b){return Math.pow(a,b);} );
 
   console.log ( powerCalc.calculate('22 / 2') );
   console.log ( powerCalc.calculate('2 * 20') );
   console.log ( powerCalc.calculate('4 ** 2') );
-} 
+}
 //doCalc();
 
 // ==== Understanding the "Object.defineProperty(object, property, descriptor)" method. ==== 
