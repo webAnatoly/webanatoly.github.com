@@ -1434,7 +1434,7 @@ function doCalc() { // Моё решение задачи с сайта https://
 
   powerCalc.addMethod( '*', function(a,b){return a * b;} );
   powerCalc.addMethod( '/', function(a,b){return a / b;} );
-  powerCalc.addMethod('**', function(a,b){return a ** b} );
+  powerCalc.addMethod('**', function(a,b){return a ** b;} );
 
   console.log ( powerCalc.calculate('22 / 2') );
   console.log ( powerCalc.calculate('2 * 20') );
