@@ -12,7 +12,7 @@ function changeColor() { //changing background color of the HTML page
   Only one of the second and third operands is evaluated, never both.
   */// changing background color of HTML page
 }
-document.getElementById('colorBotton').onclick = changeColor; // Now property "onclick" of "colorButton" object has a function "changeColor" as value, i.e. the "onclick" is a method which you create by yourself and define what it actually should do when user click on object. 
+document.getElementById('colorButton').onclick = changeColor; // Now property "onclick" of "colorButton" object has a function "changeColor" as value, i.e. the "onclick" is a method which you create by yourself and define what it actually should do when user click on object. 
 
 function getProperties () { // gettin all properties' names of document and their values
   var counter = document.getElementById('forTable').childElementCount;
