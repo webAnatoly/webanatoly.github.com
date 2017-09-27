@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="clock.css" />
+  <title>Clock</title>
+</head>
+<body>
+  <div class="clock">
+    <div class="clock-face">
+      <div class="hand hour-hand"></div>
+      <div class="hand min-hand"></div>
+      <div class="hand second-hand"></div>
+    </div>
+  </div>
+  
+<script>
+  function setDate() {
+    let gDate = new Date;
+    let h = gDate.getHours(); // hours
+    let m = gDate.getMinutes(); // minutes
+    let s = gDate.getSeconds(); // seconds
+    
+    document.getElementsByClassName('second-hand')[0].style.transform = `rotate(${90 + s*6}deg)`;
+    document.getElementsByClassName('min-hand')[0].style.transform = `rotate(${90 + m*6}deg)`;
+    document.getElementsByClassName('hour-hand')[0].style.transform = `rotate(${90 + h*30}deg)`;
+
+  }
+  setInterval(setDate, 1000);
+</script>
+</body>
+</html>
