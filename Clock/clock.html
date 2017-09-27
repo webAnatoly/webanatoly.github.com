@@ -15,7 +15,7 @@
   </div>
   
 <script>
-  function setDate() {
+  function runClock() {
     let gDate = new Date;
     let h = gDate.getHours(); // hours
     let m = gDate.getMinutes(); // minutes
@@ -26,7 +26,8 @@
     document.getElementsByClassName('hour-hand')[0].style.transform = `rotate(${90 + h*30}deg)`;
 
   }
-  setInterval(setDate, 1000);
+  runClock();
+  setInterval(runClock, 1000);
 </script>
 </body>
 </html>
