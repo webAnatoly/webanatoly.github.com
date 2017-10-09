@@ -1,34 +1,139 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8" />
-<link type="text/css" rel="stylesheet" href="style.css" />
-<title>TEST</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Layout</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
-<body id='body'>
-  <div class='center'>
-    <h2>My JavaScript Exercises And Notes</h2>
-    <br>  
-    <button type='button' class='myButton' id='colorButton'>Change Background Color</button>
-    <button type='button' class='myButton' id='buttonProperties'>Get Properties Of This Document</button>
-    <br>
-    <p id='clockedButton'><button type='button' class='myButton'><span id='textClocks'>Start Text Clock</span></button></p>
-    <div id='forTable'>
-      <!--table from script-->
+<body>
+  <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+  <div class="container">
+    <div class="row">
+      <div class="col-12 rowHeader">
+        <h1 class="rowHeader__h1">My HTML/CSS/JavaScript Exercises And Notes</h1>
+        <p class="rowHeader__p">Resize the browser window to see the responsive effect.</p>
+      </div>
     </div>
-    
-    <p><a href="Date/date.html">Summary of Date()</a></p>
-    <h2>Mini JavaScript Stuffs</h2>
-    <p><a href="./Drums/drum.html" target="_blank">Drums Keys</a></p>
-    <p><a href="Clock/clock.html" target="_blank">Clock</a></p>
-    <p><a href="css_variables.html" target="_blank">CSS variables</a></p>
-    <br>
+    <div class="row">
+      <div class="col-12 col-12--mobile">
+        <ul class="navbar">
+          <li><a href="#" class="navbarLink">Link1</a></li>
+          <li><a href="#" class="navbarLink">Link2</a></li>
+          <li><a href="#" class="navbarLink">Link3</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3 col-3--format col-3--leftTopGradient">
+        <h2>Left Side</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+        <input type="file" id="myFile"><br><br>
+        <h3>The Iframe Element</h3>
+        <div class="iframeContainer iframeContainerMobile">
+          <iframe class="iframeContainerMobile--size" width="270" height="180" src="https://www.youtube.com/embed/1cZtdKNB9jo" frameborder="0" allowfullscreen>
+            Your borouser doesn't support &#60;iframe&#62;
+          </iframe>
+        </div>
+        
+      </div><!-- "col-3" -->
+      <div class="col-6 col-6--innerFormating">
+        <h2>Main Content</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+        <div class="sunBlock"></div><p><strong>The Sun from &#60;div&#62; .</strong> Taciti penatibus venenatis hymenaeos phasellus fusce tempor tempor sit et dui sodales natoque neque inceptos dolor praesent Fusce feugiat fusce, etiam cubilia ante, mattis laoreet curabitur Condimentum aliquet accumsan fringilla magnis eleifend pede gravida. Cras. Sodales velit maecenas volutpat curae; est volutpat a pretium. Metus. Porttitor pharetra integer posuere. Nec sed eleifend pulvinar risus ornare quisque accumsan netus justo vehicula massa tincidunt sollicitudin. Class amet at montes ad rhoncus arcu sagittis. Interdum habitant facilisis leo taciti ipsum nibh lacinia. Tellus mollis, neque fames consequat, enim nullam inceptos dui orci erat, est posuere penatibus potenti lacus sollicitudin. Nunc placerat cum dis aliquam. Nibh nascetur vel erat lacus diam imperdiet. Tempor ullamcorper inceptos Ligula convallis quisque faucibus sociosqu posuere. Torquent mollis non aptent mauris leo hac pretium fringilla tellu.</p>
+        <h3>The Text Overflow CSS Property</h3>
+        <div class="overflowBlock">
+          <p class="overflowBlock__p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, a. Debitis repellendus veritatis distinctio accusantium!</p>
+        </div>
+        <h3>The Transform Property</h3>
+        <form class="formBlock">
+          <input class="formBlock__input" type="text" value="Focus me to see a transform in action" >
+        </form>
+        <h3>The CSS Animation</h3>
+        <div id="animationOne"></div>
+        <h3>Image Modal</h3>
+        <p>In this example, we use CSS to create a modal (dialog box) that is hidden by default. We use JavaScript to trigger the modal and to display the current image inside the modal when it is clicked on. Also note that we use the value from the image's "alt" attribute as an image caption text inside the modal.</p>
+        <img class="modalBlock__img" src="https://www.w3schools.com/css/img_lights.jpg" alt="Northern Lights, Norway" width="30%">
+        <!-- The Modal -->
+        <div id="modalBlock" class="modalBlock modalBlock--color">
+          <span class="modalBlock__close">&#215;</span>
+          <img class="modalBlock__content" id="img01">
+          <div class="modalBlock__caption"></div>
+        </div>
+        <script>
+        // Get the modal
+        let modal = document.getElementById('modalBlock');
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        let img = document.querySelector("[class*='modalBlock__img']");
+        let modalImg = document.getElementById('img01');
+        let captionText = document.querySelector("[class*='modalBlock__caption']");
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+
+        // Get the <span> element that closes the modal
+        let span = document.getElementsByClassName('modalBlock__close')[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() { 
+            modal.style.display = 'none';
+        }
+        </script>
+        <h3>The <kbd>object-fit</kbd> CSS property</h3>
+        <p>Resize the image-block or the browser window to see <kbd>object-fit:cover</kbd> effect. (With value <kbd>cover</kbd> the image doesn't change its aspect ratio)</p>
+        <div class="imgContainer">
+          <img class="imgContainer__innerImage" src="https://www.w3schools.com/css/paris.jpg" alt="The Paris Picture" width="400" height="150">
+        </div>
+        <h3>CSS Buttons</h3>
+        <button>DefaultButton</button>
+        <button class="button-1"><span>StyledButton</span></button>
+        <input type="button" class="button-1" value="inputButton">
+        <a href="#" class="button-1">linkButton</a>
+        <button class="button-1--disabled">Disabled</button>
+        <h3>The Multiple Colums CSS Property - <kbd>column-count</kbd></h3>
+        <div class="multiplyBlock">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla nisi natus ratione, nesciunt officia ea fugit sapiente facilis, sequi quis temporibus illum eum at saepe ex quisquam suscipit cumque deserunt accusantium similique repudiandae. Odit iusto, voluptatum fuga, laudantium dolore aperiam vitae obcaecati explicabo, officiis hic consectetur autem nesciunt? Sed aut culpa nisi quasi numquam, a accusamus cum maxime, commodi aliquid cupiditate perspiciatis rem reiciendis facere ratione natus fugiat. Temporibus suscipit perferendis provident distinctio blanditiis maxime alias numquam neque voluptate nisi ipsam necessitatibus molestias quisquam nam voluptatibus architecto ducimus similique tempora soluta quia adipisci a cupiditate odit laboriosam, corrupti. Quibusdam atque velit, mollitia ipsum illo repudiandae error eius vel tempora iste fugiat quia voluptates laborum, similique recusandae? Ex, excepturi adipisci quibusdam sequi odio explicabo assumenda repellat pariatur, repellendus tempora aut aperiam sit voluptatum optio, vero tenetur eligendi totam natus porro iste impedit, dolor deserunt nemo reprehenderit. Labore numquam, suscipit fugiat asperiores.
+        </div><!-- "multiplyBlock" -->
+        <h3>Resize The Block</h3>
+        <div class="resizeMe"><p>Resize Me!</p></div>
+        <h3>JavaScript exercises</h3>
+        <p><a href="001/Clock/clock.html">Clock</a>&nbsp; &nbsp; 
+        <a href="001/Drums/drum.html">Drum Key</a>&nbsp; &nbsp;
+        <a href="001/css_variables.html">CSS Variables</a></p>
+        <h3>Other Pages</h3>
+        <p><a href="001/001.html">One Page</a></p>
+      </div><!-- "col-6" -->
+
+      <div class="col-3 col-3--format col-3--rightTopGradient">
+        <h2>Right Side</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+        <h3>The Canvas</h3>
+        <canvas id="myCanvas">Your browser doesn't supportn &#60canvas&#62</canvas>
+        <p>The HTML &#60canvas&#62 element is used to draw graphics, on the fly, via JavaScript.</p>
+        <p>The &#60canvas&#62 element is only a container for graphics. You must use JavaScript to actually draw the graphics.</p>
+        <h3>The SVG</h3>
+        <svg>
+          <circle cx="100" cy="100" r="80" stroke="green" stroke-width="10" fill="orange">
+        </svg>
+      </div><!-- col-3 -->
+    </div>
+    <div class="row">
+      <div class="col-12 rowFooter">
+        <h5 class="rowFooter__h5">Footer</h5>
+      </div>
+    </div>
   </div>
-  <br>
-  <!--footer<div class='footer'></div>-->
-  
-  <script src='script.js'></script>
-  
+<script src="js/main.js"></script>
 </body>
 </html>
+
+
+
 
