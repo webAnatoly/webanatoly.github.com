@@ -1,4 +1,4 @@
-;'use strict';
+'use strict';
 
 function changeColor() { //changing background color of the HTML page
   var myColor = document.body.style.background;
