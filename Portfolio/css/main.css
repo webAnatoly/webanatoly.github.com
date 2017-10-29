@@ -25,6 +25,10 @@ p {
   line-height: 1.5;
 }
 
+ul {
+  list-style: none;
+}
+
 h1,h2,h3 {margin:0 0 0 0;}
 
 h1 {font-size: 4.1rem;}
@@ -91,7 +95,6 @@ header {
 
 .menu ul {
   display: block;
-  list-style: none;
   margin:0;
   padding: 0;
 }
@@ -162,7 +165,7 @@ header {
   line-height: 3rem;
 }
 
-#skills kbd {
+kbd {
   border: 1px solid black;
   border-radius: 3px;
   padding: 1px 5px;
@@ -173,3 +176,20 @@ header {
 footer {
   min-height: 300px;
 }
+
+#contacts {
+  min-height: 400px;
+}
+
+.paddingTopLarge {
+  padding-top: 200px;
+}
+
+.paddigLeft--m {
+  padding-left: 50px;
+}
+
+.marginLeft--small {
+  margin-left: 20px;
+}
+
