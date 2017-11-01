@@ -1,11 +1,11 @@
 "use strict";
 
 /* Get smal photo */
-let img = document.querySelector("[src*='img/small_avatar.png']");
-let label = img.src.length;
-console.log(label);
-img.onclick = function(){
-  img.src = 'img/avatar.png';
+let smallImg = document.querySelector("[src*='img/small_avatar.png']");
+let bigImg = document.querySelector("[src*='img/avatar.png']");
+smallImg.onclick = function(){
+  smallImg.classList.add('hidden');
+  bigImg.classList.remove('hidden');
   span.style.display = 'block';
 }
 
@@ -13,7 +13,12 @@ img.onclick = function(){
 let span = document.getElementsByClassName('bigPhoto__close')[0];
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
+function closePhoto() { 
   span.style.display = 'none';
-  img.src = 'img/small_avatar.png';
+  bigImg.classList.add('hidden');
+  smallImg.classList.remove('hidden');
 }
+
+span.onclick = closePhoto;
+bigImg.onclick = closePhoto;
+
