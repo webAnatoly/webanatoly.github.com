@@ -163,19 +163,22 @@ header {
 #skills ul {
   list-style: none;
 }
+
 #skills li {
   margin: 0;
   line-height: 3.5rem;
 }
+
+.skills_text {
+  font-family: Playfair;
+  font-style: italic;
+}
+
 .portfolio__ul {
   margin: 10px 0 30px 0;
 }
 #portfolio li {
   line-height: 2.5rem;
-}
-.portfolio_text {
-  font-family: Playfair;
-  font-style: italic;
 }
 
 kbd {
