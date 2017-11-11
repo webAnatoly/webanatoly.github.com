@@ -190,9 +190,6 @@ kbd {
   color: #fff;
 }
 
-footer {
-  min-height: 300px;
-}
 
 #contacts {
   min-height: 400px;
@@ -208,5 +205,22 @@ footer {
 
 .marginLeft--small {
   margin-left: 20px;
+}
+
+.beforeFooter {
+  min-height: 250px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 84px;
+  width: 100%;
+  background-color: #f4f4f4; 
+}
+
+.footerSpan {
+  display: block;
 }
 
