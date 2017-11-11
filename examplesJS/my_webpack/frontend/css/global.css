@@ -1,0 +1,51 @@
+
+/*  global.css */
+
+* {
+  box-sizing: border-box;
+}
+html { font-size: 10px; }
+body { 
+  font: 15px/1.5 Arial, Helvetica, sans-serif;
+  padding: 0; 
+  background-color: #f4f4f4;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Grid */
+:global(.col-1)  {width: 8.33%;  overflow: hidden;}
+:global(.col-2 ) {width: 16.66%; overflow: hidden;}
+:global(.col-3 ) {width: 25%;    overflow: hidden;}
+:global(.col-4 ) {width: 33.33%; overflow: hidden;}
+:global(.col-5 ) {width: 41.66%; overflow: hidden;}
+:global(.col-6 ) {width: 50%;    overflow: hidden;}
+:global(.col-7 ) {width: 58.33%; overflow: hidden;}
+:global(.col-8 ) {width: 66.66%; overflow: hidden;}
+:global(.col-9 ) {width: 75%;    overflow: hidden;}
+:global(.col-10)  {width: 83.33%; overflow: hidden;}
+:global(.col-11)  {width: 91.66%; overflow: hidden;}
+:global(.col-12)  {width: 100%; overflow: hidden;}
+
+/* Browser Upgrade Prompt */
+:global(.browserupgrade) {
+    margin: .2rem 0;
+    background: #ccc;
+    color: #000;
+    padding: .2rem 0;
+}
+
+:global(#wrapper) {
+  margin:0;
+  padding:0;
+  border: none;
+}
+
+:global(.globalContainer) {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+

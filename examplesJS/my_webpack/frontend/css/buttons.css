@@ -1,0 +1,41 @@
+
+/* buttons.css */
+
+.common {
+  display:inline-block;
+  color: black;
+  background-color: green;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+}
+
+.common:hover {
+  background-color: orange;
+}
+
+.disabled {
+  color: grey;
+}
+
+.disabled:hover {
+  color: grey;
+  cursor: not-allowed;
+  background-color: green;
+}
+
+.btn_1 {
+  height: 38px;
+  background-color: #e8491d;
+  border: none;
+  padding: 0 20px;
+  color: #fff;
+}
+
+/*media*/
+@media(max-width: 768px) {
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

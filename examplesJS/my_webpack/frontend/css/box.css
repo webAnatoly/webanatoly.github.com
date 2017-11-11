@@ -1,0 +1,82 @@
+
+/* boxes.css */ 
+
+.mainBox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.boxOne {
+  width: 33.33%;
+  padding: 10px;
+  text-align: center;
+}
+
+.boxOne img {
+  width: 90px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.sidebar {
+  color: lightblue;
+  width: 25%;
+  padding-left: 30px;
+}
+
+.article {
+  width: 75%;
+  padding-right: 20px;
+}
+
+.dark {
+  padding: 15px;
+  background: #35424a;
+  color: #fff;
+  margin: 10px 10px;
+}
+
+.darkFlex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: #35424a;
+  color: #fff;
+  padding: 15px 15px 40px 15px;
+}
+
+.ulServices li{
+  list-style: none;
+  padding: 20px;
+  border: #cccccc solid 1px;
+  margin-bottom: 5px;
+  background: #e6e6e6;
+}
+
+@media (max-width: 768px) {
+  .boxOne {
+    width: 100%;
+    padding-bottom: 30px;
+  }
+  .container {
+    justify-content: center;
+    padding: 5px;
+    width: 90%;
+  }
+  .article,
+  .sidebar {
+    width: 100%;
+    margin: 10px 0;
+    padding: 0;
+  }
+  .dark {
+    padding: 15px 30px;
+    margin: 10px 0px;
+  }
+}

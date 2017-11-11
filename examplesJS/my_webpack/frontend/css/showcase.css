@@ -1,0 +1,31 @@
+
+/* showcase.css */
+
+.showcase {
+  min-height: 400px;
+  background: url(../img/bg.jpg) no-repeat 0px -400px;
+  background-color: #5f7786;
+  color: #fff;
+  padding-top: 100px;
+}
+
+ .showcase h1 {
+  font-size: 55px;
+  /*margin: 0 0 10px 0;*/
+}
+
+.showcase p {
+  font-size: 20px;
+}
+
+.container {
+  text-align: center;
+  color: #fff;
+}
+
+@media(max-width: 768px) {
+  .showcase {
+    padding-top: 40px;
+    background: url(../img/bg.jpg) no-repeat -200px -400px;
+  }
+}

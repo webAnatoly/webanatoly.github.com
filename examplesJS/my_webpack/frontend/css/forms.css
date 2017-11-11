@@ -1,0 +1,21 @@
+
+/* forms.css */
+
+.form_2 {
+  width: 100%;
+}
+
+.form_2 input,
+.form_2 textarea {
+  width: 100%;
+  padding: 5px;
+  resize: vertical;
+}
+
+.form_2 div {
+  margin-top: 10px;
+}
+
+.form_2 button {
+  margin-top: 10px;
+}

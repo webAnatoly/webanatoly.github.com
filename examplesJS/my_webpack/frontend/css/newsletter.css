@@ -1,0 +1,35 @@
+
+/* newsletter.css */
+
+.newsletter {
+  padding: 40px 0;
+  color: #fff;
+  background: #35424a;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+}
+
+.newsletter input[type="email"] {
+  padding: 4px;
+  height: 38px;
+  width: 250px;
+  color: #e8491d;
+  border: none;
+}
+
+@media(max-width: 768px) {
+  .container h1 {
+    text-align: center;
+  }
+  .newsletter input[type="email"] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
