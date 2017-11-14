@@ -224,3 +224,15 @@ kbd {
   display: block;
 }
 
+@media (max-width: 768px) {
+  .col-7 {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .menu li {
+    margin: 0 20px 0 0;
+    padding: 0;
+  }
+}
+
