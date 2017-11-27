@@ -1,0 +1,47 @@
+
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+html {font-size: 10px;}
+body {
+  font-size: 16px;
+  font-family: 'PT Sans', Arial, sans-serif;
+}
+
+/* Browser Upgrade Prompt */
+.browserupgrade {
+    margin: .2rem 0;
+    background: #ccc;
+    color: #000;
+    padding: .2rem 0;
+}
+
+
+/* Main Styles */
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+
+.container {
+  width: 960px;
+  min-height: 300px;
+  margin: auto;
+}
+
+@media(max-width: 768px) {
+  .container {
+    width:100%;
+  }
+}
+
+
+
+
+

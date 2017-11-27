@@ -1,0 +1,98 @@
+
+/* section_3.css */
+
+.section {
+  position: relative;
+  min-height: 305px;
+  background-color: #fff;
+  font-size: 0;
+  text-align: center;
+}
+
+.line {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #ececec;
+}
+
+.section>h1 {
+  color: #303030;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin: 41px 0 51px 13px;
+  text-align: left;  
+}
+
+.imgContainer {
+  display: inline-block;
+  width: 16.6%;
+  height: 180px;
+  margin: 0 0 50px 0;
+}
+
+.imgWrap {
+  position: relative;
+  margin: auto;
+  width: 128px;
+  height: 128px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.imgWrap>img{
+  display: block;
+  width: 100%;
+}
+
+.imgDescription {
+  width: 100%;
+  height: 45px;
+  text-align: center;
+}
+
+.imgDescription>p {
+  display: inline-block;
+  margin-top: 20px;
+  border-bottom: 2px solid #82c044;
+  font-size: 1.4rem;
+}
+
+/* hover */
+.imgContainer:hover {
+  cursor: pointer;
+}
+
+.imgContainer:hover>.imgWrap {
+  border: 2px solid #82c044;
+  cursor: pointer;
+}
+.imgContainer:hover>.imgDescription>p {
+  border-bottom: 2px solid transparent;
+  color: #82c044;
+  cursor: pointer;
+}
+
+/* for tablet */
+@media(max-width: 768px) {
+  .imgContainer {
+    width: 33.33%;
+  }
+}
+
+/* for mobile */
+@media(max-width: 360px) {
+  .imgContainer {
+    width: 50%;
+  }
+
+  .section>h1 {
+    text-align: center;  
+  }
+}
+
+
+

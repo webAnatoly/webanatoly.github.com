@@ -1,0 +1,127 @@
+
+/* footer.css */
+
+.footer {
+  width: 100%;
+  min-height: 257px;
+  background-color: #82c044;
+}
+
+.footer h4 {
+  color: #fff;
+  font-size: 1.6rem; 
+  margin: 25px 0 15px 0; 
+}
+
+.footer p {
+  margin-top: 3px;
+  color: #ffffff;
+}
+
+.footer a {
+  text-decoration: underline;
+  color: #000000;
+}
+
+.footer a:hover {
+  color: #ffffff;
+}
+
+.footer>div { /* this is the container */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.about,
+.service,
+.payment,
+.deliver {
+  position: relative;
+  width: 25%;
+  min-height: 250px;
+}
+
+.copy { /* copyright */
+  display: block;
+  position: absolute;
+  font-size: 1.4rem;
+  bottom: 30px;
+  color: white;
+}
+
+.service img {
+  margin: 55px 10px 0 0 ;
+}
+
+.add {
+  position: absolute;
+  font-size: 1.4rem;
+  bottom: 30px;
+}
+
+
+
+/* for tablet */
+@media(max-width: 768px) {
+  .about,
+  .service,
+  .payment,
+  .deliver  {
+    width: 50%;
+    margin: 0;
+    padding-left: 10px;
+  }
+  .copy { /* copyright */
+    position: absolute;
+    font-size: 1.4rem;
+    bottom: 3px;
+  }
+  .service img {
+    margin: 45px 10px 0 0 ;
+  }
+
+  .payment,
+  .deliver {
+    padding-top: 30px;
+  }
+}
+
+
+/* for mobile */
+@media(max-width: 360px) {
+  .footer>div { /* this is a container */
+    display: block;
+  }
+  .about,
+  .service,
+  .payment,
+  .deliver  {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+  .payment,
+  .deliver {
+    padding-top: 10px;
+  }
+
+  .payment h4,
+  .deliver h4 {
+    margin-bottom: 30px;
+  }
+
+  .copy {
+    position: relative;
+    margin: 30px 0 0 0;
+  }
+
+  .add {
+    position: absolute;
+    bottom: 20px;
+    left: 10%;
+    right: 10%;
+  }
+
+}

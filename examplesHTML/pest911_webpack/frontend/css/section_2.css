@@ -1,0 +1,305 @@
+
+/* section_2.css */
+
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  min-height: 318px;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: #ececec;
+}
+
+/* Menu */ 
+.menu {
+  width: 100%;
+  min-height: 45px;
+  background-color: #82c044;
+  text-align: center;
+}
+
+.menu>ul {
+  list-style: none;
+  margin: 13px 0 0 0;
+  padding: 0;
+}
+
+.menu>ul>li {
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  margin: 0 45px;
+}
+
+.menu a:hover {
+  color: #ffffff;
+}
+
+.indicator {
+  display: none;
+  position: absolute;
+  top: 25px;
+  left: 36%;
+  right: 36%;
+  content: '';
+  width: 24px;
+  height: 20px;
+  background-color: #ececec;
+  border: none;
+  transform:  rotate(-26deg) skew(40deg);
+}
+
+.current a{
+  color: #ffffff;
+}
+
+.current .indicator {
+  display: block;
+}
+
+/* Carousel */
+.carouselWrapper {
+  display: inline-block;
+  position: relative;
+  width: 860px;
+  height: 288px;
+  padding: 36px 0;
+  margin: 0;
+}
+
+.itemsContainer {
+  display: block; 
+  position: absolute;
+  font-size: 0;
+  padding: 0;
+  margin: 0;
+  width: 9999px;
+  height: 273px;
+  z-index: 1;
+}
+
+.carouselItem {
+  display: inline-block;
+  border: 3px solid transparent;
+  width: 169px;
+  height: 214px;
+  padding: 0;
+  margin-right: 60px;
+  border-radius: 4px;
+  background-color: #fbfbfb;
+}
+
+.carouselItem:hover {
+  border: 3px solid #82c044;
+  cursor: pointer;
+}
+
+.imgWrapper {
+  width: 130px;
+  height: 140px;
+  margin: auto;
+}
+
+.carouselItem img {
+  display: block;
+  margin: auto;
+}
+
+.description,
+.value {
+  display: block;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.description {
+  overflow: hidden;
+  height: 45px;
+}
+
+.value {
+  height: 25px;
+}
+
+.value>span {
+  font-weight: bold;
+}
+
+/* carousel buttons */
+.carouselButtonLeft,
+.carouselButtonRigth {
+  display: inline-block;
+  height: 273px;
+  width: 45px;
+  z-index: 2;
+}
+
+
+.leftArrow:first-child{
+  height: 25px;
+  width: 2px;
+  background-color: #454545;
+  margin: auto;
+  margin-top: 110px;
+  transform: skewX(-30deg);
+}
+
+.leftArrow:last-child{
+  height: 25px;
+  width: 2px;
+  background-color: #454545;
+  margin: auto;
+  transform: skewX(30deg);
+}
+
+.rightArrow:first-child{
+  height: 25px;
+  width: 2px;
+  background-color: #454545;
+  margin: auto;
+  margin-top: 110px;
+  transform: skewX(30deg);
+}
+
+.rightArrow:last-child{
+  height: 25px;
+  width: 2px;
+  background-color: #454545;
+  margin: auto;
+  transform: skewX(-30deg);
+}
+
+.wrapperForHover {
+  z-index: 2;
+}
+
+.wrapperForHover:hover {
+  cursor: pointer;
+}
+  
+.wrapperForHover:hover>.leftArrow,
+.wrapperForHover:hover>.rightArrow {
+  background-color: #8ac351;
+}
+
+/* for tablet */
+@media(max-width: 768px) {
+  .section {
+    display: block;
+    position: relative;
+  }
+
+  .menu {
+    padding: 13px 0;
+  }
+
+  .menu>ul {
+    margin: 0;
+  }
+
+  .menu>ul>li {
+    margin: 0 10px;
+  }
+
+  .carouselWrapper {
+    width: 100%;
+    padding-left: 45px;
+  }
+  .carouselButtonLeft,
+  .carouselButtonRigth {
+    position: absolute;
+  }
+  .carouselButtonLeft {
+    top:45px;
+    left: 0;
+  }
+  .carouselButtonRigth {
+    top: 45px;
+    right: 0px;
+  }
+}
+
+@media(max-width: 560px) {
+  /* скрываем украшающие треугольнички во втором меню для дисплеев меньше 560 */
+  .indicator,
+  .current .indicator { 
+    display:none; 
+  }
+}
+
+/* for mobile */
+@media(max-width: 360px) {
+  .section {
+    display: block;
+    position: relative;
+    height: 530px;
+  }
+
+  .menu {
+    padding: 11px 0;
+  }
+
+  .menu>ul {
+    margin: 0;
+  }
+
+  .menu>ul>li {
+    display: block;
+    margin: 4px 10px;
+  }
+
+  .carouselWrapper {
+    width: 100%;
+    padding-top: 20px;
+    padding-left: 0px;
+    height: 320px;
+  }
+
+  .carouselItem {
+    height: 300px;
+    border: 3px solid #82c044;
+  }
+
+  .imgWrapper {
+    width: 130px;
+    height: 150px;
+    margin: 25px auto;
+  }
+
+  .carouselButtonLeft,
+  .carouselButtonRigth {
+    position: absolute;
+    top: 470px;
+    width: 50%;
+    height: 45px;
+  }
+
+  .carouselButtonLeft {
+    left: 0;
+  }
+  .carouselButtonRigth {
+    right: 0;
+  } 
+
+  .leftArrow:first-child{
+    height: 15px;
+    margin-top: 6px;
+    transform: skewX(-35deg);
+  }
+
+  .leftArrow:last-child{
+    height: 15px;
+    transform: skewX(35deg);
+  }
+
+  .rightArrow:first-child{
+    height: 15px;
+    margin-top: 6px;
+    transform: skewX(35deg);
+  }
+  .rightArrow:last-child{
+    height: 15px;
+    transform: skewX(-35deg);
+  }
+}
