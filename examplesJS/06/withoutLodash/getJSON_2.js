@@ -23,7 +23,7 @@ function ResponsiveSearch (options) {
 
   let arr = [];
 
-  // получает json с сервера и конвертируем в массив
+  // получает json с сервера и конвертирует его в массив 
   fetch(options.src).then(res => res.json()).then(data => {
     for (let i = 0; i < data.length; i++) {
       arr[i] = data[i];
