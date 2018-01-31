@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GetJSON2</title>
+  <link rel="stylesheet" href="getJSON_2.css">
+</head>
+<body>
+  <div class="repoLink"><a href="https://github.com/webAnatoly/webanatoly.github.com/tree/master/examplesJS/06"><code>смотреть код виджета в репозитарии</code></a></div>
+  <!-- without _.template from Lodash library -->
+  <div class="container">
+    <div id="divOne"></div>
+    <div id="divTwo"></div>
+    <div id="divThree"></div>
+  </div>
+
+  <div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, fugit. Labore omnis ut incidunt laudantium consequatur quaerat dolores obcaecati, maiores blanditiis. Corporis quis mollitia, commodi, labore odio eligendi a vel aliquid ducimus? Atque, veritatis, dolore. Ullam nobis magnam aliquid minus non laboriosam, vel quisquam itaque, ex dignissimos ad! Nam corporis quam rerum vel, alias. Deleniti nostrum corrupti quis reprehenderit dolorem eos, inventore repudiandae modi dignissimos laborum, officiis debitis quo aut iste similique vero aliquam qui ipsa illum ab corporis! Excepturi optio, tempore deserunt repudiandae quia sunt quasi harum dignissimos iure numquam tempora voluptate dolores maiores nesciunt nemo aperiam quam accusantium.</p>
+  </div>
+
+
+
+  <script src="getJSON_2.js"></script>
+  <script>
+    let mySearch = new ResponsiveSearch({ 
+      parent: document.getElementById('divOne'), 
+      src: 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json',
+      placeholder: 'Sity or State',
+      filterName: 'Filter For a Sity',
+      filterDescription: 'Or A State'
+    });
+
+    let mySecondSearch = new ResponsiveSearch({
+      parent: document.getElementById('divTwo'), 
+      src: 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json',
+      placeholder: 'Second',
+      filterName: 'Second filter',
+      filterDescription: ''
+    });
+
+    let thirdSearch = new ResponsiveSearch({
+      parent: document.getElementById('divThree'), 
+      src: 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json',
+      placeholder: 'Third',
+      filterName: '',
+      filterDescription: ''
+    });
+  </script>
+  </body>
+</html>
