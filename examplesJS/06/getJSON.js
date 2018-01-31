@@ -63,7 +63,7 @@ function ResponsiveSearch (options) {
               </li>`;
     }
     ul.innerHTML = html;
-    addZindex(false, ul); // вобавляет z-index, чтобы результаты поиска показывались поверх остальных элементов на странице 
+    addZindex(false, ul); // добавляет z-index, чтобы результаты поиска показывались поверх остальных элементов на странице 
   }
 
   function addZindex(event, elem) {
