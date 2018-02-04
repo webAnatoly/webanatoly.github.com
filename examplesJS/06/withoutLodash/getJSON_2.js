@@ -61,7 +61,7 @@ function ResponsiveSearch (options) {
       let cityNames = results[i].city.replace(reg, `<span class="highlight">${target.value}</span>`);
       html += `<li>
                 <span class="name"> ${cityNames}, ${results[i].state} </span>
-                <span class="population"> ${results[i].population} </span>
+                <span class="population"> ${numberWithCommas(results[i].population)} </span>
               </li>`;
     }
     ul.innerHTML = html;
@@ -83,7 +83,8 @@ function ResponsiveSearch (options) {
     target.innerHTML = cutDownLists();
   }
 
-  function cutDownLists () { // проверяет значения для тегов <li> введенные при инициализации. Если значение не было введено, то возвращает пустую строку.
+  // проверяет значения для тегов <li> введенные при инициализации. Если значение не было введено, то возвращает пустую строку.
+  function cutDownLists () { 
     if (options.filterName && options.filterDescription) {
       return `<li>${options.filterName}</li><li>${options.filterDescription}</li>`;
     } else if (options.filterName) {
@@ -93,11 +94,18 @@ function ResponsiveSearch (options) {
     } else {
       return '';
     }
-    
   }
+
+  // получает номер в виде строки, возвращает номер с разделителями
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',' );
+  }
+
+  this.getNumber = numberWithCommas;
 
   input.addEventListener('keyup', showResults);
   input.addEventListener('blur', removeZindex);
   input.addEventListener('focus', addZindex);
   input.addEventListener('focus', showResults);
 }
+
