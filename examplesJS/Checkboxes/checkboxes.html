@@ -51,6 +51,14 @@
       font-weight: 200;
       border-left: 1px solid #D1E2FF;
     }
+    .text {
+      margin-top: 50px;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    kbd {
+      font-size: 1.3rem;
+    }
 
     .container {
       margin: 50px auto;
@@ -143,6 +151,7 @@
    The following is a common layout you would see in an email client.
    When a user clicks a checkbox, holds Shift, and then clicks another checkbox a few rows down, all the checkboxes inbetween those two checkboxes should be checked.
   -->
+  <p class="text"><kbd>Shift + click</kbd> для выбора нескольких чекбоксов</p>
   <div class="container">
     <div class="buttons__panel">
       <button onclick="inbox.removeRows()">Delete</button>
