@@ -111,7 +111,7 @@ function Inbox (options) {
     let hint = p.nextElementSibling;
     hint.classList.add('show');
     hint.classList.remove('hide');
-    let idTimeout = setTimeout( () => hideHint(hint), 5000);
+    let idTimeout = setTimeout( () => hideHint(hint), 3000);
     p.addEventListener('mouseleave', (e) => hideHint(hint, idTimeout));
   }
 
