@@ -133,6 +133,17 @@
   console.log( "reg15", reg15.test('01:32:54:67:89:ZZ') ) // false (ZZ в конце)
   console.log( "reg15", reg15.test('01:32:54:67:89:AB:89') ) // false (больше 6 чисел)
 
+  let reg16 = /\B(?=(\d{3})+(?!\d))/g; // регулярное выражение для поиска границ между цифрами в числовых строках, чтобы с помощью функции replace вставлять разделители
+  function insertSeparator(number) {
+    return number.toString().replace(reg16, ',');
+  }
+  console.log("insertSeparator", insertSeparator(1234));
+  console.log("insertSeparator", insertSeparator(12345));
+  console.log("insertSeparator", insertSeparator(123456));
+  console.log("insertSeparator", insertSeparator(1234567));
+  console.log("insertSeparator", insertSeparator(12345678));
+  console.log("insertSeparator", insertSeparator(123456789));
+  console.log("insertSeparator", insertSeparator(1234567891));
   
   </script>
 </body>
