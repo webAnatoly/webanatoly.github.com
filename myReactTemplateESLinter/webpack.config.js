@@ -1,11 +1,11 @@
 const path = require('path');
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: ['babel-polyfill', './src/index.js'],
   output: {
     filename: 'browser-bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
@@ -13,33 +13,34 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: 'babel-loader',
+        },
       },
-      { 
-        test: /\.css$/, 
+      {
+        test: /\.css$/,
         use: [
           {
-            loader: "style-loader"
+            loader: 'style-loader',
           },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               modules: true,
               importLoaders: 1,
-              localIdentName: "[name]_[local]_[hash:base64:5]",
+              localIdentName: '[name]_[local]_[hash:base64:5]',
               sourceMap: false,
-              minimize: true
-            }
-          }
-        ]
-      }
-    ]
+              minimize: true,
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
-      filename: "./index.html"
-    })
-  ]
+      template: './src/index.html',
+      filename: './index.html',
+    }),
+  ],
 };
+
