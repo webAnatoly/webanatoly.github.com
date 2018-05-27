@@ -190,6 +190,10 @@ kbd {
   color: #fff;
 }
 
+.labelSmall {
+  font-size: 1.2rem;
+}
+
 
 #contacts {
   min-height: 400px;
