@@ -1,12 +1,100 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-</head>
-<body>
-	<div id="root">Your app should be here</div>
-<script type="text/javascript" src="browser-bundle.js"></script></body>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+    <header>
+      <nav class="menu col-7">
+        <ul>
+          <li><a href="index.html"><img src="img/home2.png" alt="home"></a></li>
+          <li><a href="#portfolio">Примеры работ</a></li>
+          <li><a href="#skills">Навыки</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section>
+      <div class="row col-7">
+        <p>Привет, меня зовут Анатолий,</p>
+        <div class="flex">
+          <div class="photo">
+            <img class="round" src="img/small_avatar.png" alt="picture">
+            <img class="round hidden" src="img/avatar.png">
+            <span class="bigPhoto__close">&#215;</span>
+          </div>
+          <div class="title">
+            <h3>Мой профиль это</h3>
+            <h1>HTML, CSS и JavaScript</h1>
+          </div>
+        </div>
+        <p>
+          Я специализируюсь на качественной HTML/CSS верстке с учетом современных стандартов и активно развиваюсь в качестве front-end разработчика. 
+        </p>
+      </div>
+      <hr class="line col-7">
+      <div id="skills" class="row col-7">
+        <h2>Мои знания и навыки</h2>
+        <ul>
+          <li><kbd>HTML/HTML5</kbd> - хорошо;</li> 
+          <li><kbd>CSS/CSS3</kbd> - хорошо;</li>
+          <li><kbd>BEM</kbd> - общее понимание; </li>
+          <li><kbd>JavaScript и ES6</kbd> - хороший базовый уровень;</li> 
+          <li><kbd>React</kbd> - знаком с этой библиотекой;</li> 
+          <li><kbd>Webpack</kbd> - умею собирать проект <span class="skills_text">(подключить необходимые loadеr'ы и плагины, настроить в конфигурационном файле всё что необходимо, умею пользоваться документацией)</span> </li>
+          <li><kbd>Git</kbd> - базовый уровень; </li>
+          <li><kbd>Английский</kbd> - <span class="skills_text">Понимание речи, чтение со словарем, умение выражать свои мысли в слух и письменно</span> </li>
+        </ul>
+      </div>
+      <hr class="line col-7">
+      <div id="portfolio" class="row col-7">
+        <h2>Примеры моих работ</h2>
+        <div class="paddigLeft--m">
+          <h4>Верстка:</h4>
+          <ul class="portfolio__ul">
+            <li>
+              <a href="examplesHTML/template_2/template_2.html" target="_blank">Пример №1</a>
+            </li>
+            <li>
+              <a href="examplesHTML/warface/index.html" target="_blank">Пример №2</a>
+            </li>
+            <li>
+              <a href="examplesJS/webpack_project/public/index.html" target="_blank">Пример №3 Адаптивная верстка</a>
+            </li>
+            <li>
+              <a href="examplesHTML/pest911_webpack/public/index.html">Пример №4 Адаптивная верстка. Слайдер. Карусель.</a>
+            </li>
+          </ul>
+          <h4>JavaScript:</h4>
+          <ul class="portfolio__ul">
+            <li><a href="examplesJS/burgerBuilder/burgerBuilder.html">Заказ будербродов</a> <kbd class="labelSmall">React</kbd></li>
+            <li><a href="examplesJS/route-editor/index.html">Редактор маршрутов</a> <kbd class="labelSmall">React</kbd> <kbd class="labelSmall">Yandex.Maps</kbd></li>
+            <li><a href="examplesJS/Checkboxes/checkboxes.html">Чекбоксы</a></li>
+            <li><a href="examplesJS/Clock/clock.html" target="_blank">Круглые часы</a></li>
+            <li><a href="examplesJS/Drums/drum.html" target="_blank">Drumm-машинка</a></li>
+            <li><a href="examplesJS/06/withoutLodash/getJSON_2.html">Виджет(компонент) с живым поиском по JSON файлу</a></li>
+          </ul>
+        </div><!--paddingLeft-->
+      </div>
+      <hr class="line col-7">
+      <div id="contacts" class="row col-7 .paddingTopLarge">
+        <h2>Контакты</h2>
+        <p class="marginLeft--small"><a href="https://t.me/AnatolyUser">Telegram</a></p>
+      </div>
+    </section>
+    <section class="beforeFooter">
+      <!-- don't remove footer. It's need for future needs -->
+    </section>
+    <footer class="footer">2018</footer>
+    <script src="js/main.js"></script>
+  </body>
 </html>
