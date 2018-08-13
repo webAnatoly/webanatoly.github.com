@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="16px" viewBox="0 0 10 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>5194065E-B75F-4D63-912D-31E06E37693F</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Test-Task" transform="translate(-915.000000, -2132.000000)">
+            <rect fill="none" x="0" y="0" width="1600" height="2220"></rect>
+            <g id="footer" transform="translate(0.000000, 2005.000000)" fill="#3D4252" fill-rule="nonzero">
+                <g id="items" transform="translate(102.000000, 63.000000)">
+                    <g id="3" transform="translate(635.000000, 34.000000)">
+                        <g id="input_email" transform="translate(0.000000, 20.000000)">
+                            <g id="btn_send" transform="translate(164.000000, 0.000000)">
+                                <path d="M23.6160585,17.1503024 L16.3285346,10.4057052 C16.0548299,10.1523918 15.670989,10 15.3422162,10 C15.0134434,10 14.6846707,10.1523918 14.410966,10.4057052 C13.8630113,10.9128368 13.8630113,11.6228209 14.410966,12.1299525 L20.7672396,18.0126783 L14.410966,23.8954041 C13.8630113,24.4025357 13.8630113,25.1125198 14.410966,25.6196513 C14.9589206,26.1267829 15.7811252,26.1267829 16.3285346,25.6196513 L23.6160585,18.8750542 C23.8656389,18.6480173 24.0042781,18.3365364 23.9998993,18.0126783 C23.9998993,17.6574339 23.8903084,17.4041204 23.6160585,17.1503024 Z" id="icon_arrow-right"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
