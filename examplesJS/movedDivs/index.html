@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="moveDiv.js"></script>
+
+  <title>Хаотичное движение</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <div class="container__item container__item-1"></div>
+      <div class="container__item container__item-2"></div>
+    </div>
+    <nav class="navigation">
+      <button class="btn navigation__btn_start" id="startButton">Start</button>
+      <button class="btn navigation__btn_stop" id="stopButton">Stop</button>
+    </nav>
+  </div>
+  <script>
+    window.addEventListener("load", moveDiv);
+  </script>
+</body>
+</html>
