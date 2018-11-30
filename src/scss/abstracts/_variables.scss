@@ -1,0 +1,18 @@
+
+
+// GRID
+/* Breakpoints
+  0 - 600px:      Phone
+  600 - 900px:    Tablet portrait
+  900 - 1200px:   Tablet landscape
+  [1200 - 1800]   is where our normal styles apply
+  1800px + :      Bid desktop
+*/
+$phone: 37.5em; // 600px / 16px = 37.5em
+$tab-port: 56.25em; // 900px / 16 = 56.25em
+$tab-land: 75em;  // 1200px / 16 = 75em;
+$big-desktop: 112.5em; // 1800px / 16 = 112.5
+
+$gutter-vertical: 4rem;
+$gutter-vertical-small: 2rem;
+$gutter-horizontal: 2rem;

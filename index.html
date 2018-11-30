@@ -22,38 +22,52 @@
         </ul>
       </nav>
     </header>
-    <section>
-      <div class="row col-7">
-        <p>Привет, меня зовут Анатолий,</p>
-        <div class="flex">
-          <div class="photo">
-            <img class="round" src="dist/img/small_avatar.png" alt="picture">
-            <img class="round hidden" src="dist/img/avatar.png">
-            <span class="bigPhoto__close">&#215;</span>
-          </div>
-          <div class="title">
-            <h3>Мой профиль это</h3>
-            <h1>HTML, CSS и JavaScript</h1>
-          </div>
+    <section class="about">
+      <p>Меня зовут Анатолий</p>
+      <div class="flex">
+        <div class="photo">
+          <img class="round" src="dist/img/small_avatar.png" alt="picture">
+          <img class="round hidden" src="dist/img/avatar.png">
+          <span class="bigPhoto__close">&#215;</span>
         </div>
-        <p>
-          Я специализируюсь на качественной HTML/CSS верстке с учетом современных стандартов и активно развиваюсь в качестве front-end разработчика. 
-        </p>
+        <div class="title">
+          <h3>Мой профиль это</h3>
+          <h1>HTML, CSS и JavaScript</h1>
+        </div>
       </div>
+      <p>
+        Я специализируюсь на качественной HTML/CSS верстке с учетом современных стандартов и активно развиваюсь в качестве
+        front-end разработчика.
+      </p>
+    </section>
+    <section class="old">
+    </section><!--old-->
+    <section class="beforeFooter">
+      <!-- don't remove footer. It's need for future needs -->
+    </section>
+    <footer class="footer">2018</footer>
+    <section class="education">
+      education
+    </section>
+    <section class="skills">
       <hr class="line col-7">
       <div id="skills" class="row col-7">
         <h2>Мои знания и навыки</h2>
         <ul>
-          <li><kbd>HTML/HTML5</kbd> - хорошо;</li> 
+          <li><kbd>HTML/HTML5</kbd> - хорошо;</li>
           <li><kbd>CSS/CSS3</kbd> - хорошо;</li>
           <li><kbd>BEM</kbd> - общее понимание; </li>
-          <li><kbd>JavaScript и ES6</kbd> - хороший базовый уровень;</li> 
-          <li><kbd>React</kbd> - знаком с этой библиотекой;</li> 
-          <li><kbd>Webpack</kbd> - умею собирать проект <span class="skills_text">(подключить необходимые loadеr'ы и плагины, настроить в конфигурационном файле всё что необходимо, умею пользоваться документацией)</span> </li>
+          <li><kbd>JavaScript и ES6</kbd> - хороший базовый уровень;</li>
+          <li><kbd>React</kbd> - знаком с этой библиотекой;</li>
+          <li><kbd>Webpack</kbd> - умею собирать проект <span class="skills_text">(подключить необходимые loadеr'ы и плагины,
+              настроить в конфигурационном файле всё что необходимо, умею пользоваться документацией)</span> </li>
           <li><kbd>Git</kbd> - базовый уровень; </li>
-          <li><kbd>Английский</kbd> - <span class="skills_text">Понимание речи, чтение со словарем, умение выражать свои мысли в слух и письменно</span> </li>
+          <li><kbd>Английский</kbd> - <span class="skills_text">Понимание речи, чтение со словарем, умение выражать свои
+              мысли в слух и письменно</span> </li>
         </ul>
       </div>
+    </section>
+    <section class="portfolio">
       <hr class="line col-7">
       <div id="portfolio" class="row col-7">
         <h2>Примеры моих работ</h2>
@@ -70,37 +84,62 @@
               <a href="examplesJS/webpack_project/public/index.html" target="_blank">Пример №3 Адаптивная верстка</a>
             </li>
             <li>
-              <a href="examplesHTML/pest911_webpack/public/index.html" target="_blank">Пример №4 Адаптивная верстка. Слайдер. Карусель.</a>
+              <a href="examplesHTML/pest911_webpack/public/index.html" target="_blank">Пример №4 Адаптивная верстка. Слайдер.
+                Карусель.</a>
             </li>
             <li>
-              <a href="examplesHTML/example5/example5.html" target="_blank">Пример №5 Адаптивная верстка с использованием БЭМ-методологии</a>
+              <a href="examplesHTML/example5/example5.html" target="_blank">Пример №5 Адаптивная верстка с использованием
+                БЭМ-методологии</a>
             </li>
-            <li><a href="examplesHTML/Natours/index.html">Адаптивная верстка с использованием SASS, БЭМ, автопрефексера, таскраннера gulp и т.д.</a></li>
+            <li><a href="examplesHTML/Natours/index.html">Адаптивная верстка с использованием SASS, БЭМ, автопрефексера,
+                таскраннера gulp и т.д.</a></li>
             <li><a href="examplesHTML/Trillo/index.html">Адаптивная верстка c активным использованием flex-box</a></li>
-            <li><a href="examplesHTML/header/index.html">Фрагмент адаптивной, кроссбраузерной верстки header'a (картинка с крабом просто для красоты)</a></li>
+            <li><a href="examplesHTML/header/index.html">Фрагмент адаптивной, кроссбраузерной верстки header'a (картинка с
+                крабом просто для красоты)</a></li>
           </ul>
           <h4>JavaScript:</h4>
           <ul class="portfolio__ul">
             <li><a href="examplesJS/Notebook/dist/index.html" target="_blank">Блокнот</a><kbd class="labelSmall">React</kbd></li>
             <li><a href="https://react-burger-builder-45a84.firebaseapp.com" target="_blank">Заказ будербродов</a> <kbd class="labelSmall">React</kbd></li>
-            <li><a href="examplesJS/route-editor/index.html" target="_blank">Редактор маршрутов</a> <kbd class="labelSmall">React</kbd> <kbd class="labelSmall">Yandex.Maps</kbd></li>
+            <li><a href="examplesJS/route-editor/index.html" target="_blank">Редактор маршрутов</a> <kbd class="labelSmall">React</kbd>
+              <kbd class="labelSmall">Yandex.Maps</kbd></li>
             <li><a href="examplesJS/Checkboxes/checkboxes.html">Чекбоксы</a></li>
             <li><a href="examplesJS/Clock/clock.html" target="_blank">Круглые часы</a></li>
             <li><a href="examplesJS/Drums/drum.html" target="_blank">Drumm-машинка</a></li>
-            <li><a href="examplesJS/06/withoutLodash/getJSON_2.html" target="_blank">Виджет(компонент) с живым поиском по JSON файлу</a></li>
+            <li><a href="examplesJS/06/withoutLodash/getJSON_2.html" target="_blank">Виджет(компонент) с живым поиском по
+                JSON файлу</a></li>
           </ul>
-        </div><!--paddingLeft-->
+        </div>
+        <!--paddingLeft-->
       </div>
+    </section>
+    <section class="contacts">
       <hr class="line col-7">
       <div id="contacts" class="row col-7 .paddingTopLarge">
         <h2>Контакты</h2>
         <p class="marginLeft--small"><a href="https://t.me/AnatolyUser">Telegram</a></p>
       </div>
     </section>
-    <section class="beforeFooter">
-      <!-- don't remove footer. It's need for future needs -->
+    <section>
+      <div class="row">
+        <div class="col-6"></div>
+        <div class="col-6"></div>
+      </div>
+      <div class="row">
+        <div class="col-2"></div>
+        <div class="col-4"></div>
+        <div class="col-6"></div>
+      </div>
+      <div class="row">
+        <div class="col-2"></div>
+        <div class="col-1"></div>
+        <div class="col-1"></div>
+        <div class="col-5"></div>
+        <div class="col-1"></div>
+        <div class="col-1"></div>
+        <div class="col-1"></div>
+      </div>
     </section>
-    <footer class="footer">2018</footer>
     <script src="dist/js/main.js"></script>
   </body>
 </html>
