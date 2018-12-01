@@ -13,3 +13,16 @@ html {
 body {
   padding: 0;
 }
+
+.container {
+  display: block;
+  width: 100%;
+  max-width: 180rem;
+  margin: 0 auto;
+  border: 2px dashed green;
+}
+
+
+.hidden {
+  display: none;
+}

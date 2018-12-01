@@ -1,0 +1,60 @@
+/* Nav Horizontal Panel */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  height: 5rem;
+  background-color: $grey-light;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+
+
+  & ul {
+    display: block;
+    list-style: none;
+    margin: 0 auto;
+    padding: .5rem;
+    width: 100%;
+    max-width: 180rem;
+    height: 100%;
+    text-align: center; // на всякий случай
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+  }
+
+  & li {
+    display: inline-block;
+    margin: 0 1rem 0 0;
+    padding: 0;
+    line-height: 3.4rem;
+    height: 3.4rem;
+
+    &::before {
+      content: "\200B"; // for Safary bug. See more https://developer.mozilla.org/en-US/docs/Web/CSS/list-style#Accessibility_concerns
+    }
+  }
+
+  & a {
+    font-size: 1.6rem;
+    color: grey;
+    margin: 0;
+    padding: .5rem 1rem;
+    border-radius: 3px;
+    transition: .1s all;
+
+
+    &:hover {
+      color: $grey-darken;
+    }
+  }
+
+  & img {
+    margin: 0;
+    border: 1px solid red;
+  }
+}
