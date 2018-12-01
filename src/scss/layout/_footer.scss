@@ -1,0 +1,12 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 9rem;
+  width: 100%;
+  background-color: $grey-light;
+
+  &__p {
+    color: $grey-darken;
+  }
+}

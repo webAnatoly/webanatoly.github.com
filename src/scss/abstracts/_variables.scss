@@ -1,3 +1,13 @@
+// COLORS
+$grey-lightest:      #ffffff;
+$grey-light:         #eceaea;
+$grey-light-medium:  #cccccc;
+$grey:               #808080;
+$grey-dark:          #666666;
+$grey-dark-medium:   #585858;
+$grey-darken:        #333333;
+$grey-darkest:       #000000;
+
 
 
 // GRID
@@ -15,4 +25,8 @@ $big-desktop: 112.5em; // 1800px / 16 = 112.5
 
 $gutter-vertical: 4rem;
 $gutter-vertical-small: 2rem;
-$gutter-horizontal: 2rem;
+$gutter-vertical-none: 0;
+
+$gutter-horizontal: 4rem;
+$gutter-horizontal-small: 2rem;
+$gutter-horizontal-none: 0;

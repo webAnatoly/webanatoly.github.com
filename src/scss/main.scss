@@ -1,4 +1,4 @@
-@import 'base/normalize';
+@import 'vendors/normalize';
 
 @import 'abstracts/mixins';
 @import 'abstracts/variables';
@@ -7,11 +7,12 @@
 @import 'base/base';
 
 @import 'layout/grid';
-// @import 'layout/header';
-// @import 'layout/footer';
+@import 'layout/header';
+@import 'layout/footer';
 // @import 'layout/navigation';
 
 @import 'components/button';
+@import 'components/nav';
 // @import 'components/composition';
 // @import 'components/feature-box';
 // @import 'components/card';

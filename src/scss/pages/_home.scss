@@ -1,77 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Playfair+Display+SC'); // во время загрузки страницы, пока подгружаются шрифты, показываются системные шрифты, надо решить как-то эту проблему, погуглить хотябы
 
 
-
-ul {
-  list-style: none;
-}
-
-
-.container {
-  display: block;
-  margin: 0;
-}
-
-.hidden {
-  display: none;
-}
-
-/* Browser Upgrade Prompt */
-.browserupgrade {
-    margin: .2rem 0;
-    background: #ccc;
-    color: #000;
-    padding: .2rem 0;
-}
-
-
-/* Nav Panel */
-header {
-  position: fixed;
-  height: 34px;
-  width: 100%;
-  background-color: #f4f4f4; 
-  padding: 0;
-  margin: 0;
-  opacity: 1;
-  z-index: 1;
-}
-
-.menu {
-  margin: 0 auto;
-  padding: 0;
-}
-
-.menu ul {
-  display: block;
-  margin:0;
-  padding: 0;
-}
-
-.menu li {
-  display: inline-block;
-  float: left;
-  margin: 0 60px 0 0;
-  padding: 0;
-  line-height: 34px;
-  height: 34px;
-}
-
-.menu a {
-  font-size: 1.4rem;
-  color: grey;
-  margin: 0;
-  padding: 0;
-}
-
-.menu li a:hover {
-  color: black;
-}
-
-.menu img {
-  margin: 0;
-}
-
 /* Text container */
 .round {
   border-radius: 50%;
@@ -99,7 +28,7 @@ header {
   position: relative;
   top: -365px;
   left: 365px;
-  color: #666666;
+  color: $grey-dark-medium;
   font-size: 4rem;
   font-weight: bold;
   cursor: pointer;
@@ -128,11 +57,11 @@ header {
 }
 
 kbd {
-  border: 1px solid black;
+  border: 1px solid $grey-darkest;
   border-radius: 3px;
   padding: 1px 5px;
-  background-color: #000;
-  color: #fff;
+  background-color: $grey-darkest;
+  color: $grey-lightest;
 }
 
 .labelSmall {
@@ -154,23 +83,6 @@ kbd {
 
 .marginLeft--small {
   margin-left: 20px;
-}
-
-.beforeFooter {
-  min-height: 250px;
-}
-
-.footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 84px;
-  width: 100%;
-  background-color: #f4f4f4; 
-}
-
-.footerSpan {
-  display: block;
 }
 
 @media (max-width: 768px) {
