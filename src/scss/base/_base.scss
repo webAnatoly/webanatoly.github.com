@@ -61,11 +61,8 @@ kbd {
 ul {
   display: block;
   margin: 0 auto 2rem;
-  width: 80rem;
+  min-width: 40rem;
 
-  @media only screen and (max-width: $tab-port) {
-    width: 60rem;
-  }
   @media only screen and (max-width: $phone) {
     width: 100%;
   }
