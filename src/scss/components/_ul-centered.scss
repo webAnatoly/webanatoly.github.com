@@ -1,0 +1,18 @@
+.ul-centered {
+  display: block;
+  margin: 0 auto 2rem;
+  width: 80rem;
+
+  @media only screen and (max-width: $tab-port) {
+    width: 40rem;
+  }
+  @media only screen and (max-width: $phone) {
+    width: 100%;
+  }
+
+  & li {
+    margin-bottom: 2rem;
+    list-style: none;
+    line-height: 1.5;
+  }
+}

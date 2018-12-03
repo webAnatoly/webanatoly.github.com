@@ -61,10 +61,10 @@ kbd {
 ul {
   display: block;
   margin: 0 auto 2rem;
-  min-width: 40rem;
+  min-width: 30rem;
 
   @media only screen and (max-width: $phone) {
-    width: 100%;
+    min-width: 100%;
   }
 
 
