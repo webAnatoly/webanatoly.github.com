@@ -1,0 +1,5 @@
+.skills {
+  @include screen-min-height-with-large-padding-top;
+
+  &__h4 { text-align: center; }
+}

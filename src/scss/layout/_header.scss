@@ -1,6 +1,12 @@
-header {
-  height: 19.4rem;
+.header {
+  position: fixed;
   width: 100%;
-  padding: 0;
-  margin: 0;
+  background-color: $grey-light;
+  min-height: 6rem;
+  z-index: 999;
+
+  @media only screen and (max-width: $phone) {
+    position: relative;
+    z-index: 1;
+  }
 }

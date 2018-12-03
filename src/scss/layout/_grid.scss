@@ -1,7 +1,7 @@
 .row {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 
   margin: 0 auto;
   padding: 0;
@@ -38,9 +38,8 @@ div[class^="col-"]:not(:last-child) {
   min-height: inherit;
   padding: 0;
   margin: 0;
-  background-color: lightblue;
   min-height: 100px;
-  border: 1px solid red;
+  // border: 1px solid red;
 
   @media only screen and (max-width:$phone) {
     width: 100%;

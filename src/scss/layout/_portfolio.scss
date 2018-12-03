@@ -1,0 +1,11 @@
+.portfolio {
+  @include screen-min-height-with-large-padding-top;
+
+  &__h3 {
+    text-align: center;
+  }
+
+  &__h4 {
+    text-align: center;
+  }
+}

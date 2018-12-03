@@ -1,0 +1,9 @@
+@mixin screen-min-height-with-large-padding-top {
+  min-height: 60vh;
+  padding: 15rem 1rem 1rem;
+  box-shadow: 0 1px 11px rgba(0,0,0,0.1);
+
+  @media only screen and (max-width: $phone) {
+    padding: 5rem 1rem 1rem;
+  }
+}

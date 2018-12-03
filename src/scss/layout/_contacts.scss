@@ -1,0 +1,32 @@
+.contacts {
+  min-height: 90vh;
+  padding-top: 10rem;
+
+  & svg {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  &__h3 {
+    text-align: center;
+  }
+
+  &__p {
+    text-align: center;
+  }
+
+  &__icon-holder {
+    display: block;
+    padding: 5px;
+    text-align: center;
+    margin: auto;
+  }
+
+  & .icon-telegram {
+    fill: $color-link;
+
+    &:hover {
+      fill: $color-link-hover;
+    }
+  }
+}

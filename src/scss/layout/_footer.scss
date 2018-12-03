@@ -2,11 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 9rem;
+  min-height: 4.5rem;
   width: 100%;
+  padding: $indent-normal;
   background-color: $grey-light;
 
   &__p {
     color: $grey-darken;
+    text-align: center;
+    margin: auto;
   }
 }

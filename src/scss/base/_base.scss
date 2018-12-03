@@ -8,10 +8,20 @@
 
 html {
   box-sizing: border-box;
+  font-size: 62.5%; // This defines what 1rem is 10px (62.5% from 16px = 10px)
 }
 
 body {
-  padding: 0;
+  // футер к полу (для пустых страниц)
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+svg {
+  width: 1.6rem;
+  height: 1.6rem;
 }
 
 .container {
@@ -19,14 +29,51 @@ body {
   width: 100%;
   max-width: 180rem;
   margin: 0 auto;
-  border: 2px dashed green;
+  // border: 1px solid red;
 }
 
 .hidden {
   display: none;
 }
 
-// svg[class*="icon"] {
-//   width: 3.2rem;
-//   height: 3.2rem;
-// }
+.round {
+  border-radius: 50%;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+kbd {
+  border: 1px solid $grey;
+  border-radius: 3px;
+  padding: .2rem .5rem;
+  background-color: $grey;
+  color: $grey-lightest;
+
+  &.kbd-small {
+    font-size: 70%;
+  }
+}
+
+ul {
+  display: block;
+  margin: 0 auto 2rem;
+  width: 80rem;
+
+  @media only screen and (max-width: $tab-port) {
+    width: 60rem;
+  }
+  @media only screen and (max-width: $phone) {
+    width: 100%;
+  }
+
+
+  & li {
+    margin-bottom: 2rem;
+    list-style: none;
+    line-height: 1.5;
+  }
+}

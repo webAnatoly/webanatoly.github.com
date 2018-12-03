@@ -1,0 +1,92 @@
+.about {
+  @include screen-min-height-with-large-padding-top;
+  background-color: white;
+
+  @media only screen and (max-width: $tab-port) {
+    margin-top: 6rem;
+  }
+  @media only screen and (max-width: $phone) {
+    margin-top: 0;
+  }
+
+  & svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &__content {
+    // padding: $indent-normal;
+    padding: 0;
+
+    @media only screen and (max-width: $phone) {
+      text-align: center;
+    }
+  }
+
+  &__h4 {
+    margin-top: 5rem;
+  }
+
+  &__ul {
+    list-style: none;
+    margin-bottom: 3rem;
+
+    @media only screen and (max-width: $phone) {
+      display: block;
+      margin: 3rem auto;
+    }
+
+    & li {
+      margin-bottom: $indent-normal;
+      font-style: italic;
+
+      &:before {
+        content: "✓ ";
+      }
+    }
+  }
+
+  &__slogan {
+    font-size: 1.7rem;
+  }
+
+  &__icon-holder {
+    display: inline-block;
+    padding: 5px;
+    text-align: center;
+  }
+
+  &__col-4 {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__picture {
+    display: block;
+    width: 25vw;
+    height: 25vw;
+    max-width: 30rem;
+    max-height: 30rem;
+    overflow: hidden;
+    margin: 0 3rem 0 0;
+    opacity: .7;
+    transition: all .2s;
+
+    @media only screen and (max-width: $phone) {
+      display: block;
+      margin: auto auto 3rem auto;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    & img {
+      display: block;
+      width: inherit;
+      height: inherit;
+      max-width: inherit;
+      max-height: inherit;
+    }
+  }
+}

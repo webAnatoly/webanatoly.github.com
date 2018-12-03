@@ -6,6 +6,8 @@
     <title>Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&amp;subset=cyrillic" rel="stylesheet">
+
     <link rel="stylesheet" href="dist/css/main.css">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -17,67 +19,118 @@
     <meta name="theme-color" content="#ffffff">
   </head>
   <body>
-    <nav class="nav">
-      <ul>
-        <li>
-          <a href="index.html">
-            <svg class="icon nav__icon-home">
-              <use xlink:href="./dist/img/sprite.svg#icon-home"></use>
-            </svg>
-          </a>
-        </li>
-        <li><a href="#portfolio">Примеры работ</a></li>
-        <li><a href="#skills">Навыки</a></li>
-        <li><a href="#contacts">Контакты</a></li>
-      </ul>
-    </nav>
-    <header class="container">
-    </header>
-    <section class="about">
-      <p>Меня зовут Анатолий</p>
-      <div class="flex">
-        <div class="photo">
-          <img class="round" src="dist/img/small_avatar.png" alt="picture">
-          <img class="round hidden" src="dist/img/avatar.png">
-          <span class="bigPhoto__close">&#215;</span>
-        </div>
-        <div class="title">
-          <h3>Мой профиль это</h3>
-          <h1>HTML, CSS и JavaScript</h1>
-        </div>
-      </div>
-      <p>
-        Я специализируюсь на качественной HTML/CSS верстке с учетом современных стандартов и активно развиваюсь в качестве
-        front-end разработчика.
-      </p>
-    </section>
-    <section class="education">
-      education
-    </section>
-    <section class="skills">
-      <hr class="line col-7">
-      <div id="skills" class="row col-7">
-        <h2>Мои знания и навыки</h2>
+    <header class="header">
+      <nav class="nav">
         <ul>
-          <li><kbd>HTML/HTML5</kbd> - хорошо;</li>
-          <li><kbd>CSS/CSS3</kbd> - хорошо;</li>
-          <li><kbd>BEM</kbd> - общее понимание; </li>
-          <li><kbd>JavaScript и ES6</kbd> - хороший базовый уровень;</li>
-          <li><kbd>React</kbd> - знаком с этой библиотекой;</li>
-          <li><kbd>Webpack</kbd> - умею собирать проект <span class="skills_text">(подключить необходимые loadеr'ы и плагины,
-              настроить в конфигурационном файле всё что необходимо, умею пользоваться документацией)</span> </li>
-          <li><kbd>Git</kbd> - базовый уровень; </li>
-          <li><kbd>Английский</kbd> - <span class="skills_text">Понимание речи, чтение со словарем, умение выражать свои
-              мысли в слух и письменно</span> </li>
+          <li>
+            <a href="#about">
+              <svg class="icon nav__icon-home">
+                <use xlink:href="./dist/img/sprite.svg#icon-home"></use>
+              </svg>
+            </a>
+          </li>
+          <li><a href="#education">Образование</a></li>
+          <li><a href="#skills">Навыки</a></li>
+          <li><a href="#portfolio">Портфолио</a></li>
+          <li><a href="#contacts">Контакты</a></li>
         </ul>
+      </nav>
+    </header>
+    <section id="about" class="container about">
+      <div class="row">
+        <div class="col-4 about__col-4">
+          <picture class="about__picture">
+            <img class="round" src="dist/img/avatar.png" alt="picture">
+            <!-- <img class="round hidden" src="dist/img/avatar.png">
+            <span class="about__photo__close">&#215;</span> -->
+          </picture>
+        </div>
+        <div class="col-8">
+          <div class="about__content">
+            <h3>Анатолий Демьянов</h3>
+            <ul class="about__ul">
+              <li>Верстка лендингов</li>
+              <li>Верстка сайтов-визиток</li>
+              <li>Фронтенд разработка</li>
+            </ul>
+            <p>
+              <span class="about__slogan">
+                Кроссбраузерная адаптивная верстка с учетом современных стандартов для десктопных и мобильных браузеров.
+              </span>
+            </p>
+            <h4 class="about__h3">Целевые браузеры</h4>
+                <div class="about__icon-holder">
+                  <svg class="icon">
+                    <use xlink:href="./dist/img/sprite.svg#icon-chrome"></use>
+                  </svg>
+                  <p>Chrome, </p>
+                </div>
+                <div class="about__icon-holder">
+                  <svg class="icon">
+                    <use xlink:href="./dist/img/sprite.svg#icon-firefox"></use>
+                  </svg>
+                  <p>Firefox, </p>
+                </div>
+                <div class="about__icon-holder">
+                  <svg class="icon">
+                    <use xlink:href="./dist/img/sprite.svg#icon-opera"></use>
+                  </svg>
+                  <p>Opera, </p>
+                </div>
+                <div class="about__icon-holder">
+                  <svg class="icon">
+                    <use xlink:href="./dist/img/sprite.svg#icon-IE"></use>
+                  </svg>
+                  <p>IE11, </p>
+                </div>
+                <div class="about__icon-holder">
+                  <svg class="icon">
+                    <use xlink:href="./dist/img/sprite.svg#icon-IE"></use>
+                  </svg>
+                  <p>Edge, </p>
+                </div>
+                <div class="about__icon-holder">
+                  <svg class="icon">
+                    <use xlink:href="./dist/img/sprite.svg#icon-safari"></use>
+                  </svg>
+                  <p>Safari</p>
+                </div>
+
+          </div><!-- about__content-->
+        </div>
       </div>
     </section>
-    <section class="portfolio">
-      <hr class="line col-7">
-      <div id="portfolio" class="row col-7">
-        <h2>Примеры моих работ</h2>
-        <div class="paddigLeft--m">
-          <h4>Верстка:</h4>
+    <section id="education" class="container education">
+      <h4 class="education__h4">Курсы, которые я закончил</h4>
+      <ul class="education__ul">
+        <li>Курс по HTML, CSS на codeacademy.com</li>
+        <li>Курс по продвинутому CSS <em>Advanced CSS and Sass</em> на udemy.com</li>
+        <li>Онлайн учебник по JavaScript Часть 1.:<em>"Язык JavaScript"</em> и Часть 2.: <em>"Документ, события,
+            интерфейсы"</em> на learn.javascript.ru</li>
+      </ul>
+      <h4 class="education__h4">Дополнительно</h4>
+      <ul class="education__ul">
+        <li>Курс по программированию на Python на codeacademy.com</li>
+      </ul>
+    </section>
+    <section id="skills" class="container skills">
+      <h4 class="skills__h4">Мои знания и навыки</h4>
+      <ul>
+        <li><kbd>HTML/HTML5</kbd> - хорошо;</li>
+        <li><kbd>CSS/CSS3</kbd> - хорошо;</li>
+        <li><kbd>BEM</kbd> - базовые концепции; </li>
+        <li><kbd>JavaScript и ES6</kbd> - хороший базовый уровень;</li>
+        <li><kbd>React</kbd> - знаком с этой библиотекой;</li>
+        <li><kbd>Webpack</kbd> - умею собирать проект <span class="skills_text">(подключить необходимые loadеr'ы и плагины,
+            настроить в конфигурационном файле всё что необходимо, умею пользоваться документацией)</span> </li>
+        <li><kbd>Gulp</kbd> - умею запускать таски, подключать необходимые плагины, конфигурировать gulpfile; </li>
+        <li><kbd>Git</kbd> - базовый уровень; </li>
+        <li><kbd>Английский</kbd> - <span class="skills_text">Чтение со словарём, умение выражать мысли письменно, восприятие на слух неторопливой речи.</span> </li>
+      </ul>
+    </section>
+    <section id="portfolio" class="container portfolio">
+        <h4 class="portfolio__h3">Портфолио</h4>
+        <h4 class="portfolio__h4">Верстка:</h4>
           <ul class="portfolio__ul">
             <li>
               <a href="examplesHTML/template_2/template_2.html" target="_blank">Пример №1</a>
@@ -102,30 +155,31 @@
             <li><a href="examplesHTML/header/index.html">Фрагмент адаптивной, кроссбраузерной верстки header'a (картинка с
                 крабом просто для красоты)</a></li>
           </ul>
-          <h4>JavaScript:</h4>
+          <h4 class="portfolio__h4">JavaScript:</h4>
           <ul class="portfolio__ul">
-            <li><a href="examplesJS/Notebook/dist/index.html" target="_blank">Блокнот</a><kbd class="labelSmall">React</kbd></li>
-            <li><a href="https://react-burger-builder-45a84.firebaseapp.com" target="_blank">Заказ будербродов</a> <kbd class="labelSmall">React</kbd></li>
-            <li><a href="examplesJS/route-editor/index.html" target="_blank">Редактор маршрутов</a> <kbd class="labelSmall">React</kbd>
-              <kbd class="labelSmall">Yandex.Maps</kbd></li>
+            <li><a href="examplesJS/Notebook/dist/index.html" target="_blank">Блокнот </a><kbd class="kbd-small">React</kbd></li>
+            <li><a href="https://react-burger-builder-45a84.firebaseapp.com" target="_blank">Заказ будербродов </a><kbd class="kbd-small">React</kbd></li>
+            <li><a href="examplesJS/route-editor/index.html" target="_blank">Редактор маршрутов </a><kbd class="kbd-small">React</kbd>
+              <kbd class="kbd-small">Yandex.Maps</kbd></li>
             <li><a href="examplesJS/Checkboxes/checkboxes.html">Чекбоксы</a></li>
             <li><a href="examplesJS/Clock/clock.html" target="_blank">Круглые часы</a></li>
             <li><a href="examplesJS/Drums/drum.html" target="_blank">Drumm-машинка</a></li>
             <li><a href="examplesJS/06/withoutLodash/getJSON_2.html" target="_blank">Виджет(компонент) с живым поиском по
                 JSON файлу</a></li>
           </ul>
-        </div>
-        <!--paddingLeft-->
+    </section>
+    <section id="contacts" class="container contacts">
+      <h3 class="contacts__h3">Контакты</h3>
+      <div class="contacts__icon-holder">
+        <p class="contacts__p"><a href="https://t.me/AnatolyUser">Telegram</a></p>
+        <a href="https://t.me/AnatolyUser">
+          <svg class="icon icon-telegram">
+            <use xlink:href="./dist/img/sprite.svg#icon-telegram"></use>
+          </svg>
+        </a>
       </div>
     </section>
-    <section class="contacts">
-      <hr class="line col-7">
-      <div id="contacts" class="row col-7 .paddingTopLarge">
-        <h2>Контакты</h2>
-        <p class="marginLeft--small"><a href="https://t.me/AnatolyUser">Telegram</a></p>
-      </div>
-    </section>
-    <footer class="footer"><span class="footer__p">2018</span></footer>
+    <footer class="footer"><span class="footer__p">&copy; 2018</span></footer>
     <script src="dist/js/main.js"></script>
   </body>
 </html>

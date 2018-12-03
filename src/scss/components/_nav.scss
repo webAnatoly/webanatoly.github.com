@@ -1,27 +1,28 @@
 /* Horizontal Navigation Panel */
 .nav {
-  position: fixed;
-  top: 0;
-  left: 0;
   margin: 0 auto;
   padding: 0;
-  width: 100%;
-  min-height: 5rem;
-  background-color: $grey-light;
-  box-shadow: 0 1px 11px rgba(0,0,0,0.2);
+  min-width: 20rem;
+  max-width: 180rem;
+  min-height: 6rem;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media only screen and (max-width: $phone) {
-    position: relative;
+    width: 100%;
   }
 
   & ul {
     list-style: none;
     margin: 0 auto;
     padding: .5rem;
-    width: 100%;
-    max-width: 180rem;
-    height: 100%;       // растянуть по высоте родителя
-    text-align: center; // на всякий случай
+    min-width: inherit;
+    max-width: inherit;
+    min-height: inherit; // растянуть по высоте родителя
+    text-align: center;  // на всякий случай
 
     display: flex;
     justify-content: center;
@@ -38,6 +39,10 @@
     height: 3.4rem;
     min-width: 2rem;
 
+    @media only screen and (max-width: $phone) {
+      margin: 0 .5rem 0 0;
+    }
+
     &::before {
       content: "\200B"; // for Safary bug. See more https://developer.mozilla.org/en-US/docs/Web/CSS/list-style#Accessibility_concerns
     }
@@ -52,13 +57,18 @@
     border-radius: 3px;
     transition: .1s all;
 
+    @media only screen and (max-width: $phone) {
+      font-size: 1.4rem;
+      padding: .2rem .5rem;
+    }
+
     &:hover {
       color: $grey-darken;
     }
   }
 
   &__icon-home {
-    display: inline-block;
+    display: block;
     margin: 0;
     width: 2rem;
     height: 2rem;
@@ -66,6 +76,16 @@
 
     &:hover {
       fill: $grey-darken;
+    }
+  }
+
+  &__photo {
+    height: 100%;
+    
+
+    & img {
+      display: block;
+      height: inherit;
     }
   }
 }
