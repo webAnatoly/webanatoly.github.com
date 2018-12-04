@@ -26,6 +26,7 @@ svg {
 
 .container {
   display: block;
+  position: relative;
   width: 100%;
   max-width: 180rem;
   margin: 0 auto;
@@ -34,6 +35,12 @@ svg {
 
 .hidden {
   display: none;
+}
+
+.invisible {
+  color: transparent;
+  background-color: transparent;
+  opacity: 0;
 }
 
 .round {

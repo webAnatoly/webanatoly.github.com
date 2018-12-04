@@ -19,52 +19,25 @@
     <meta name="theme-color" content="#ffffff">
   </head>
   <body>
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-      (function (d, w, c) {
-        (w[c] = w[c] || []).push(function () {
-          try {
-            w.yaCounter51406987 = new Ya.Metrika2({
-              id: 51406987,
-              clickmap: true,
-              trackLinks: true,
-              accurateTrackBounce: true
-            });
-          } catch (e) { }
-        });
-
-        var n = d.getElementsByTagName("script")[0],
-          s = d.createElement("script"),
-          f = function () { n.parentNode.insertBefore(s, n); };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = "https://mc.yandex.ru/metrika/tag.js";
-
-        if (w.opera == "[object Opera]") {
-          d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
-      })(document, window, "yandex_metrika_callbacks2");
-    </script>
-    <noscript>
-      <div><img src="https://mc.yandex.ru/watch/51406987" style="position:absolute; left:-9999px;" alt="" /></div>
-    </noscript>
-    <!-- /Yandex.Metrika counter -->
     <header class="header">
-      <nav class="nav">
-        <ul>
-          <li>
-            <a href="#about">
-              <svg class="icon nav__icon-home">
-                <use xlink:href="./dist/img/sprite.svg#icon-home"></use>
-              </svg>
-            </a>
-          </li>
-          <li><a href="#education">Образование</a></li>
-          <li><a href="#skills">Навыки</a></li>
-          <li><a href="#portfolio">Портфолио</a></li>
-          <li><a href="#contacts">Контакты</a></li>
-        </ul>
-      </nav>
+      <div class="container">
+        <img class="round header__avatar" src="dist/img/small-avatar.png" alt="small avatar">
+        <nav class="nav">
+          <ul>
+            <li>
+              <a href="#about">
+                <svg class="icon nav__icon-home">
+                  <use xlink:href="./dist/img/sprite.svg#icon-home"></use>
+                </svg>
+              </a>
+            </li>
+            <li><a href="#education">Образование</a></li>
+            <li><a href="#skills">Навыки</a></li>
+            <li><a href="#portfolio">Портфолио</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <section id="about" class="container about">
       <div class="row">
@@ -134,13 +107,14 @@
       <h4 class="education__h4">Курсы, которые я закончил</h4>
       <ul class="education__ul ul-centered">
         <li>Курс по HTML, CSS на codeacademy.com</li>
-        <li>Курс по продвинутому CSS <em>Advanced CSS and Sass</em> на udemy.com</li>
+        <li>Курс по продвинутому CSS <em>Advanced CSS and Sass: Flexbox, Grid, Animations</em> на udemy.com</li>
         <li>Онлайн учебник по JavaScript Часть 1.:<em>"Язык JavaScript"</em> и Часть 2.: <em>"Документ, события,
             интерфейсы"</em> на learn.javascript.ru</li>
       </ul>
       <h4 class="education__h4">Дополнительно</h4>
       <ul class="education__ul ul-centered">
-        <li>Курс по программированию на Python на codeacademy.com</li>
+        <li>Курс по реакту <em>"React 16 - The Complete Guide (incl. React Router 4 & Redux)"</em> на udemy.com</li>
+        <li>Курс по программированию на Python на codeacademy.com (для общего развития)</li>
       </ul>
     </section>
     <section id="skills" class="container skills">
@@ -210,6 +184,36 @@
       </div>
     </section>
     <footer class="footer"><span class="footer__p">&copy; 2018</span></footer>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function (d, w, c) {
+        (w[c] = w[c] || []).push(function () {
+          try {
+            w.yaCounter51406987 = new Ya.Metrika2({
+              id: 51406987,
+              clickmap: true,
+              trackLinks: true,
+              accurateTrackBounce: true
+            });
+          } catch (e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+          s = d.createElement("script"),
+          f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+        if (w.opera == "[object Opera]") {
+          d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+      })(document, window, "yandex_metrika_callbacks2");
+    </script>
+    <noscript>
+      <div><img src="https://mc.yandex.ru/watch/51406987" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
     <script src="dist/js/main.js"></script>
   </body>
 </html>

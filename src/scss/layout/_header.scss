@@ -2,11 +2,27 @@
   position: fixed;
   width: 100%;
   background-color: $grey-light;
-  min-height: 6rem;
+  min-height: 6.4rem;
   z-index: 999;
 
   @media only screen and (max-width: $phone) {
     position: relative;
     z-index: 1;
+  }
+
+  &__avatar {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: $indent-large;
+    transform: translateY(-50%);
+    width: 5rem;
+    height: 5rem;
+    margin-right: 12rem;
+    flex: 0 0 auto;
+
+    @media only screen and (max-width: $phone) {
+      display: none;
+    }
   }
 }
