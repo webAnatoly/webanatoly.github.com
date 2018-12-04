@@ -11,7 +11,9 @@ const gulp = require('gulp'),
       gulpIf = require('gulp-if'),
       // debug = require('gulp-debug'),
       notify = require('gulp-notify'),
-      multipipe = require('multipipe');
+      multipipe = require('multipipe'),
+      pump = require('pump'),
+      minify = require('gulp-minify');
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development'; // NODE_ENV=production gulp build
 
@@ -44,9 +46,14 @@ gulp.task('assets', function() {
     .pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('js', function () {
-  return gulp.src('src/js/main.js')
-    .pipe(gulp.dest('dist/js'));
+gulp.task('js', function (cb) {
+  pump([
+    gulp.src('src/js/*.js'),
+    minify(),
+    gulp.dest('dist/js')
+  ],
+    cb
+  );
 });
 
 gulp.task('build', gulp.series(

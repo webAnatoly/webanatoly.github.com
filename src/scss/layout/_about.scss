@@ -70,7 +70,7 @@
     max-height: 30rem;
     overflow: hidden;
     margin: 0 3rem 0 0;
-    opacity: .7;
+    opacity: .8;
     transition: all .2s;
 
     @media only screen and (max-width: $phone) {
@@ -88,6 +88,7 @@
       height: inherit;
       max-width: inherit;
       max-height: inherit;
+      transition: all .3s .1s;
     }
   }
 }

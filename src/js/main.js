@@ -1,24 +1,24 @@
 "use strict";
 
-/* Get smal photo */
-let smallImg = document.querySelector("[src*='img/small_avatar.png']");
-let bigImg = document.querySelector("[src*='img/avatar.png']");
-smallImg.onclick = function(){
-  smallImg.classList.add('hidden');
-  bigImg.classList.remove('hidden');
-  span.style.display = 'block';
+// Для десктопа скрытие большой фотки при скроллинге и появления маленькой в области навигации
+if (window.innerWidth > 600) {
+  function toggleImages() {
+    if (bigImg.getBoundingClientRect().top - headerHeight < 0) {
+      bigImg.classList.add('invisible');
+      smallImg.classList.remove('invisible');
+    } else {
+      bigImg.classList.remove('invisible');
+      smallImg.classList.add('invisible');
+    }
+  }
+  /* Get photos */
+  const imgs = document.querySelectorAll("[src*='avatar.png']");
+  const smallImg = imgs[0];
+  const bigImg = imgs[1];
+
+  // get header height
+  const headerHeight = +getComputedStyle(document.querySelector("header")).height.match(/^[0-9.]+/ig)[0];
+
+  window.addEventListener('scroll', toggleImages);
 }
-
-// Get the <span> element that closes the modal
-let span = document.getElementsByClassName('bigPhoto__close')[0];
-
-// When the user clicks on <span> (x), close the modal
-function closePhoto() { 
-  span.style.display = 'none';
-  bigImg.classList.add('hidden');
-  smallImg.classList.remove('hidden');
-}
-
-span.onclick = closePhoto;
-bigImg.onclick = closePhoto;
 
