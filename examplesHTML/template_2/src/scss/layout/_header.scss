@@ -1,6 +1,8 @@
 .header {
   background: url(../img/first-bg.jpg) no-repeat center top / cover, rgb(75, 70, 63);
   min-height: 100vh;
+  // border: 1px solid transparent;
+  padding-bottom: 2rem;
 
   &__head {
     display: flex;
@@ -33,6 +35,7 @@
 
     @media only screen and (max-width: $phone) {
       margin: 9rem 0 0 0;
+      font-size: 3rem;
     }
   }
 
@@ -43,5 +46,10 @@
     text-transform: uppercase;
     text-align: center;
     margin: 1.5rem 0;
+
+    @media only screen and (max-width: $phone) {
+      margin: 9rem 0 0 0;
+      font-size: 6.5rem;
+    }
   }
 }
