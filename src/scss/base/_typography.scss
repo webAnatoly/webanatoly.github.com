@@ -9,6 +9,7 @@ a:link,
 a:visited {
   text-decoration: none;
   color: $color-link;
+  outline: none;
 
   &:hover { color: $color-link-hover; }
 }
