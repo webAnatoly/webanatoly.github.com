@@ -1,0 +1,18 @@
+.title {
+  padding: 12.5rem 0 0 0;
+
+  &__h2 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  &__p {
+    color: #777777;
+    text-align: center;
+    font-size: 1.6rem;
+    margin: .5rem 0 0 0;
+  }
+}

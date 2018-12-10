@@ -1,0 +1,87 @@
+.about {
+
+  &__row {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+
+    @media only screen and (max-width:$phone) {
+      flex-wrap: wrap;
+      margin: 5rem auto;
+
+      /* в каждом первом ряду, последнею ячейку поменять местами с первой */
+      &:nth-child(even) .about__col-side:last-child {
+        order: -1;
+      }
+      &:nth-child(even) .about__col-side:first-child {
+        order: 1;
+      }
+    }
+  }
+
+  &__col-side {
+    width: 37.5%;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+
+    @media only screen and (max-width:$phone) {
+      width: 100%;
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+
+    &:first-child {
+      text-align: right;
+      justify-content: flex-end;
+
+      @media only screen and (max-width:$phone) {
+        text-align: center;
+      }
+    }
+
+    &:last-child {
+      text-align: left;
+      justify-content: flex-start;
+
+      @media only screen and (max-width:$phone) {
+        text-align: center;
+      }
+    }
+  }
+
+  &__col-center {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    min-height: 30rem;
+    justify-content: center;
+
+   @media only screen and (max-width:$phone) {
+      width: 100%;
+    }
+  }
+}
+
+.history {
+
+  & h3 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    margin: .5rem 0;
+  }
+
+  & h4 {
+    font-size: 1.8rem;
+    margin: .5rem 0;
+  }
+
+  & p {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+
+}

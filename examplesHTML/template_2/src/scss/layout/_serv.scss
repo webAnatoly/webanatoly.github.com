@@ -1,0 +1,32 @@
+.services {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 10rem 0;
+  margin: 10rem 0 8rem 0;
+
+  @media only screen and (max-width: $phone) {
+    display: block;
+  }
+
+  &__item {
+    width: 27rem;
+    text-align: center;
+    padding: 1rem;
+
+    @media only screen and (max-width: $phone) {
+      display: block;
+      margin: 3rem auto;
+    }
+
+    & h3 {
+      font-size: 1.8rem;
+      margin: 0 0 .5rem 0;
+    }
+    & p {
+      color:#777777;
+      font-size: 1.4rem;
+      line-height: 2rem;
+      margin: 0;
+    }
+  }
+}

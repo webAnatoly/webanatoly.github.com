@@ -1,0 +1,47 @@
+.header {
+  background: url(../img/first-bg.jpg) no-repeat center top / cover, rgb(75, 70, 63);
+  min-height: 100vh;
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media only screen and (max-width: $tab-port) {
+      justify-content: center;
+    }
+    @media only screen and (max-width: $phone) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    display: block;
+    margin: 4rem;
+    width: 7.9rem;
+    height: 2.8rem;
+  }
+
+  &__welcome {
+    font-size: 4rem;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 18rem 0 0 0;
+
+    @media only screen and (max-width: $phone) {
+      margin: 9rem 0 0 0;
+    }
+  }
+
+  &__greeting {
+    font-size: 7.5rem;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 1.5rem 0;
+  }
+}

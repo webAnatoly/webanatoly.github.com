@@ -1,0 +1,28 @@
+.nav {
+  margin: 4.5rem 0 0 0;
+
+  &__menu {
+    display: block;
+    padding: 0;
+    margin: 0;
+
+    & li {
+      display: inline-block;
+      list-style: none;
+      margin: 0 4.1rem 0 0;
+      
+      @media (max-width: $phone) {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: .5rem 0 0 0;
+      }
+    }
+
+    & a {
+      color: $color-second;
+      font-size:1.4rem;
+      text-transform: uppercase;
+    }
+  }
+}
