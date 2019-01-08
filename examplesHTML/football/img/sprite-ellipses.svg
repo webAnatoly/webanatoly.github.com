@@ -1,0 +1,12 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="ellipse-1" viewBox="0 0 400 400">
+  <title>Ellipse dashed 1</title>
+  <circle r="200" transform="matrix(-1 0 0 1 200 200)" stroke="#00ADEE" stroke-dasharray="8 8" fill="none"/>
+</symbol>
+<symbol id="ellipse-2" viewBox="0 0 600 600">
+  <title>Ellipse dashed 2</title>
+  <circle r="300" transform="matrix(-1 0 0 1 300 300)" stroke="#00ADEE" stroke-dasharray="8 8" fill="none"/>
+</symbol>
+</defs>
+</svg>

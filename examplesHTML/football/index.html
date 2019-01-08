@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Tell mobile browsers to use the device's width and scale -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!-- Tell Internet Explorer to use the most current layout engine available READ: https://www.modern.ie/en-us/performance/how-to-use-x-ua-compatible -->
+
+  <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
+  <title>Mobile App</title><!-- Specify web page title -->
+
+  <!-- Specify the web page description -->
+  <meta name="description" content="">
+
+  <!-- The commented-out markup below is for iOS/Android bookmarking icons-->
+  <!--
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="196x196" href="">
+  <link rel="apple-touch-icon" sizes="152x152" href="">
+  -->
+
+</head>
+<body>
+  <header class="container header responsive-padding">
+    <div class="row">
+      <div class="col-7">
+        <div class="logo header__logo">
+          <div class="logo__img"><a href="/"><img src="./img/football.svg" alt="football picture"></a></div>
+          <div><a href="/"><span class="logo__text">Sports</span></a></div>
+        </div>
+        <div class="header__slogan">
+          Get a personalized football experience tailored just for you
+        </div>
+        <p class="header__p">
+          Achieve super-fan status by getting tailored updates and up-to-the-minute information on your team.
+        </p>
+        <div class="store-buttons header__store-buttons">
+          <div class="store-buttons__img-wrapper"><a href="javascript:void(0)"><img src="./img/apple-store.svg" alt="Apple Store Button"></a></div>
+          <div class="store-buttons__img-wrapper"><a href="javascript:void(0)"><img src="./img/google-play.svg" alt="Google Play Button"></a></div>
+        </div>
+      </div>
+      <div class="col-5 hide-mobile"></div>
+    </div>
+  </header>
+  <section class="container about responsive-padding">
+    <div class="row">
+      <div class="col-7">
+        <div class="about__container">
+          <div class="informer about__informer">
+            <p class="informer__date">Sat, 12:35pm</p>
+            <div class="informer__teams">
+              <p class="informer__team">Arsenal <span>v</span></p>
+              <p class="informer__team">Chelsea</p>
+            </div>
+            <p class="informer__status">Friendly Match</p>
+            <div class="informer__img-holder informer__img-holder--1">
+              <img src="./img/arsenal.svg" alt="club emblem picture">
+            </div>
+            <div class="informer__img-holder informer__img-holder--2">
+              <img src="./img/chelsea.svg" alt="club emblem picture">
+            </div>
+            <div class="informer__row">
+              <div class="informer__row__text">Turn on all match notifications</div>
+              <div class="switch">
+                <input type="checkbox" class="switch__checkbox">
+                <div class="switch__knobs"></div>
+                <div class="switch__layer"></div>
+              </div>
+            </div>
+          </div>
+          <!-- <iframe class="small-video about__small-video" src="https://www.youtube.com/embed/CYU0h6pCrxA" allowfullscreen></iframe> -->
+          <!-- The <iframe> (and video player) will replace this <div> tag. -->
+          <div id="video-wrapper">
+            <div id="player" class="small-video about__small-video"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-5 about__flex">
+        <article class="article about__article">
+          <h2>what it does</h2>
+          <h3>an enhanced football experience</h3>
+          <p>The Guardian Live Scores app is your go to app for live scores and watching Premier League goals… Get in there, what
+            a
+            result!</p>
+          <p>As well as videos of all the goals, you can watch match highlights, check out the latest scores and results and stay
+            bang-up-to-date with the big football stories from The Guardian publication.</p>
+            <a href="#">Learn more</a>
+        </article>
+      </div>
+    </div>
+  </section><!--about-->
+  <section class="container get-started responsive-padding">
+    <div class="row">
+      <div class="col-6">
+        <article class="article get-started__article">
+          <h2>Get started</h2>
+          <h3>User-friendly Interface</h3>
+          <p>
+            The in-game goal clips from every Premier League match are available to Guardian TV customers with a Guardian
+            subscription.
+          </p>
+          <p>
+            So, if you’re not a subscriber, now’s the time to make that savvy call. If that’s a step too far for you, you can still
+            watch loads of firecracker Premier League action as long as you sign in with a free Guardian iD.
+          </p>
+          <a href="#">Learn more</a>
+        </article>
+      </div>
+      <div class="col-6">
+        <div class="get-started__container">
+          <div class="get-started__ellipse">
+            <svg class="get-started__ellipse-1">
+              <use xlink:href="./img/sprite-ellipses.svg#ellipse-1" href="./img/sprite-ellipses.svg#ellipse-1"></use>
+            </svg>
+          </div>
+          <div class="get-started__ellipse">
+            <svg class="get-started__ellipse-2">
+              <use xlink:href="./img/sprite-ellipses.svg#ellipse-2" href="./img/sprite-ellipses.svg#ellipse-2"></use>
+            </svg>
+          </div>
+          <div class="get-started__ellipse get-started__ellipse-3"></div>
+          <div class="get-started__ellipse get-started__ellipse-4"></div>
+          <div class="get-started__ellipse get-started__ellipse-5"></div>
+          <div class="get-started__ellipse get-started__ellipse-6"></div>
+          <div class="get-started__ellipse get-started__ellipse-7"></div>
+          <div class="get-started__ellipse get-started__ellipse-8"></div>
+          <div class="get-started__ellipse get-started__ellipse-9"></div>
+
+          <div class="mobile-phone get-started__mobile-phone">
+            <div class="mobile-phone__front">
+              <div class="mobile-phone__front__camera"></div>
+              <div class="mobile-phone__front__mic"></div>
+            </div>
+            <div class="mobile-phone__btns">
+              <div class="mobile-phone__btns__btn-1"></div>
+              <div class="mobile-phone__btns__btn-2"></div>
+            </div>
+            <div class="mobile-phone__screen">
+              <img src="./img/screenshot.png" alt="mobile screen picture">
+            </div>
+          </div>
+          <div class="informer-rounded get-started__container__informer-rounded-1">
+            <div class="informer-rounded__icon-holder">
+              <svg class="svg-icon">
+                <use xlink:href="./img/sprite-icons.svg#bell" href="./img/sprite-icons.svg#bell"></use>
+              </svg>
+              <div class="informer-rounded__icon-holder__counter">
+                <span>7</span>
+              </div>
+            </div>
+          </div>
+          <div class="informer-rounded get-started__container__informer-rounded-2">
+            <div class="informer-rounded__icon-holder">
+              <svg class="svg-icon icon--phone">
+                <use xlink:href="./img/sprite-icons.svg#phone" href="./img/sprite-icons.svg#phone"></use>
+              </svg>
+              <div class="informer-rounded__icon-holder__counter invisible">
+                <span>0</span>
+              </div>
+            </div>
+          </div>
+          <div class="get-started__small-circle"></div>
+        </div>
+      </div>
+    </div>
+  </section><!--get-started-->
+  <section class="container features responsive-padding">
+    <h3 class="features__h3">Features That Will Tailor Your Experience</h2>
+    <div class="row">
+      <div class="col-4">
+        <article class="features__article">
+          <div class="features__article__icon-holder">
+            <svg class="svg-icon">
+              <use xlink:href="./img/sprite-icons.svg#ondemand_video-24" href="./img/sprite-icons.svg#ondemand_video-24"></use>
+            </svg>
+          </div>
+          <ul>
+            <li>
+              Video highlights for every Premier League and English Football League game
+            </li>
+          </ul>
+        </article>
+      </div>
+      <div class="col-4">
+        <article class="features__article">
+          <div class="features__article__icon-holder">
+            <svg class="svg-icon icon--phone">
+              <use xlink:href="./img/sprite-icons.svg#notifications_active" href="./img/sprite-icons.svg#notifications_active"></use>
+            </svg>
+          </div>
+          <ul>
+            <li>
+              Notifications for your teams, including in-game goal clips and Premier League match highlights for Sky TV subscribers
+              with Guardian.
+            </li>
+          </ul>
+        </article>
+      </div>
+      <div class="col-4">
+        <article class="features__article">
+          <div class="features__article__icon-holder">
+            <svg class="svg-icon icon--phone">
+              <use xlink:href="./img/sprite-icons.svg#hd" href="./img/sprite-icons.svg#hd"></use>
+            </svg>
+          </div>
+          <ul>
+            <li>
+              Brand new video section including dedicated areas for your chosen team, trending video, Premier League, Football
+              league and other major leagues
+            </li>
+          </ul>
+        </article>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <article class="features__article">
+          <div class="features__article__icon-holder">
+            <svg class="svg-icon icon--phone">
+              <use xlink:href="./img/sprite-icons.svg#flag" href="./img/sprite-icons.svg#flag"></use>
+            </svg>
+          </div>
+          <ul>
+            <li>
+              Match pages showing live scores, commentary, team line-ups and enhanced match stats to keep you up-to-date on all the
+              action
+            </li>
+          </ul>
+        </article>
+      </div>
+      <div class="col-4">
+        <article class="features__article">
+          <div class="features__article__icon-holder">
+            <svg class="svg-icon icon--phone">
+              <use xlink:href="./img/sprite-icons.svg#style-24" href="./img/sprite-icons.svg#style-24"></use>
+            </svg>
+          </div>
+          <ul>
+            <li>
+              The new picture in picture video mode means you can watch goals, manager interviews and more whilst using other areas
+              of the app – so you don’t need to miss any of the action
+            </li>
+          </ul>
+        </article>
+      </div>
+      <div class="col-4">
+        <article class="features__article">
+          <div class="features__article__icon-holder">
+            <svg class="svg-icon icon--phone">
+              <use xlink:href="./img/sprite-icons.svg#poll" href="./img/sprite-icons.svg#poll"></use>
+            </svg>
+          </div>
+          <ul>
+            <li>
+              Live updated league tables including all the domestic, European and major leagues and tournaments
+            </li>
+          </ul>
+        </article>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <article class="features__article">
+          <div class="features__article__icon-holder">
+            <svg class="svg-icon icon--phone">
+              <use xlink:href="./img/sprite-icons.svg#add-home-screen" href="./img/sprite-icons.svg#add-home-screen"></use>
+            </svg>
+          </div>
+          <ul>
+            <li>
+              The Guardian News Vidiprinter. Follow the goals as they go in with our new and improved Vidiprinter
+            </li>
+          </ul>
+        </article>
+      </div>
+      <div class="col-4">
+        <article class="features__article">
+          <div class="features__article__icon-holder">
+            <svg class="svg-icon icon--phone">
+              <use xlink:href="./img/sprite-icons.svg#people" href="./img/sprite-icons.svg#people"></use>
+            </svg>
+          </div>
+          <ul>
+            <li>
+              Match reports, previews and a dedicated news section
+            </li>
+          </ul>
+        </article>
+      </div>
+      <div class="col-4">
+        <article class="features__article">
+          <div class="features__article__icon-holder">
+            <svg class="svg-icon icon--phone">
+              <use xlink:href="./img/sprite-icons.svg#tune" href="./img/sprite-icons.svg#tune"></use>
+            </svg>
+          </div>
+          <ul>
+            <li>
+              And you can achieve super-fan status by personalising your home page with up-to-the-minute information on your team.
+            </li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section><!--features-->
+  <section class="container opinions">
+    <h3 class="opinions__h3">What Our Users Say</h3>
+    <div class="carousel" id="carousel">
+      <div class="carousel__row carousel__row--main">
+        <ul>
+          <li>
+            <div class="card">
+              <header class="card__header">
+                <div class="card__header__photo"></div>
+                <span class="card__header__name">John Doe</span>
+                <div class="card__header__icon"></div>
+              </header>
+              <p class="card__text">
+                I use this app every day and it's a great way to keep up to date with what's going on in football.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <header class="card__header">
+                <div class="card__header__photo"></div>
+                <span class="card__header__name">Noach jackson</span>
+                <div class="card__header__icon"></div>
+              </header>
+              <p class="card__text">
+                I use this app every day and it's a great way to keep up to date with what's going on in football. It's a shame it
+                won't rotate into landscape mode like its main competitor
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <header class="card__header">
+                <div class="card__header__photo"></div>
+                <span class="card__header__name">Darren Wilson</span>
+                <div class="card__header__icon"></div>
+              </header>
+              <p class="card__text">
+                Good for scores and commentary but the team lineups have stopped working.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <header class="card__header">
+                <div class="card__header__photo"></div>
+                <span class="card__header__name">Michael Akinuli</span>
+                <div class="card__header__icon"></div>
+              </header>
+              <p class="card__text">
+                Good for watching the goals and great for highlights instead of waiting till 10:30 before you can watch highlights
+                on
+                March of the day also no need of sky go
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <header class="card__header">
+                <div class="card__header__photo"></div>
+                <span class="card__header__name">Alex Doe</span>
+                <div class="card__header__icon"></div>
+              </header>
+              <p class="card__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <header class="card__header">
+                <div class="card__header__photo"></div>
+                <span class="card__header__name">Alex Doe</span>
+                <div class="card__header__icon"></div>
+              </header>
+              <p class="card__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="card">
+              <header class="card__header">
+                <div class="card__header__photo"></div>
+                <span class="card__header__name">Alex Doe</span>
+                <div class="card__header__icon"></div>
+              </header>
+              <p class="card__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div><!-- carousel__row--main -->
+      <div class="carousel__row carousel__indicators">
+        <div class="carousel__indicators__indicator"></div>
+        <div class="carousel__indicators__indicator"></div>
+        <div class="carousel__indicators__indicator"></div>
+        <div class="carousel__indicators__indicator"></div>
+        <div class="carousel__indicators__indicator"></div>
+        <div class="carousel__indicators__indicator"></div>
+      </div>
+      <button class="button-1 carousel__btn--left"></button>
+      <button class="button-1 button-1--right carousel__btn--right"></button>
+    </div><!--carousel-->
+  </section><!--opinions-->
+
+  <section class="container tv responsive-padding">
+    
+    <h3 class="tv__h3">We have been featured in</h3>
+    
+    <div class="tv__row">
+
+        <div class="tv__img-holder tv__img-holder--1">
+          <img src="./img/tv__sports-tv.svg" alt="tv channel label">
+        </div>
+        <div class="tv__img-holder tv__img-holder--1">
+          <img src="./img/tv__sports.svg" alt="">
+        </div>
+
+        <div class="tv__img-holder tv__img-holder--2">
+          <img src="./img/tv__nbc-sports-1.svg" alt="tv channel label">
+        </div>
+        <div class="tv__img-holder tv__img-holder--2">
+          <img src="./img/tv__designer-technology.svg" alt="tv channel label">
+        </div>
+        <div class="tv__img-holder tv__img-holder--2">
+          <img src="./img/tv__designer-news.svg" alt="tv channel label">
+        </div>
+
+        <div class="tv__img-holder tv__img-holder--3">
+          <img src="./img/tv__sky-sports-1.svg" alt="tv channel label">
+        </div>
+
+    </div><!--tv__row-->
+  </section><!--tv-->
+
+  <section class="container get-up responsive-padding">
+    <div class="row get-up__bg-layer">
+      <div class="col-6 hide-mobile">&nbsp;</div>
+      <div class="col-6">
+        <article class="article get-up__article">
+          <h3>
+            Get Up Close With Your Team
+          </h3>
+          <p class="get-up__p">
+            If you’re interested in the scores of more than one team (it’s OK, we won’t tell your mates you support two clubs!),
+            you can choose the scores and competitions that matter to you using the ‘My Scores’ section. So, make sure you’re a
+            top-flight football fan by downloading the Football Score Centre now. It’s got all this:
+          </p>
+        </article>
+        <div class="store-buttons get-up__store-buttons">
+          <div class="store-buttons__img-wrapper"><a href="javascript:void(0)"><img src="./img/apple-store.svg" alt="Apple Store Button"></a></div>
+          <div class="store-buttons__img-wrapper"><a href="javascript:void(0)"><img src="./img/google-play.svg" alt="Google Play Button"></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="show-mobile get-up__box--mobile">&nbsp;</div>
+  </section><!--get up-->
+
+  <footer class="container footer responsive-padding">
+
+    <div class="footer__box footer__box--1">
+      <div class="logo">
+        <div class="logo__img"><a href="/"><img src="./img/football-2.svg" alt="football picture"></a></div>
+        <div class="logo__text"><a href="/">Sports</ф></div>
+      </div>
+    </div>
+    
+    <div class="footer__box footer__box--center">
+      <nav class="footer__menu">
+        <ul>
+          <li><a href="javascript:void(0);">download</a></li>
+          <li><a href="javascript:void(0);">support</a></li>
+          <li><a href="javascript:void(0);">developers</a></li>
+          <li><a href="javascript:void(0);">privacy</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+    <div class="footer__box footer__box--2">
+      <div class="footer__icons">
+        <div class="footer__icons__icon-holder">
+          <a href="javascript:void(0)">
+            <svg class="footer__svg">
+              <use xlink:href="./img/sprite-icons.svg#twitter-2" href="./img/sprite-icons.svg#twitter-2"></use>
+            </svg>
+          </a>
+        </div>
+        <div class="footer__icons__icon-holder">
+          <a href="javascript:void(0)">
+            <svg class="footer__svg">
+              <use xlink:href="./img/sprite-icons.svg#facebook-2" href="./img/sprite-icons.svg#facebook-2"></use>
+            </svg>
+          </a>
+        </div>
+        <div class="footer__icons__icon-holder">
+          <a href="javascript:void(0)">
+            <svg class="footer__svg">
+              <use xlink:href="./img/sprite-icons.svg#instagram-2" href="./img/sprite-icons.svg#instagram-2"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  
+  </footer>
+
+<script src="./js/main.js"></script>
+<script src="./js/svg4everybody.min.js"></script> <!--polyfil for svg sprite support-->
+<script> svg4everybody(); </script>
+<script src="./js/carousel-min.js"></script>
+</body>
+</html>
