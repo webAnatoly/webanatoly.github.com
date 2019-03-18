@@ -9,6 +9,7 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; // This defines what 1rem is 10px (62.5% from 16px = 10px)
+  scroll-behavior: smooth;
 }
 
 body {
